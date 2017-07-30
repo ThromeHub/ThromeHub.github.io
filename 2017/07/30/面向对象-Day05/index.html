@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数与Function -&amp;gt; length 属性    在定义函数的时候, 函数有length属性, 用于描述函数的参数个数      function wode() { }             wode.length -- 0      function wode( item ) { }        wode.length -- 1    -&amp;gt; arguments 对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/30/面向对象-Day05/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数与Function -&amp;gt; length 属性    在定义函数的时候, 函数有length属性, 用于描述函数的参数个数      function wode() { }             wode.length -- 0      function wode( item ) { }        wode.length -- 1    -&amp;gt; arguments 对象">
+<meta property="og:updated_time" content="2017-07-28T13:33:12.294Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="函数与Function -&amp;gt; length 属性    在定义函数的时候, 函数有length属性, 用于描述函数的参数个数      function wode() { }             wode.length -- 0      function wode( item ) { }        wode.length -- 1    -&amp;gt; arguments 对象">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象-Day05" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/30/面向对象-Day05/" class="article-date">
+  <time datetime="2017-07-30T07:20:36.623Z" itemprop="datePublished">2017-07-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数与Function</p>
+<pre><code>-&gt; length 属性
+
+  在定义函数的时候, 函数有length属性, 用于描述函数的参数个数
+
+    function wode() { }             wode.length -- 0
+
+    function wode( item ) { }        wode.length -- 1
+
+
+
+-&gt; arguments 对象
+
+      该对象是一个伪数组, 用于获得所有的传入参数. 实际函数调用时传入的所有参数都会依次存储在arguments中.
+
+
+利用该属性可以实现函数的多种调用结果( 函数重载 ).
+
+        function wode() {
+
+              console.log( arguments ); 
+
+           }
+
+           wode( 1, 2, 3 );                ---- [1,2,3]            
+
+        wode( &apos;a&apos;, true, 1, { name: &quot;哈哈&quot; });        ---- [&quot;a&quot;,true,1,{ name:&quot;哈哈&quot; }]
+
+
+      函数重载, 原本不是js中的语法特性, 是 C++ 引入的语法特性。
+
+通过arguments判断参数的类型及数量，在函数内部执行不同代码，实现函数重载的模拟
+
+
+
+
+-&gt; callee 与 caller
+
+  1&gt; callee 是 arguments 的方法, 表示当前函数
+
+      function wode() {
+
+        arguments.callee();         ---- wode()
+
+      }
+
+
+  2&gt; caller 是函数的属性方法, 在函数套用过程中表示调用该函数的引用
+
+      function wode() {
+
+        todo();
+
+      }
+
+      function todo() {
+
+        console.log( todo.caller );        ---- wode的函数体
+
+      }
+
+
+
+ -&gt; call            Loading
+
+ -&gt; apply            Loading
+
+ -&gt; bind            Loading
+</code></pre><p>Function 的使用</p>
+<pre><code>作用：  可用于创建函数,将字符串作为Js代码执行
+
+
+语法:   new Function( &quot;参数&quot;, &quot;参数&quot;, .. &quot;参数&quot;, &quot;函数体&quot; )
+
+
+注意:   Function 的参数全部是字符串, 最后的参数用于构成函数体, 其余参数为该函数的参数.
+
+    用Function无法创建全局变量
+
+
+
+实例: 求两个数字的和, 并将结果返回的函数
+
+    var getSum = new Function( &quot;numone&quot;, &quot;numtwo&quot;, &quot;return numone + numtwo&quot;);
+
+
+
+实例: 请求返回的json格式字符串就可以使用此法直接执行 
+
+      ( new Function ( &quot;return &quot; + jsondata ) ) ( );
+</code></pre><p>eval 函数</p>
+<pre><code>作用： eval同样可以将字符串作为Js代码执行
+
+用法:  eval( &apos;js 代码&apos; )
+
+说明: 
+
+        1&gt; 在确保没有安全问题的前提下 eval还是被使用的比较频繁的( MDN ). 
+
+         2&gt; 在使用 eval 转换对象字符串为对象的时候, 由于{ }默认用于包裹代码块，所以字符串需要圆括号包裹
+
+         3&gt; 在严格模式下禁用 eval
+</code></pre><p>loop 循环跳出</p>
+<pre><code>语法： 标记名：for(var i = 0; i &lt; arr.length; ++i){
+
+            for(var j = 0; arr[i].length; ++j){
+
+                break 标记名
+
+            }    
+
+        }
+
+    break 标记名能够跳出循环至标志起始位置
+</code></pre><ol>
+<li><p>函数的二义性</p>
+<p>   函数是Function的实例，函数同样是对象.</p>
+<p>   可以绘制出函数 Function 与 原型属性( Function.prototype ) 的三角形关系</p>
+</li>
+</ol>
+<pre><code>练习 Function 与 Object 这两个函数之间的完整原型链图
+
+题目:
+
+        console.log( Function instanceof Object );
+
+        console.log( Object instanceof Function );
+
+
+      Object.prototype 在不在 Function 的原型链上?     ---- true
+
+      所有对象的原型链都集中在Object.prototype处
+
+      Function.prototype 在不在 Object 的原型链上?     ---- true
+
+      所有构造函数都是Function的实例化对象，故Function.prototype位于其原型链上
+
+
+作业:   考虑 Function, Object, 以及自定义函数 Person 的完整原型链
+</code></pre><p>面向对象小结与补充</p>
+<p>  -&gt; 包装对象( Number, String, Boolean )</p>
+<pre><code>思考: 字符串的方法是谁提供的?
+
+    由于 js 的基本类型不是对象, 为了让它可以方便操作, js 作者为它们设计了包装对象来提供各种方法.
+
+    在代码的执行过程中, 如果需要使用方法, 会在代码中临时创建对应的对象, 并在调用方法后释放.
+
+
+
+
+实例: &quot;wode,tode&quot;.split(&quot;,&quot;)
+
+      1&gt; 创建一个 String 的实例( new String(&quot;wode,todo&quot; ) ).
+
+      2&gt; 调用实例对应的 split 方法, 分隔字符串并返回一个数组.
+
+      3&gt; 在返回数组的之后, 释放该对象.
+
+如果要取得对应包装对象中存储的值, 使用 valueOf 方法.
+</code></pre><p>  -&gt; 理论知识( 能够复述 )</p>
+<pre><code>-&gt; 面向对象特征( 三大特征 )
+
+  1&gt; 抽象性
+
+    其原意是说将你研究的目标上抽取你需要的特征, 然后将这些特征组合起来表征这个具体的事务. 
+
+
+  2&gt; 封装性
+
+    所谓的封装性就是将复杂的逻辑, 或需要隐藏的数据保护起来, 不让使用者看到, 了解到. 
+
+    只预留简单的接口被使用.如函数, 就是封装性的体现. 
+
+
+  3&gt; 继承性
+
+    拿来主义. 强调自己原来是没有的. 然后有了.
+
+
+  4&gt; 多态性
+
+    原意: 一个对象调用相同的方法, 会展示出不同的效果.
+
+    最简单的多态性就是 js 中的 toString 方法.
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/30/面向对象-Day05/" data-id="cj5qelv3q0003a4untrj8ffx6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/30/面向对象-Day05/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/面向对象-Day01/">JavaScript面向对象手札</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/16/wode/">wode</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
