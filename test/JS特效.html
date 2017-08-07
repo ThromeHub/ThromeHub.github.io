@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title> - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-08-07T07:55:02.324Z">August 7, 2017</time><h1 class="post__title"><a href="/test/JS特效.html"></a></h1><div class="post__main echo"><p>�ڵ�.�¼����ͣ���    ���������ýڵ����¼�</p>
+<p>�ڵ�.click()        �������������¼�</p>
+<p>offsetϵ�е���������</p>
+<p>offsetLeft        </p>
+<pre><code>���㷽ʽ����ǰԪ�ص����߿����࣬����λ�����ӵ����߿�����
+
+    �߿� -- �߿��ľ���
+
+ȡֵ���ͣ���ֵ���ͣ���ȡ������������
+</code></pre><p>offsetTop</p>
+<pre><code>���㷽ʽ����ǰԪ�صĶ����߿򣬵���λ�����ӵĶ�������
+
+    �߿� -- �߿��ľ���
+
+ȡֵ���ͣ���ֵ���ͣ���ȡ������������
+</code></pre><p>offsetWidth</p>
+<pre><code>��ʾԪ�ص���ʵ����
+
+    ����margin�����Ŀ���ֵ
+
+ȡֵ���ͣ���ֵ���ͣ���ȡ������������
+</code></pre><p>offsetHeight</p>
+<pre><code>��ʾԪ�ص���ʵ�߶�
+
+    ����margin�����ĸ߶�ֵ
+
+ȡֵ���ͣ���ֵ���ͣ���ȡ������������
+</code></pre><p>offsetParent</p>
+<pre><code>ѡ���������Ի�ȡ����λ�ĸ�����
+
+parentNode    ��ȡ���Ǹ�Ԫ��
+
+offsetParent    ��ȡ��λ�ĸ�Ԫ��
+</code></pre><p>�ֲ�ͼЧ��    </p>
+<pre><code>��������
+
+JavaScript / ��Ч / 5�����ֲ�ͼ / prefect.html
+</code></pre><p>ͨ��documentֱ�ӻ�ȡĳЩԪ��</p>
+<pre><code>��ȡtittle��ǩ�����������ߵ���ʾ����
+
+    document.title = &quot;����&quot;
+
+
+��ȡbody��ǩ
+
+    document.body
+
+
+��ȡhtml��ǩ
+
+    document.documentElement
+</code></pre><p>scrollϵ�е���������</p>
+<pre><code>����ʵ�����ݲ�û�дﵽԪ�صĸ߶ȺͿ���
+
+    ��ʱ��ȡ�Ľ���ΪԪ�صĸ߶�������
+
+scrollHeight        
+
+    Ԫ����ʵ�����ݵĸ߶�
+
+    ��ȡ������ֵ����
+
+scrollWidth
+
+    Ԫ����ʵ�����ݵĿ���
+
+    ��ȡ������ֵ����
+
+
+
+scrollTop
+
+    ��ȡԪ�����Ϲ����ľ���
+
+        scrollHeight���ݸ߶� - HeightԪ�ظ߶� 
+
+    ʹ����Ҫ���Ϲ����¼�
+
+    Object.onsrcoll = function(){ 
+
+        console.log(this.srcollTop)
+
+    }
+
+
+scrollLeft
+
+    ��ȡԪ�����������ľ���
+
+        scrollHeight���ݿ��� - HeightԪ�ؿ��� 
+
+    ʹ����Ҫ���Ϲ����¼�
+
+    Object.onsrcoll = function(){ 
+
+        console.log(this.srcollLeft)
+
+    }
+</code></pre><p>�Ա��ܽ�</p>
+<p>offsetLeft :Ԫ�ؾ������ߵľ���</p>
+<p>offsetTop��Ԫ�ؾ��붥���ľ���</p>
+<p>offsetWidth��Ԫ�صĿ��� �б߿�</p>
+<p>offsetHeight��Ԫ�صĸ߶� �б߿�</p>
+<p>scrollWidth��Ԫ�������ݵ�ʵ�ʿ���</p>
+<p>scrollHeight��Ԫ�������ݵ�ʵ�ʸ߶�</p>
+<p>scrollLeft��Ԫ�����������ľ���</p>
+<p>scrollTop��Ԫ�����Ϲ����ľ���</p>
+<p>scrollϵ�����Է�װ</p>
+<pre><code>function getScrollTop(){
+
+    return window.pageYOffset || document.body.offsetTop || document.documentElement.scrollTop || 0
+
+}
+
+function getScrollLeft(){
+
+    return window.pageXOffset || document.body.offsetLeft || document.documentElement.scrollLeft || 0
+
+}
+</code></pre><p>��ȡԪ�ص�css����</p>
+<pre><code>window.getComputedStyle(Object, null).top
+
+windwo.getComputedStyle(Object, null)[&quot;top&quot;]
+
+
+ie�Ͱ汾
+
+Object.currentStyle.left;
+
+Object.currentStyle[&quot;left&quot;];
+</code></pre><p>����������װ����</p>
+<pre><code>�ο�     �ʼҶ�������animate��tag��json��fn��
+
+����     �����ö���ʽjson
+
+        json��ʽ����
+
+        { &quot;width&quot;:200, &quot;height&quot;:160 }
+
+    ׷���˻ص�����fn
+
+        �����ڶ���Ƕ��ʹ��
+
+    ׷����͸������ʽopacity
+
+    ׷���˲�����ʽzIndex
+</code></pre><p>function animate(tag, json, fn){</p>
+<pre><code>    clearInterval(tag.Ds);
+
+    tag.Ds =setInterval(function(){
+
+        var flag =true;
+
+        for(var key in json){
+
+            if(key == &quot;opacity&quot;){
+
+                //��ȡ��ǰ��ʽ
+
+                var current = getStyle(tag, key)*100;
+
+                var target = json[key]*100;
+
+                //������ʽ�仯����
+
+                var step = (target - current)/10;
+
+                //������ʽ
+
+                step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+
+                //��ʽ����
+
+                current += step;
+
+                tag.style[key] = current/100;
+
+            }else if(key == &quot;zIndex&quot;){
+
+                tag.style.zIndex = json[key];
+
+            }else{
+
+                //��ȡ��ǰ��ʽ
+
+                var current = parseInt(getStyle(tag, key));
+
+                var target = json[key];
+
+                //������ʽ�仯����
+
+                var step = (target - current)/10;
+
+                //������ʽ
+
+                step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+
+                //��ʽ����
+
+                current += step;
+
+                tag.style[key] = current + &quot;px&quot;;
+
+            }
+
+            //�жϵ�ǰ��ʽ�Ƿ���λ
+
+            if(current != target){
+
+                flag = false;
+
+            }
+        }
+
+        //�ж�������ʽ�Ƿ���λ
+
+        if(flag){
+
+            //������ʱ��
+
+            clearInterval(tag.Ds);
+
+            //�����ص��������ڣ������ûص�����
+
+            if(fn){
+
+                fn();
+            }
+        }
+    },20)
+}
+</code></pre><p>�ۺϰ�����</p>
+<pre><code>�ο�    ��ư���
+
+    �ַ��ٰ���
+
+    ��תľ��������
+</code></pre><p>event�¼���������</p>
+<pre><code>���ӻ��������꣺���겻�����ֶ�ʱ��clientֵ����
+
+clientX��ҳ���п��������ĺ�����
+
+    ��ֵ����
+
+clientY��ҳ���п���������������
+
+    ��ֵ����
+
+
+ҳ������
+
+pageX��ҳ���еĺ�����
+
+    ��ֵ����
+
+pageY��ҳ���е�������
+
+    ��ֵ����
+</code></pre><p>����ϵ��</p>
+<pre><code>offset        scroll        client
+
+
+offsetLeft
+
+    ��ȡ����Ԫ�ؾ�������λ�õĺ�����
+
+offsetTop
+
+    ��ȡ����Ԫ�ؾ��붥��λ�õ�������
+
+offsetWidth
+
+    ��ȡ����Ԫ�صĿ��ȣ��б߿򲻰���marign
+
+offsetHeight
+
+    ȡ����Ԫ�صĿ��߶ȣ��б߿򲻰���marign
+
+
+
+scrollLeft
+
+    ��ȡ���ǹ���ȥ�ĺ�����ֵ
+
+scrollTop
+
+    ��ȡ���ǹ���ȥ��������ֵ
+
+scrollWidth
+
+    Ԫ�������ݵ�ʵ�ʿ��ȣ��ޱ߿�
+
+scroll Height
+
+    Ԫ�������ݵ�ʵ�ʸ߶ȣ��ޱ߿�
+
+
+
+
+
+
+
+���������⣺
+
+    ie8�е��¼���������;window.event
+
+    �ȸ�֧�ֲ���e��window.event
+
+    ����֧�ֲ���e����֧��window.event
+
+    function (e){
+
+        e = window.event?window.event:e; 
+
+    }
+</code></pre><p>��Ҫ��֤����ֵ����׼ȷ��ȡ�������ȵ�ͼƬ��ȫ���غ�</p>
+<p>����A ���ں���</p>
+<p>window.onload = function(){</p>
+<pre><code>console.log(pic.offsetWidth)
+</code></pre><p>}</p>
+<p>����B��</p>
+<pre><code>ʹ�ÿ��������Ŀ���
+</code></pre><p>����C��</p>
+<pre><code>��ȡjson�е�����ֵ���ӷ������˽��չ��������ݣ�
+</code></pre></div></header></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2017 John Doe</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

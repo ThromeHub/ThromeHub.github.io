@@ -1,0 +1,860 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title> - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-08-07T07:55:02.320Z">August 7, 2017</time><h1 class="post__title"><a href="/test/JS-DOM笔记.html"></a></h1><div class="post__main echo"><p>DOM</p>
+<pre><code>document        �ĵ�
+
+object            ����
+
+model            ģ��
+
+
+�������ṩһЩ��ʽ������ҳ������
+
+console.dir(��ǩ)
+
+    �ı���ʾģʽ�����Խ���ǩ��ʽ��ӡΪ����ģʽ��ʾ
+</code></pre><hr>
+<p>�ڵ�</p>
+<pre><code>��ҳ�������У����ȸ��ݵ�ǰҳ����html�ṹ���ɽṹ��
+
+js�����ݽṹ������ͬ���Ľڵ�����ÿ����ǩ���Զ�����ʽ���֣�
+
+    ��������Ϊ�ڵ����������Ƿ����û�����
+
+�ڵ���׼�����Ǹ���ÿ���ڵ������¼�/ͬ�����Ĺ�ϵ���з��ʣ��������ṩ���ʷ�ʽ��
+
+
+
+�ڵ��ķ��ࣺ
+
+    1.Ԫ�ؽڵ㣺��ǩ����ã�
+
+    2.���Խڵ㣺��ǩ������
+
+    3.�ı��ڵ㣺��ǩ������
+
+    4.���ڵ㣺document��documentʵ������DOM�еĶ���������
+
+
+�ڵ���ȡ.
+
+    ���ʸ���Ԫ��
+
+    �ӽڵ�.parentNode
+
+
+    �����ӽڵ㣺        ��������
+
+    �ӽڵ�.children
+
+    ���⣺��ie�Ͱ汾�п��Ի�ȡע�ͽڵ�
+
+
+
+
+    ׷���ӽڵ�        ���й�ȥ
+
+    �ڲ�������
+
+        ���ڵ�.appendChild(���ӽڵ�)
+
+    ָ��λ�ã�
+
+        ��Ԫ��.insertBefore(���ӽڵ㣬λ�ýڵ�)
+
+        ��Ԫ��.insertBefore(���ӽڵ㣬null)
+
+        ����λ�ýڵ�Ϊ�գ�Ĭ�ϲ�������λ��
+</code></pre><hr>
+<p>��ȡ����</p>
+<pre><code>id��ȡ��            ע����Сд
+
+       document.getElementById ( &quot;id��&quot; )
+
+    ������ȡ����Ϊnull����ʾ��ȡʧ��
+
+    ��������
+
+        - ��Сд����
+
+        - id ƴд����������
+
+        - ִ��˳�����⣨script��head�У�
+
+
+    ִ��˳����������
+
+        window.onload = function(){ 
+
+            document.getElementById ( &quot;id��&quot; )
+
+        }
+
+        �ڲ����д�����ҳ�����غ�ִ��
+
+
+
+
+��ǩ����ȡ��            ע��Element��s��
+
+    document.getElementsByTagName ( &quot;��ǩ��&quot; )
+
+    ���ص���һ��α���飨����ʹ�����鷽����
+
+    ǰ�ߵ�document��Ӧwindow�����Ի��ɱ��ı�ǩ
+
+
+    �����ض�Ԫ�أ�
+
+        var tag = document.getElementsByTagName ( &quot;��ǩ��&quot; );
+
+        tag[0].innerHTML = ���ݣ�
+
+
+    ����ÿ��Ԫ�أ�
+
+        var tag = document.getElementsByTagName ( &quot;��ǩ��&quot; );
+
+        for(var i = 0; i &lt; tag.length; ++i){
+
+            tag[i].innerHTML = i;
+
+        }
+
+
+
+
+������ȡ��            ����ǩ������    
+
+    HTMLObject.getElementsByClassName(&quot;����&quot;);
+
+
+    ie9���²�֧�ָ÷�����Ҳû����������Ҫ�Լ���д����ʵ��
+
+    �������⣺
+
+        if( document.getElementsByClassName ){
+
+            document.getElementsByClassName(&quot;����&quot;)
+
+        }
+        else{
+
+            //�Լ���д����������ȡԪ�صĹ���
+
+            //1.��ȡ���б�ǩ
+
+                var tags = getElementsByTagName(&quot;*&quot;);
+
+                var arr = [ ];
+
+            //2.���μ���ÿ����ǩ����������
+
+                for(var i = 0; i &lt; tags.length; ++i){
+
+                //3.���⸶��className������Ҫ��������ͬ����ȡ������
+
+                    if(tags[i].className.split(&quot; &quot;).indexOf(&quot;box&quot;) &gt;= 0){
+
+                        arr[arr.length] = tags[i];
+
+                    }
+                }
+
+            //4.��������
+
+                return arr
+
+
+
+ȫ�ֻ�ȡ��
+
+    document.querySelectorAll(ѡ����)
+
+    ȡ�õ��Ǿ�̬���飬����ʵʱ����
+
+
+body�Ļ�ȡ��
+
+    document.body
+</code></pre><hr>
+<p>���Բ�����</p>
+<pre><code>ȡֵ��htmlObject.������
+
+��ֵ��htmlObject.������ = ����ֵ
+
+�Զ������ԣ�htmlObject.�������� = ����ֵ
+</code></pre><hr>
+<p>css��ʽ������    </p>
+<pre><code>ȡֵ��
+
+    HTMLObject.style.��ʽ
+
+    ʹ��js��Ч����ʽ��������Ƕ���ķ�ʽ����
+
+
+
+    ��������������ʽ����ȡ��������
+
+    ����ʹ��getComputStyle������ȡ��
+
+        getComputedStyle��box��null��.width
+
+        ����A:Ҫ��ȡ��Ԫ��
+
+        ����B��αԪ�أ���������д�ַ�����ΪԪ�أ�����û�п�������null
+
+        ����ֵΪ����
+
+
+
+    ie�Ͱ汾��֧��
+
+    ����ʹ�ñ�ǩ.currentStyle���Թ�������ʽ��ͬ
+
+        box.currentStyle.width
+
+
+
+    ��������
+
+        getComputedStyle�Ǻ�����ʽ�������ԣ�������֧�ֻᱨ���������ȼ���currentStyle
+
+        if(box.currentStyle){
+
+            console.log(box.currentStyle.width);            
+
+        }
+        else{
+
+            console.log( getComputedStyle( box, null ).width )
+
+        }
+
+
+
+��ֵ��
+
+    HtmlObject.style.fontSize = &quot;18px&quot;;
+
+    ��css��ʽ�У������ں���-����ʽ����Ҫ�޸�Ϊ�շ�������
+
+
+    HTMLObject.style.cssText = &quot;width:100px; height:40px&quot;
+
+    ��ֱ������css����
+
+
+
+
+
+    �򻯺���
+
+
+���庯����
+
+    function setStyle(tag, data){
+
+        for(var k in data){
+
+            tag.style[k] = data[k];
+
+        }    
+    }
+
+
+���ã�
+
+    setStyle(htmlObject,{
+
+        width:&quot;100px&quot;,
+
+        height:&quot;70px&quot;,
+
+    });
+</code></pre><hr>
+<p>Class����</p>
+<pre><code>��JS��Ҫ��ʽ�϶�ʱ�Ƽ�ʹ��
+
+ȡֵ��
+
+    HtmlObject.className
+
+�����ࣺ
+
+    HTMLObject.className = ����
+
+�����ࣺ
+
+    HtmlObject.className.replace(&quot;Ŀ��&quot;��&quot;�滻����&quot;)
+
+    �ַ����������ı�ԭֵ,����ֵΪ�޸ĺ���ֵ
+
+
+
+    ��Ԫ�ؾ�����������ʱ����replace����ʱ����������
+
+    1.ȡԪ�ص��࣬�ַ�����ʽ
+
+        var str = HtmlObject.className;
+
+    2.�ַ���.split��&quot; &quot;��     �Կո��ָ��ַ�����������
+
+        var arr = str.split(&apos; &apos;);
+
+    3.���������е��ַ�����hide�������޸�
+
+        var index = arr.indexof(&quot;hide&quot;);
+
+        arr[index] = &quot;show&quot;��
+
+    4.����.join(&quot; &quot;)     �Կո������������ַ���
+
+        var str = arr.join(&quot; &quot;);
+
+    5.���ķ������ַ�����ʽ
+
+        HTMLObject.className = str;
+
+
+������ϰʵ���ο���
+
+    tab��̬����.html        ��ť��ɫ��ϰ.html        
+</code></pre><hr>
+<p>�ı�������</p>
+<pre><code>innerHTML    ������ǩ���ı�
+
+    htmlObject.innerHtml = &quot;��ǩ&lt;span&gt;����&lt;/span&gt;����ȡ&quot;
+
+        ----    ��ǩ ���� ����ȡ
+
+        ����innerHTML�Ḳ��ԭ����ǩ������
+
+    ������
+
+        btn.innerHTML += &quot;������&quot;;
+
+        ��Ȼ�Ǹ��ƣ�ֻ�����ݸ���
+
+
+
+innerText    �����ı� ��ʶ����ǩ�����ܼ�
+
+    htmlObject.innerText = &quot;��ǩ&lt;span&gt;����&lt;/span&gt;����ȡ&quot;
+
+        ----    ��ǩ&lt;span&gt;����&lt;/span&gt;����ȡ
+
+        ����ת����ǩ����ǩ�����ַ�����ʽ����
+
+
+
+��JS�У���һЩ�����ڲ�ͬ���������е�ʵ�ַ�ʽ��ͬ����Ҫͳһ
+
+    ���ֲ�����Ϊ�������ļ����Բ���
+
+    innerText     ���Ǳ�׼���ԣ���ie�����������������Ͱ汾��֧��
+
+
+    textContent   ��׼���ԣ�����������֧�֣�ie678�Ͱ汾��֧��
+
+
+�����Խ�����ʽ���������ⷽʽ
+
+    ��������������ʶ��innerText���ԣ����õ�һ���ַ���
+
+    ���������⵽���Բ����ڣ�����undefined
+
+    if( box.innerText != undefined )
+
+        box.innerText = &quot;innerText����&quot;;
+    }
+
+    else{
+
+        box.textContent = &quot;textContent����&quot;
+    }
+</code></pre><hr>
+<p>��������</p>
+<pre><code>�����ı���ʽ��ͬ������ʹ���Դ���value����
+
+�����¼�������
+
+    onfocus        ��ȡ�����¼�
+
+    onblur        ʧȥ�����¼�
+
+
+textarea�ɲ���innerHTML��value���ַ�ʽ�������Ƽ�����
+
+select-option���⣬��value������Ӧ�ı�����
+
+
+���õı������ԣ�    ����ֵΪ����ֵ
+
+    disabled    ������
+
+    onlyread    ֻ��
+
+    checked        Ĭ��ѡ��
+
+    selected�����˵�Ĭ��ѡ��    
+
+
+�ο�ʵ����        ������֤-Css.html
+</code></pre><hr>
+<p>�¼���</p>
+<pre><code>�¼�Դ��    �����¼���Ԫ��
+
+�¼����ͣ�    �����¼��ķ�ʽ
+
+�¼�Ч����    �ڲ�Ϊ�¼���������Ҫ��������
+
+
+
+��ʽA:
+
+    �¼�Դ.�¼����� = function����{
+
+                �¼���������
+
+            }
+
+    �¼��������������������ɺ������ý���ִ�еģ��������û�����������
+
+    �����Ǹ�ָ����ǩ���ú���ֵ�����¼����ƻ�ʵʱ���������¼�
+
+
+
+��ʽB��
+
+    ��ǩ���������Է�ʽ
+
+        &lt;li onclick = &apos;add( )&apos;&gt;&lt;/li&gt;
+
+    ��script�����Ӷ�Ӧ����
+
+        function add(){ }
+
+
+
+
+�����¼����ͣ�
+
+    onclick            �����¼�
+
+    ondblclick        ˫���¼�
+
+    contextmenu        �Ҽ�����
+
+    onmouseover         ��������
+
+    onmouseout        �����Ƴ�
+
+    onmousemove        �����ƶ�
+
+    onkeyup            ����̧��
+
+    onkeydown        ��������
+
+    onchange        �����޸ĺ�ͨ��onbulur����
+
+
+
+     onclick�¼�ϸ��
+
+        onmousedown    ���갴��
+
+        onmouseup    ���갴��
+
+
+
+��ֹĬ�ϵ���Ч����
+
+    �ڵ����¼�ĩβ���ӣ�������ֹδ��Ч˵��ǰ���д�
+
+    retrun false    
+
+
+��ֹ����ѡ�е�Ч����
+
+    ���� onmousedown onmouseup�¼�
+
+    ���� retrun false        
+
+
+
+�¼�ð�ݣ�
+
+
+    ��ǰ�¼�Դ�����¼�����������Ԫ����ͬ�����¼�����֮�󴥷�
+
+    �¼�ִ��˳�򣺴�������
+
+        &lt;div onclick=&quot;tode()&quot;&gt;
+
+            &lt;p onclick=&quot;add()&quot;&gt;&lt;/p&gt;
+
+        &lt;/div&gt;
+
+            p.click() ---- div.click()
+
+
+
+    ��ֹ������
+
+
+        window.event.cancelBubble = true;
+
+            �ȸ���IE8֧�֣�������֧��
+
+        e.stopPropagation()
+
+            �ȸ��ͻ���֧�֣�IE8��֧��
+
+
+    �����Դ���
+
+        e = window.event?window.event:e;
+
+            ���ȴ����¼������ļ���
+
+
+        if(e.stopPropagation){
+
+            e.stopPropagation();
+
+        }
+        else{
+
+            e.cancelBubble = true;
+
+        }
+</code></pre><hr>
+<p>�¼��߼�����</p>
+<pre><code>����ϵͳ�ķ���ΪԪ�ذ����¼�
+
+    �ڵ�.addEventListener��&quot;click&quot;,function(){},false��
+
+    ����    1.�¼�����  String
+
+        2.�¼��Ĵ�������
+
+        3.�¼�ð��˳��  true��Ĭ�ϣ�
+
+          �¼�����˳��  false
+
+    ���ݣ�    �ȸ� ���� ie11֧�� ie8��֧��
+
+    this��    ָ���ڵ�
+
+
+
+    �ڵ�.attachEvent��&quot;onclick&quot;,function(){}��
+
+    ����    1.�¼�����  String
+
+        2.�¼��Ĵ�������
+
+    ���ݣ�    ie8���ݣ��ȸ��ͻ�����֧��
+
+    this:    ָ��window
+
+
+
+����ϵͳ�ķ���ΪԪ�ؽ����¼�
+
+    �ڵ�.removeEventListener��&quot;click&quot;,��������,false��
+
+        ����    1.�¼�����  String
+
+            2.�¼��Ĵ�������
+
+            3.�¼�ð��˳��  true��Ĭ�ϣ�
+
+                �¼�����˳��  false
+
+        ���ݣ�    �ȸ� ���� ie11֧�� ie8��֧��
+
+        this��    ָ���ڵ�
+
+
+
+        �ڵ�.detachEvent��&quot;onclick&quot;,����������
+
+        ����    1.�¼�����  String
+
+            2.�¼��Ĵ�������
+
+        ���ݣ�    ie8���ݣ��ȸ��ͻ�����֧��
+
+        this:    ָ��window
+
+
+
+    ������
+        1.����������ͬ��ǰ��������������������
+
+        2.ǰ���е�thisָ����ǰ���󣬺���ָ��window
+
+        3.ǰ�߹ȸ�����ie11��֧�֣�����ie8֧��
+
+        4.������Ҫʹ����������
+
+
+
+
+�¼��׶�e.eventPhase
+
+    1.�¼������׶�    
+
+        �¼��������¼�ִ��˳�����⵽��    
+
+    2.�¼�Ŀ���׶�    
+
+        ��ǰ���󴥷��¼�    
+
+    3.�¼�ð�ݽ׶�    
+
+        �¼�ð�ݣ��¼�ִ��˳�����ڵ���            
+
+
+
+�¼��������ԣ�
+
+
+    �¼�Դ��
+
+        e.target��������    
+
+        window.event.srcElement��ie��
+
+
+    ��ǰ�¼�����
+
+        e.currentTarget
+
+
+    �¼�����
+
+        e.type
+
+
+    ���갴��
+
+        e.button
+
+        0������      2���Ҽ�
+
+
+    ��ȡ����
+
+        e.ctrlKey    
+
+        e.shiftKey    
+
+        e.altKey
+
+        true:�û�����ctrl��      false:�û�δ����ctrl��
+</code></pre><hr>
+<p>DOM���ӽڵ�</p>
+<pre><code>document.write            ҳ�������ı�����ǩ
+
+- ���⣺ҳ���е��������ݱ��滻Ϊ������
+
+    obj.onclick = funciton(){
+
+        document.write(&quot;����&quot;);
+
+    }
+
+- ԭ����ҳ�����״μ��ػῪ��һ������������ҳ���������Ϻ�����������֮�رա�
+
+    ҳ�����غ�ʹ��document.write�Ὺ��һ���µ������������¾ɵ�������������
+
+- ���⣺�����ڼ��ع�����ʹ�ã����ǲ���ָ��λ�ô�������
+
+
+
+
+innerHTML            ���Ķ����ı�����ǩ����
+
+-���ã��ڲ��ṹ�Ƚϸ���ʱ    
+
+
+-���⣺��ԭ���ݽ��и���
+
+    ʹ��+=���Ա������ݣ������ܱ����¼�
+
+-���⣺���ܵ�
+
+    ��div������2000����div
+
+    ��ӡִ��ʱ�� ----- 2+s
+
+        console.time(&quot;��ʶ��&quot;0
+
+        ִ������
+
+        console.timeEnd(&quot;��ʶ��&quot;)
+
+-������var str = &quot;Object.innerHTML&quot;;
+
+    ÿ��ѭ��ִ��
+
+        str += &quot;��������&quot;
+
+    ѭ��������ͳһ��ֵ    
+
+        Object.innerHTML = str
+
+
+
+
+�ڵ�.createElement��&quot;��ǩ&quot;��    ��(&quot;p&quot;��
+
+���ڵ�.appendChild���ڵ㣩     
+
+    ͨ������appendChild �� insertBefore
+
+    ��ӡִ��ʱ�� ----- 0.002s
+
+        console.time(&quot;��ʶ��&quot;0
+
+        ִ������
+
+        console.timeEnd(&quot;��ʶ��&quot;)
+
+    -���⣺���ӽṹ����ʱ������
+
+
+
+��̬����Ԫ��
+
+    �ᵼ�����·���ҳ������ȾЧ��
+
+    ���ţ���Ԫ�ش�С�ı�����λ�øı�
+
+    �ػ棺���ı���ͼ��ɫ�������ı�
+
+
+    ���űض������ػ�
+
+    �����ڲ�����������Ҫ�����������Ŵ���
+
+
+�Ż�����
+
+    ����documentFragment�ĵ�Ƭ��
+
+        ���Խ������Ŵ�������������
+
+    ���ԣ����ӵ�ҳ����ʽ���������ᱻ���ӣ�ȴ���� ������������Ԫ��
+
+    ������ʽ��
+
+        var n;
+
+        var df = document.createDocumentFragment();
+
+        for(var i =0; i &lt; 10; ++i){
+
+            n = document.createElement(&quot;div&quot;);
+
+            df.appendChild(n)            
+
+        }
+
+        document.body.appendChild(df);
+
+
+��Ҫ��ҳ���е�ĳԪ�ؽ��д�С���޸�
+
+��������Ԫ�صĸ߶�����Ӧ��ͨ���ڲ�����������Ԫ�أ��ſ���Ԫ�ػ���������
+
+�ȶ�����Ԫ�ؽ���display��none��ֻ������ʾ������ʱ������������
+</code></pre><p>DOM�Ƴ��ڵ�</p>
+<pre><code>���ڵ�.removeChild���Ƴ��ڵ㣩    
+</code></pre><p>�滻�ڵ�</p>
+<pre><code>���ڵ�.replaceChild���滻��ǩ��Ŀ����ǩ��
+</code></pre><p>��¡�ڵ�</p>
+<pre><code>�ڵ�.cloneNode()
+
+    �������ò���������������Ĭ��false 
+
+        falseǳ���� ---- ֻ���Ʊ�ǩ��������������
+
+        true���  ---- ���Ʊ�ǩ������
+
+
+ע�⣺  Ҫ���п�¡�ı�ǩ��Ҫ����id������ֹid�ظ�
+
+    �¼�Ч�����ܸ���
+</code></pre><p>�ڵ����ԣ�</p>
+<pre><code>�ڵ�.nodeType
+
+    ������ֵ1.����Ԫ�ؽڵ�
+
+        2.�������Խڵ�
+
+        3.�����ı��ڵ�
+
+        9.document
+
+        11.documentFragment
+
+�ڵ�.nodeName
+
+    ���ر�ǩ��html��д��ʽ
+
+         xhtmlСд��ʽ
+
+
+�ڵ�.nodeValue
+
+    ��������ֵ
+
+
+��ǩ�����Դ������ԣ�ͨ����ǩ.�������ķ�ʽ����ֱ�Ӳ���
+
+��ǩ�����Զ�����д�����ԣ��޷�ͨ����ǩ.�������ķ�ʽ����
+
+
+    ��ȡ���ԣ�
+
+        �ڵ�.getAttribute(&quot;������&quot;)
+
+    ��������;
+
+        �ڵ�.setAttribute(&quot;������&quot;, &quot;�趨ֵ&quot;)
+
+    �Ƴ����ԣ�
+
+        �ڵ�.removeAttribute(&quot;������&quot;)
+
+
+    ʹ��������ʽ������ǩ�����Զ�������ʽ���Խ��в���
+</code></pre><hr>
+<p>�������⣺for�д�ӡ���� i</p>
+<pre><code>���ڴ�ӡʱfor�Ѿ�ִ�����ϣ�����iʼ��Ϊlis.length
+</code></pre><p>������ʽ���Զ�����ǩ����index����ÿ����ǩ������ֵ    </p>
+<pre><code>for(var i = 0; i &lt; lis.length; ++i){
+
+    lis[i].index = i;
+
+    lis[i].onclick = function(){
+
+        console.log(this.index)
+
+    }
+
+}
+</code></pre><p>α����Ϊ��̬���飬�ڲ����ݷ����ı�ʱ��ʵʱ����</p>
+<p>��֪α���飺</p>
+<pre><code>arguments[]��
+
+getElementsByClassName[];
+
+getElementsByTagName[];
+</code></pre><p>����ɾ������</p>
+<pre><code>����.splice��Ŀ�꣬ɾ��������
+</code></pre><p>������tr��������rowIndex</p>
+<pre><code>��ʾ��ǰ���кţ����㿪ʼ������thead�е�tr
+</code></pre></div></header></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2017 John Doe</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

@@ -1,0 +1,21 @@
+
+HMWEB10@sy.itcast.cn
+
+56128502
+
+
+
+webstrom less编译使用：
+
+添加less插件：
+
+	webstrom - 文件 - 设置 - 工具 - file watchers - 添加less
+
+	修改路径为：..npm/lessc.cmd - 确定
+
+
+添加less类型文件：
+
+	文件 - new - 编辑文件模板 - 添加less扩展文件类型 - 新建less文件
+
+	保存后自动生成css转换文件

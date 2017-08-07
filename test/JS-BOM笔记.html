@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title> - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-08-07T07:55:02.316Z">August 7, 2017</time><h1 class="post__title"><a href="/test/JS-BOM笔记.html"></a></h1><div class="post__main echo"><p>BOM</p>
+<pre><code>Browser Object Model ---- ����������ģ��
+
+���ã����������Ĺ�������Ϊ������ʽ���ṩ������һЩ�����뷽��ʹ��
+
+
+BOM�еĶ���������window����
+
+    Ҳ��JS�������������еĶ�������
+
+
+    ͨ�������£���ʹ��whindow�����Ի򷽷�ʱ����ʡ��window
+
+              ��window.alert();            ֻ�а�ť
+
+        window.confirm();        ��ȷ�ϼ�ȡ����ť������bool
+
+        window.prompt();        �ɷ�����������
+
+
+    ����������ȫ�ֱ�������window������
+
+        var num = 10;        
+
+        window.num ---- 10
+</code></pre><p>window����</p>
+<pre><code>open����
+
+    window.open��&quot;��ַ&quot;��&quot;�򿪷�ʽ&quot;,&quot;width=300,height=100&quot;��
+
+        �򿪷�ʽ��_self _blank
+
+close����
+
+    window.close()
+</code></pre><p>;        var win = window.open();</p>
+<pre><code>    ����ֵ���¿��Ĵ��ڵ�window����
+
+win.close();
+
+    �ر��´���
+</code></pre><p>Location����</p>
+<pre><code>location��window������    
+
+href���� ---- ����
+
+    location.href = &quot;index.html&quot;
+
+    ��ʾ��ת��./����
+
+
+assign����    
+
+    location.assign(&quot;index.html&quot;)
+
+    ��ת�����õ�����
+
+
+replace����
+
+    location.replace(&quot;index.html&quot;)
+
+    ������ת�����õ����ӣ��޷���ͷ
+
+reload����
+
+    location.reload(true)
+
+    ˢ��ҳ��
+
+    ���������ò�������ȡ������¼
+</code></pre><p>navigator����</p>
+<pre><code>userAgent����    
+
+    navigator.userAgent    
+
+    �û������ַ��� 
+
+platform����    
+
+    navigator.platform    
+
+    ����ϵͳ��ƽ̨
+</code></pre><p>histroy����</p>
+<pre><code>go����
+
+    histroy.go(1/-1)
+
+    ����1��ǰ��
+
+    ����-1������
+
+
+back����
+
+    histroy.back������
+
+    ���˹���
+
+
+forward����
+
+    histroy.forward������
+
+    ǰ������
+</code></pre><p>��ʱ��</p>
+<pre><code>timeout��ʱ��        ��ʱЧ����ִ��һ��
+
+    ���÷�ʽ;
+
+        setTimeout(�������ӳ�ʱ��)
+
+        var Ds = setTimeout(function(){
+
+                console.log(this);
+
+            }, 3000)
+
+
+    ������ʽ��
+
+        clearTimeout(��ʱ��)
+
+        clearTimeout��Ds��
+
+
+setInterval��ʱ��    �ӳ�Ч������ִ��
+
+    ���÷�ʽ;
+
+        setInterval(������ ����ʱ��)
+
+        var Ds = setInterval��function(){
+
+                console.log(this);
+
+            },3000��
+
+    ������ʽ��
+
+        clearInterval����ʱ����
+
+        clearInterval��Ds��
+</code></pre><p>���߳������߳�</p>
+<pre><code>1.js�ǵ��̵߳�
+
+    H5�������˶��̵߳ĸ���
+
+    ���ǻ���ֻ��Ψһ���߳������������̸߳���
+
+2.���߳�ָ�ľ���ֻ��һ��������
+
+
+���߳����⣺
+
+    һ�ν�����һ���£�����ĳ�������ȽϺ�ʱ��
+
+    ��ʱ���Ժ���������������
+</code></pre><p>ͬ�����첽</p>
+<pre><code>ͬ����һ�����£�����˳�������飬�м䲻������������
+
+�첽����һ�������ȽϺ�ʱ������ִ��ʱ�䲻�ȶ�����ʱ������Ϊ�첽����
+
+
+    �����첽�������¼�����ʱ����Ajax
+
+
+������ִ��ʱ
+
+    ����ͬ������
+
+        ����������ֱ�ӷ��뵽���߳��н����Ŷ�
+
+    �����첽����
+
+        1.�������첽���񲻻�ֱ�����ӵ����߳��н����Ŷӣ��������ӵ�����������
+
+        2.�����������е�ĳ��������������ʱ������Ҫִ�еĴ������ӵ����߳���
+
+    ���е��첽������ִ�о�����ͬ������
+
+
+ʵ��
+
+    for(var i = 0 ; i &lt; 5; ++i){
+
+        setInterval(function(){
+
+            console.log(i);
+
+        },0)
+
+    }
+
+    console.log ---- 5 5 5 5 5
+</code></pre></div></header></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2017 John Doe</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

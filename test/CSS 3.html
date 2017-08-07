@@ -1,0 +1,1088 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title> - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-08-07T07:55:02.288Z">August 7, 2017</time><h1 class="post__title"><a href="/test/CSS 3.html"></a></h1><div class="post__main echo"><p>CSS 3</p>
+<pre><code>�����Բ���    
+
+www.caniuse.com
+</code></pre><p>ѡ����</p>
+<pre><code>����ѡ����
+
+    ��ǩ[������]{ }
+
+    span[class]{ }
+
+
+    [������ = &quot;����ֵ&quot;]{ }
+
+    [class=&quot;active&quot;]{ }
+
+
+    [������ ^= &quot;����ֵ&quot;]{ }
+
+    [class ^=&quot;act&quot;]{ }    ѡ��class��act��ͷ��Ԫ��
+
+
+    [������ $= &quot;����ֵ&quot;]{ }
+
+    [class $=&quot;ve&quot;]        ѡ��class��ve��β��Ԫ��
+
+
+    [������ *= &quot;����ֵ&quot;]{ }
+
+    [class $=&quot;ve&quot;]        ѡ��class����ve��Ԫ��
+
+
+
+
+    ��ǩ[������ = &quot;����ֵ&quot;][������ = &quot;����ֵ&quot;] { }
+
+    span[class=&quot;active&quot;] [width=&quot;100&quot;]{ }        
+
+        ͬʱ������������Ҫ��
+
+
+
+α��ѡ����
+
+    �ṹα�ӣ�λ��α�ࣩ
+
+        �ṹα��html�ṹ������Ƕ�׽ṹ
+
+
+        li:first-child{ }
+
+            li�����Ǹ�Ԫ���ڵ��׸���Ԫ��
+
+
+        li:last-child{ }
+
+            li�����Ǹ�Ԫ���ڵ�����һ����Ԫ��
+
+
+        li:nth-child(n){ }        �Ƽ�ʹ��
+
+            li�����Ǹ�Ԫ���ڵĵ�n����Ԫ��
+
+            n��ȡֵ��
+
+                ��������һ������ֵ1,2,3
+
+                �������ùؼ���0dd even
+
+                ��������n�ı���ʽ an + b��nȡ�Ǹ�������
+
+
+        li:nth-last-child(n){ }        
+
+            ����
+
+
+
+
+    ��α��
+
+        li:empty{ }
+
+            ѡ������Ϊ�յ�liԪ��
+
+
+    �ų�α��
+
+        li:not(ѡ����){ }
+
+        li:not(#box)
+
+            �ų�α��ѡ��������&quot;&quot;
+
+
+    Ŀ��α��
+
+        li:target{ }
+
+        ָ����ǰ��ǩ��ʱ����Ŀ��α��
+
+        Ŀ��α������ê����ʹ��
+
+
+
+        html�ṹ��
+
+            &lt;a href=&quot;#test&quot;&gt;
+
+            &lt;ul&gt;
+                &lt;li&gt;&lt;/li&gt;
+
+                &lt;li&gt;&lt;/li&gt;
+
+                &lt;li id=&quot;test&quot;&gt;&lt;/li&gt;
+
+                &lt;li&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+
+
+
+        css��ʽ��
+
+            li:target{
+
+                background:#ff6666;
+
+            }
+
+
+
+αԪ��ѡ����
+
+    ::first-letter
+
+        ѡ������ĸ������
+
+    ::first-line
+
+        ѡ����������
+
+    ::selection
+
+        ѡ�в���������ʽ����������ɫ������ʽ
+
+
+
+
+αԪ��
+
+    ::before
+
+    ::after
+
+        �Ƽ���:д������ie�Ͱ汾
+
+        �ڲ�����Ԫ�أ�Ĭ������Ԫ��
+
+
+    div.main::before{
+
+        content:&quot;����&quot;;        
+
+        width:100px;
+
+        height:80px;
+
+        display:inline-block;
+
+    }
+</code></pre><p>��ɫ</p>
+<pre><code>hsl����
+
+hsla��45, 50%, 60%, 0.5��
+
+    h��ɫ��        ȡֵ��Χ��0 - 360
+
+    s�����Ͷ�    ȡֵ��Χ��0% - 100%
+
+    l:����        ȡֵ��Χ��0% - 100%
+
+    a��͸����    ȡֵ��Χ��0 - 1
+</code></pre><p>�ı�����</p>
+<pre><code>������Ӱ
+
+    text-shadow
+
+    text-shadow:5px 5px 10px #ff6
+
+    ����A: ˮƽ�ƶ�����
+
+    ����B����ֱ�ƶ�����
+
+    ����C��ģ����
+
+    ����D����Ӱ��ɫ
+
+
+
+����Ӱ
+
+    text-shadow:5px 5px 10px #ff6, 10px 10px 10px pink;
+
+    �ڰ���Ӱ��������ʵ�����ְ�͹Ч��
+</code></pre><p>����ģ��</p>
+<pre><code>����ʵ�ʿ��� = ���ݿ��� + �߿� + �ڱ߾�
+
+box-sizing    
+
+    �ı���ģ�͵ļ��㷽ʽ
+
+    content-box    Ĭ�Ϸ�ʽ
+
+        width  height��Ӧ�������ݿ���
+
+    border-box     
+
+        width  height��Ӧ����ʵ�ʿ��ߣ����Զ�ѹե������
+</code></pre><p>������Ӱ</p>
+<pre><code>box-shadow
+
+box-shadow:5px 5px 10px #ff6;
+
+    ����A: ˮƽ�ƶ�����
+
+    ����B����ֱ�ƶ�����
+
+    ����C��ģ����
+
+    ����D������ֵ��ûɶ�ò����ã�
+
+    ����E����Ӱ��ɫ
+
+
+����Ӱ+inset
+
+    box-shadow:inset 5px 5px 10px #ff6
+
+����Ӱ�ã�����
+</code></pre><p>�߿�Բ��</p>
+<pre><code>border-radius: A/B
+
+    ����A: Բ�ǵ�ˮƽ����
+
+    ����B��Բ�ǵ���ֱ����, A��ͬ��A/A
+
+border-radius: 5px/8px 6px/4px 50% 20%/40%
+</code></pre><p> �߿�ͼƬ            ������</p>
+<pre><code>���ñ߿�
+
+    border:26px solid #ff6;
+
+���ñ߿�ͼƬ·��
+
+    border-image-source: url(ͼƬ·��)��
+
+�߿�ͼƬ����
+
+    border-image-slice:26 26 26 26;
+
+    ��Ӧ�����������о���
+
+���ñ߿�ͼƬƽ�̷�ʽ;
+
+    border-image-repeat: stretch
+
+    stretch:  ����Ч����Ĭ�ϣ�
+
+    repeat:      ƽ��Ч��
+
+    round:      ������ʾЧ��
+
+���ñ߿�ͼƬ����
+
+    border-image-width:20px;
+
+
+�߿��ĸ�������
+
+    border-image: url() 27/20px round;
+</code></pre><p>����ͼƬ</p>
+<pre><code>�����ߴ磺
+
+    background-size���������� �����߶�
+
+    background-size��200px 200px
+
+
+    ���õ�auto
+
+    background-size: 100% auto
+
+    background-size: auto 100%
+
+        ����һ��ֵ����Ӧ
+
+
+    ����cover
+
+    background-size��cover
+
+        cover���ñ���ͼƬ�����������ű�
+
+        ʼ������������
+
+
+    ����contain
+
+    background-size:contain
+
+        contain���ű���ͼƬ�����������ű�
+
+        ʼ����������ʾ����������
+
+
+
+����ԭ��
+
+    background-origin: padding-box
+
+        Ĭ��ֵ����paddingΪ����ԭ��
+
+
+    background-origin: content-box
+
+        ����������Ϊ����ԭ��
+
+
+    background-origin��border-box
+
+        �Ա߿�����Ϊ����ԭ��
+
+
+
+��������
+
+    background-clip��������ͼƬ��ʾ��ָ��λ��
+
+
+    background-clip��border-box��Ĭ�ϣ�
+
+        ������ͼƬ��ʾ���߿�����
+
+    background-clip��padding-box
+
+        ������ͼƬ��ʾ��padding����
+
+    background-clip��content-box
+
+        ������ͼƬ��ʾ����������
+
+
+�ܽ᣺
+
+    origin �ı䱳��ͼƬ��ԭ��λ�ã�paddingĬ�ϣ�
+
+    clip �ñ���ͼƬ���ǿ�������ʾ��borderĬ�ϣ�
+
+
+
+�౳��
+
+    һ����������ͬʱ���ö��ű���ͼƬ,�ö��ŷ���
+
+    background��url��one.jpg��no-repeat left top,
+
+            url (two.jpg) no-repeat right bottom
+
+
+    �౳��ע����;
+
+        �౳��д�����ܽ�������ɫ�ŵ����������У���Ҫ��������
+
+        background-color: #fff
+</code></pre><p>��������</p>
+<pre><code>���Խ���
+
+
+    background��linear-gradient(
+
+        to right��        ���䷽��
+
+        purple��        ��ʼ��ɫ
+
+        pink��            ������ɫ        
+
+    )
+
+    ���䷽����
+
+        �������� to right|left|top|bottom
+
+        �������� 20deg|45deg 
+
+        Ĭ�� �������ϣ�0deg��
+
+
+
+
+���䷶Χ    ͨ���ٷֱȱ�ʾ
+
+    background-image��linear-gradient(
+
+        to right��        ���䷽��
+
+        purple 30%��        ��ʼ��ɫ ��ʼ����λ��
+
+        pink 80%        ������ɫ ���ɽ���λ��        
+
+    )
+
+    �����ķ�Χͨ���ٷֱȱ�ʾ
+
+    �ٷֱ�Ĭ�������ڸ���������
+
+    ����background-size���ٷֱ��������趨�ߴ�
+
+
+
+
+���Ʊ���ʵ��;
+
+    background: linear-gradient(
+
+        135deg
+
+        #1b6d85 25%,        ��ʼ
+
+        #ff8888 25%,        ����
+
+        #ff8888 50%,        ά��
+
+        #1b6d85 50%,        ����
+
+        #1b6d85 75%,        ά��
+
+        #ff8888 75%        ���� - ά��100%
+
+    )
+
+
+
+
+
+
+���򽥱�
+
+
+    ���򽥱�Բ��λ��
+
+    ��ʼ��ɫ
+
+    ������ɫ
+
+
+    background: radial-gradient(
+
+
+        ˮƽ/��ֱ�뾶  at  ˮƽ/��ֱλ��
+
+        100px 80px  at  center,        
+
+
+        purple         ��ʼ��ɫ
+
+        pink        ������ɫ
+
+    )
+
+
+    ͨ���뾶�Ĵ�С���ý����ķ�Χ
+
+    Բ�ĵ�λ�ÿ���ͨ������ֵȷ��,Ҳ����ͨ������ֵȷ��
+
+        ��center|left|top|right|bottom��
+
+    �������ðٷֱȣ���ô�������ڰ뾶���õ�      
+</code></pre><p>����Ч��</p>
+<pre><code>�������䶯��
+
+���ɣ��������ԣ�
+
+    transition��all 2s 1s linear;
+
+
+
+����д����
+
+    .main{
+
+        transition-property��width,height,all
+
+            ������Щ���Բ�������Ч��
+
+
+        transition-duration: 1s
+
+            ���ö���ִ��ʱ��
+
+
+        transition-delay:2s
+
+            ���ö�����ʱִ��
+
+
+        transition-timing-function:
+
+            ���ö����ٶ�����
+
+            ease��Ĭ��
+
+            linear������
+
+            ease-in������
+
+            ease-out ����
+
+            ease-in-out: ���ٺ�����
+
+
+    }
+
+
+    .main:hover{
+
+        height:200px;
+
+        width:240px;
+
+        background:#ff8888;
+
+    }
+
+
+
+
+
+
+��д��ʽ
+
+    transition: �������� ִ��ʱ�� �ӳ�ʱ�� �ٶȷ�ʽ
+
+        transition: all  1s 1s linear;
+
+        * transition�������Ӹ�Ŀ�궯��Ԫ��
+
+
+
+�ֲ�������
+
+    transition: width 1s linear, height 1s ease-in;
+
+        �ֲ������ö��ŷָ�
+</code></pre><p>2Dת��</p>
+<pre><code>λ�ƣ�
+
+    transform��translate����
+
+    transform: translate(20px, 60px)
+
+
+        x����y������������Ӧ��ˮƽ���� ��ֱ����
+
+        ������һ��ֵʱ����һ��ֵĬ��Ϊ��
+
+
+
+��ת��
+
+    transform: rotate(�Ƕ�)
+
+    transform: rotate(180deg)
+
+
+        ��ת��Ҫ���ýǶȣ���λΪdeg
+
+        ��ֵ����˳ʱ�뷽����ת
+
+
+
+���ţ�
+
+    transform: scale (���ű���);
+
+    transform��scale��x�����ţ�y�����ţ�
+
+        transform: scale (0.5, 2)
+
+
+��б��
+
+    transform��skew��x����б�Ƕȣ�y����б�Ƕȣ�
+
+    transform: skew (30deg,30deg)
+
+        �����õ���������������x����б
+
+
+���ģ�
+
+    transform-origin
+
+        transform-origin: left top:    �ؼ���
+
+        transfomr-origin��200px 100px;    ����ֵ
+
+    ������������ת���� ��������
+</code></pre><p>3Dת��</p>
+<pre><code>3D����ϵ
+
+    x�᣺ˮƽ����
+
+    y�᣺��ֱ����
+
+    z�᣺��ֽ��������
+
+    Z  ����  X
+
+    |
+    |
+
+    Y
+
+
+λ�ƣ�
+
+    transform: translateX    
+
+        transform: translateX(50px)
+
+        ��x�᷽��λ��
+
+    transform: translateY
+
+        transform: translateY(50px)
+
+        ��y�᷽��λ��
+
+
+    transform: translateZ
+
+        transform: translateZ(50px)
+
+        ��Z�᷽��λ�ƣ�����Ч����
+
+
+    perspective:1000px
+
+        ��Ԫ������͸������
+
+        �Ƽ����þ��� 800-1000
+
+
+
+��ת��
+
+    transform: rotateX(�Ƕ�)
+
+    transform: rotateY(60deg)
+
+    transform: rotateZ(30deg)
+
+
+    ��ת����λ����Ŀ������ϵΪ׼
+
+    ���ַ����ж���ת����
+
+        Ĵָָ����ת����������ָ����Ϊ��ת����
+
+
+���ţ�
+
+    transform: scaleX(���ű���)
+
+    transform��scaleY(0.5)
+
+    transform��scaleZ��2��    ��Ч��
+
+
+
+��б��
+
+    transform��skewX����б�Ƕȣ�
+
+    transform��skewY��30deg��
+
+
+
+������ת��3Dͼ��
+
+    transform-style��preserve-3d
+
+    �����尸��
+
+
+
+����˵��
+
+    ��Ҫ����Ч��ʱ���ܻ��õ�
+
+    �������أ�backface-visibility��hidden
+</code></pre><p>����</p>
+<pre><code>��������Ҫ�κεĴ���������ֻҪ���þͻ�����ִ��
+
+
+
+���嶯��    
+
+    @keyframes ��������{
+
+        ���ö�����ʼ״̬
+
+        from{
+
+            transform: translateX( 0px )
+
+        }
+
+        ���ö�������״̬
+
+        to{
+
+            transform: translateX( 300px )
+
+        }
+
+    }
+
+
+    ״̬����
+
+        �ɲ��ùؼ���     from to
+
+        �ɲ��ðٷֱ�     0% 20% 80%..
+
+
+
+
+
+���ö���
+
+    .box{
+
+        ��������
+
+            animation-name: ��������;
+
+
+        ���ö�������ʱ��
+
+            animation-duration: 2s    
+
+
+        ���ö���ִ�д���
+
+            animation-iteration-count��
+
+            infinite / Number
+
+
+        ���ö���ִ�з���
+
+            animation-direction:
+
+            alternate:��������
+
+
+        ���ö�������
+
+            animation-timing-funciton:
+
+            linear:�����˶�
+
+
+        ���ö����ӳ�
+
+            animation-delay��2s
+
+
+        ���ö�����������״̬��
+
+            animation-fill-mode��
+
+            forwards��ͣ�ڶ���������״̬
+
+            ����ִ�д�������������
+
+
+    }
+
+
+    .box:hover{
+
+        ���ö���ֹͣ��
+
+        animation-play-state: paused;
+
+    }
+
+
+
+
+
+��������
+
+    animation���������� ʱ�� �ӳ� �˶���ʽ ִ�д��� .. 
+
+    animation: move 2s 1s linear infinite  alternate forwards;
+
+
+
+��������
+
+    animation��move 2s 1s steps��������
+
+    steps��linear����ͬʱ����
+
+
+
+�ද��
+
+    Ԫ�ؿ���ͬʱ���ö�����������������֮���ö��ŷָ�
+
+    .box{
+
+        animation������A 2s infinite alternate,
+
+               ����B 2s 3s(�ӳ�ʱ��)
+
+    }    
+
+
+
+    ����ִ�������¼�
+
+    webkitTransitionEnd
+
+    object.addEventListener(&quot;webkitTransitionEnd&quot;, function())
+</code></pre><p>��������</p>
+<pre><code>���ø�Ԫ��Ϊ��������
+
+    display��flex��
+
+
+���������ص�
+
+    ���������������Ͳ���
+
+       ���᣺Ĭ��ˮƽ�������ҵ���
+
+       ���᣺ʼ��Ҫ��ֱ����������
+
+       ������������(Ĭ��)
+      |
+      |
+      |
+     ����
+
+
+    �����������У���Ԫ���ǰ������᷽����ʾ��
+</code></pre><p>������������</p>
+<pre><code>�������᷽��
+
+    flex-direction:
+
+        row             �������ң�Ĭ�����᷽����
+
+        row-reverse         ��������
+
+        column            ��ֱ���£����ã�
+
+        column-reverse        ��ֱ����
+
+
+
+������Ԫ���������Ķ��뷽ʽ
+
+    justify-content
+
+        flex-start        ���Ὺʼλ�ö���
+
+        flex-end        ��������λ�ö���
+
+        center             ��������λ�ö���
+
+        space-between        �ֲ�Ч��
+
+        space-around        ����Ч��
+
+        stretch            ����Ч����Ĭ��Ч����
+
+    ��Ԫ�ز����ø߶�ʱ��Ĭ���븸Ԫ��ͬ��
+
+
+
+������Ԫ���ڲ����Ķ��뷽ʽ
+
+    align-items
+
+        flex-start        ���Ὺʼλ�ö���
+
+        flex-end        ��������λ�ö���
+
+        center            ��������λ�ö��루���ã�
+
+
+
+���ú��ӻ��У�
+
+    flex-wrap:
+
+        nowrap            �����У�Ĭ�ϣ�
+
+        wrap            ������
+
+
+
+���ú��ӻ��к��Ķ��뷽ʽ
+
+    align-content:
+
+        flex-start        ���Ὺʼλ�ö���
+
+        flex-end        ��������λ�ö���
+
+        center            ��������λ�ö���
+
+        space-between        �ֲ�Ч��
+
+        space-around        ����Ч��
+
+        stretch            ����Ч����Ĭ�ϣ�
+
+    ��Ҫ����flex-wrapʹ��
+
+
+
+
+������Ԫ�صĳߴ��ݶ�
+
+    flex: Number
+
+    flex: 1/2/3
+
+    ���������丸Ԫ��ʣ���ߴ�
+
+
+
+������Ԫ�ص�����
+
+    order:Number
+
+    order:1/2/3
+
+    ֵԽ��Խ����
+
+
+
+����������Ԫ�صĶ��뷽ʽ
+
+    align-self:  �������뷽ʽ
+
+        flex-start    ���Ὺʼλ�ö���
+
+        flex-end    ��������λ�ö���
+
+        center        �����м�λ�ö���
+</code></pre><p>web����</p>
+<pre><code>������ԱΪ��վָ�����������壬���迼���û��������Ƿ���װ�˴�����
+
+�������壺
+
+    @font-family{
+
+        font-family: &quot;��������&quot;��
+
+        src:url(&quot;�����ļ���ַ&quot;) format(&quot;�ļ���ʽȫ��&quot;)
+
+    }
+
+��������:
+
+    .font{
+
+        font-family: &quot;��������&quot;
+
+    }
+
+
+ʵ���ο���CSS3/Web����/index.html
+</code></pre><p>���Ӿ��з�ʽ����λ���ӣ�</p>
+<pre><code>.one{
+
+    width:55px;
+
+    height:100px;
+
+    position&quot;absolute;f
+
+
+    //ˮƽ����
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+
+    //��ֱ����
+
+    top:50%;
+
+    transform:translateY(-50%);        
+
+}
+</code></pre><p>360ʵ��</p>
+<pre><code>FullPage JQ����
+
+����js�ļ�
+
+    &lt;script src=&quot;JQuery.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script srcs=&quot;FullPage.js&quot;&gt;&lt;/script&gt;
+
+
+html�ṹ
+
+    &lt;div id=&quot;fullpage&quot;&gt;
+
+        &lt;div class=&quot;section&quot;&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;section&quot;&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;section&quot;&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+����
+
+    &lt;script&gt;
+
+        $(&quot;#fullpage&quot;).fullpage();
+
+    &lt;/script&gt;
+
+
+���ò���
+
+    $(&quot;#fullpage&quot;).fullpage({ 
+
+
+        //����ÿ�����ı�����ɫ
+
+        sectionsColor:[ &quot;#fff&quot;, &quot;#000&quot; ] 
+
+
+        //��̬ѡ�ж�Ӧ����
+
+        afterLoad:function( anchorLink, index ){ 
+
+            $(&quot;.section&quot;).removeClass(&quot;target&quot;);
+
+            setTimeout(function(){
+
+                $(&quot;.section&quot;).eq(index-1).addClass(&quot;target&quot;)
+
+                //��ǰ��Ļ��Ӧ����������target����������
+
+            },100)
+
+        }
+
+    })
+</code></pre><p>���в���</p>
+<pre><code>����������
+
+    column-count: ����
+
+    column-width: �п�
+
+    column-gap: �м���
+
+    column-border: 1px solid #fff
+
+    ���в�������Ϊ�������ݣ���ϸ�������ֲ�
+</code></pre><p>�������ԣ�</p>
+<pre><code>margin:calc(320px/20)
+</code></pre></div></header></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2017 John Doe</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

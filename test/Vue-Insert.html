@@ -1,0 +1,628 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title> - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-08-07T07:55:02.342Z">August 7, 2017</time><h1 class="post__title"><a href="/test/Vue-Insert.html"></a></h1><div class="post__main echo"><p>Vue-devtools</p>
+<pre><code>���Թ���
+
+������ʾ������ϵ�����÷�Χ
+
+https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+
+
+������ָ�npm install vue-devtools registry --D
+
+�ȸ������� - ���๤�� - ������չ - ��ѡ������ѡ�� - 
+
+    �����ѽ�ѹ����չ���� - ���������� - 
+
+    ����Vueʵ��ʱ��������ѡ����������ʾVue-devtools
+</code></pre><hr>
+<p>����:</p>
+<pre><code>����ʵ������ $http��ʵ������ajax��Ч��
+
+����vue����������Ҫ����: vue-resouce
+
+    &lt;script src=&quot;vue-resouce&quot;&gt;&lt;/script&gt;
+
+
+
+get����:
+
+    ��ȡһ����ͨ�ı�����:
+
+    this.$http.get(&apos;aa.txt&apos;)                
+
+    .then(function(res){                    then���ɹ�ʱ���ú���fn��ʧ��ʱ���ú���fn��
+
+        alert(res.data);                    ����ֵresΪ�������ͣ�����request data status����Ӧ������Ϣ
+
+    },function(res){
+
+        alert(res.status);
+
+    });
+
+
+
+    ��������������:                        ��ͨ��ʹ��
+
+    this.$http.get(&apos;get.php&apos;,{
+
+        name�����ݣ�
+
+        pass������
+
+    }).then( function(res){
+
+        alert(res.data);
+
+    },function(res){
+
+        alert(res.status);
+
+    });
+
+
+
+
+
+post����:
+
+    this.$http.post(&apos;post.php&apos;,{
+
+        name�����ݣ�
+
+        pass������
+
+    },{
+        emulateJSON:true                    post������Ҫָ���������ͣ���JSON��
+
+    }).then(function(res){
+
+        alert(res.data);
+
+    },function(res){
+
+        alert(res.status);
+
+    });
+
+
+
+
+
+
+
+$http��ʽ��
+
+    this.$http({
+
+        url: ��������ַ��
+
+        data: ����̨�ύ���ݣ�
+
+        method: &apos;get&apos;/post/jsonp��     //���ͷ�ʽ
+
+        jsonp: &apos;cb&apos;             //callback Name
+
+    });
+
+
+
+
+
+
+jsonp����:
+
+    https://sug.so.360.cn/suggest?callback=suggest_so&amp;word=a
+
+    https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=jshow
+
+
+    this.$http.jsonp(&apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&apos;,{
+
+        wd : &apos;a&apos;                    //��������
+
+    },{
+
+        jsonp:&apos;cb&apos;                    //callback���֣�Ĭ�����־���&quot;callback&quot;            
+
+    }).then(function(res){
+
+        alert(res.data.s);
+
+    },function(res){
+
+        alert(res.status);
+
+    });
+</code></pre><hr>
+<p>Vue����</p>
+<pre><code> transition ����
+
+    &lt;transition name=&quot;fade&quot; mode=&quot;&quot;&gt;
+
+        �˶�Ŀ��(Ԫ�� ���� ·�ɣ�
+
+    &lt;/transition&gt;
+
+
+    �л�ģʽ��
+
+        mode:in-out        �Ƚ�����Ч��
+
+        mode��out-in        �ȳ�����Ч��
+
+
+
+
+�Ƽ�����animate.cssʹ�ã��ֶ�������ʽ�����Ұ���
+
+class����:
+
+    ���붯��
+
+    .fade-enter{ }                //��ʼЧ��
+
+    .fade-enter-active{ }              //Ԫ����ʾЧ��
+
+
+    �뿪����
+
+    .fade-leave{ }                //һ�㱣����һ״̬
+
+    .fade-leave-active{ }             //Ԫ���뿪ʱЧ��
+
+
+
+ʵ��
+
+    .fade-enter, .fade-leave-active{
+
+        width:100px;
+
+        height��75px;                
+
+     } 
+
+    .fade-enter-active, .fade.leave{
+
+        width:40px;
+
+        height:30px;
+
+    }
+</code></pre><p>����animate.css</p>
+<pre><code>��Ҫ����
+
+    1.����Ԫ����������ʧ��Ч������
+
+    2.����Ԫ����������class=&quot;animated&quot;
+
+    3.transition��ǩ�����ض���
+
+        enter-active-class����������ʱ��Ч����
+
+        leave-active-class�������뿪ʱ��Ч����
+
+
+&lt;transition enter-active-class=&quot;zoomInLeft&quot; leave-active-class=&quot;zoomOutRight&quot;&gt;
+
+            &lt;p v-show=&quot;show&quot; class=&quot;animated&quot;&gt;&lt;/p&gt;
+
+    &lt;/transition&gt;
+</code></pre><p>��Ԫ�ض���:</p>
+<pre><code>��ǩ&lt;transition-group&gt;
+
+ע�⣺��Ҫ�󶨣�key���Խ�������
+
+&lt;transition-group enter-active-class=&quot;&quot; leave-active-class=&quot;&quot;&gt;
+
+    &lt;p :key=&quot;&quot;&gt;&lt;/p&gt;
+
+    &lt;p :key=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;/transition-group&gt;
+
+
+����v-forʹ��
+
+&lt;transition-group enter-active-class=&quot;bounceInLeft&quot; leave-active-class=&quot;bounceOutRight&quot;&gt;
+
+    &lt;li v-for=&quot;(val,key) in arr&quot; :key=&quot;key&quot;&gt;&lt;/li&gt;            //arrΪVueʵ���е�����arr��[&quot;apple&quot;,&quot;bounce&quot;,&quot;combo&quot;]
+
+&lt;/transition-group&gt;
+</code></pre><p>�������Ӻ���</p>
+<pre><code> &lt;transition enter-active-class=&apos;zoomInLeft&apos; leave-active-class=&apos;zoomOutRight&apos;
+
+                @before-enter = &quot;&quot;
+
+                @enter = &quot;&quot;
+
+                @after-enter = &quot;afterEnter&quot;
+
+                @before-leave = &quot;&quot;
+
+                @leave = &quot;&quot;
+
+                @after-leave = &quot;afterLeave&quot;
+
+    &gt;
+
+&lt;script&gt;
+
+    new Vue({
+
+        methods:{
+
+            afterEnter(element){ },            //ָ��������������ʱִ��
+
+            afterLeave(element){ }            //ָ�������뿪����ʱִ��
+
+        }
+
+    })
+
+    element������Ӧ����DOMԪ��
+</code></pre><hr>
+<p>vue2.0 ·��:</p>
+<pre><code>���ڵ�ҳ��Ӧ�ã���Ҫ����vue-router
+
+���ϲο�;http://router.vuejs.org/zh-cn/index.html
+</code></pre><p>����ʹ��</p>
+<pre><code>Html����
+
+    &lt;router-link to=&quot;/home&quot;&gt;��ҳ&lt;/router-link&gt;
+
+    &lt;router-link to=&quot;/news&quot;&gt;����&lt;/router-link&gt;
+
+    &lt;router-view&gt;&lt;/router-view&gt;
+
+
+Script·������
+
+
+    var Home={
+
+            template:&apos;&lt;h3&gt;������ҳ&lt;/h3&gt;&apos;
+
+        };
+
+    Vue.component(&quot;News&quot;, {                            //������������ģʽ
+
+        template:&apos;&lt;h3&gt;��������&lt;/h3&gt;&apos;
+
+    })
+
+
+    ���ò�����·��ʵ��
+
+    const router=new VueRouter({
+
+            routes��[
+
+            {path:&apos;/home&apos;, componet:Home},                //·�� ---- ����
+
+               {path:&apos;/news&apos;, componet:News},
+
+        ]
+
+    });
+
+
+    ����·�ɵ�ʵ��Vue
+
+        new Vue({
+
+                router,
+
+        }).$mount(&quot;#main&quot;);
+
+
+�ض���
+
+    {path:&apos;*&apos;, redirect:&apos;/home&apos;}
+
+
+
+
+����ʽ����
+
+
+    ���ֱ�ǩ�ڵ�Ԫ����ָ��Ԫ�أ���ul������ͨ��tag����ת������
+
+        &lt;ul&gt;
+
+            &lt;router-link to=&quot;/home&quot; tag=&quot;li&quot;&gt; home &lt;/router-link&gt;
+
+            &lt;router-link to=&quot;/news&quot; tag=&quot;li&quot;&gt; news &lt;/router-link&gt;
+
+        &lt;/ul&gt;
+
+
+
+
+������ͼ
+
+    ���Բ�ͬview��ʾ��ͬ��������
+
+    &lt;router-link to=&quot;/home&quot;&gt; home &lt;/router-link&gt;
+
+    &lt;router-view name=&quot;viewone&quot;&gt;&lt;/router-view&gt;
+
+    &lt;router-view name=&quot;viewtwo&quot;&gt;&lt;/router-view&gt;
+
+
+
+    routes:[
+
+        {path:&quot;/home&quot;,component:{
+
+            viewone:������one
+
+            viewtwo:������two
+
+        }}
+
+    ]
+</code></pre><hr>
+<p>·��Ƕ��:</p>
+<pre><code>/user/login
+
+const routes=[
+
+    { path:&apos;/home&apos;, component:Home },
+
+    { path:&apos;/user&apos;, component:User, children:[          //children������·��
+
+               { path:&apos;login&apos;, component:login }
+
+        { path:&apos;regis&apos;, component:regis }
+
+        ]
+    },
+
+    { path:&apos;*&apos;, redirect:&apos;/home&apos;} 
+
+];
+</code></pre><p>·��ƥ��</p>
+<pre><code>���磺routes:[
+
+        { path:&quot;/user/:name&quot;, component:one }
+
+        { path:&quot;/user/:id&quot;,   component:two }
+
+        { path:&quot;/user/:name/:sex&quot;, component:three }
+
+        { path:&quot;/user/:name/sex/:sex&quot;, component��four}
+
+    ]
+
+ƥ����ʱ����˳��
+
+    /home/melody         -----         component:one
+
+    /home/melody/man    -----        component:three
+
+    /home/melody/sex/man    -----        component:four
+</code></pre><p>·�ɲ�����$route����</p>
+<pre><code>{{ $route.params }}
+
+    ����·����Ϣ�Ķ���,�����ڿɵ���
+
+    $route.path     ----        ·��
+
+    $route.juery     ----         get��ʽ���λ�ȡ
+
+
+    { path:&quot;/home/:id&quot;,   component:two }
+
+        ����·��/home/melody    
+
+    $route.id     ----        ��ȡ·��ƥ�䵽������
+</code></pre><hr>
+<p>Vue-loader:</p>
+<pre><code>.vue��ʽ�ļ�ת������
+
+
+broserify      ģ�����أ�ֻ�ܼ���js
+
+webpack       ģ���������� һ�ж���ģ��, ����������һ��
+
+vue-loader �������� webpack
+
+
+
+.vue�ļ����ݸ�ʽ:
+
+    ���õ���vue��������
+
+    &lt;template&gt;
+
+        htmlģ������
+
+    &lt;/template&gt;
+
+    &lt;style&gt;
+
+        css��ʽ
+
+    &lt;/style&gt;
+
+    &lt;script&gt;                        
+
+        ��������
+
+        export default{
+
+            data:{ 
+
+                return{ name : &quot;����&quot; }
+
+            },
+
+            methods:{
+
+                add(){ },
+
+                pass(){ }
+
+            }
+        }
+
+    &lt;/script&gt;
+
+    ת��ES6������Ҫbabel-loader
+</code></pre><hr>
+<p>�򵥵�Ŀ¼�ṹ:</p>
+<pre><code>|-index.html    ���ļ�
+
+
+|-main.js    �����ļ�
+
+    ��дwebpack���Ĵ����������ļ�
+
+
+|-App.vue    vue�ļ����ٷ��Ƽ�������
+
+
+|-package.json    �����ļ�
+
+    ��Ŀ���������ơ�����
+
+    ͨ��npm init --yes ����
+
+
+|-webpack.config.js    webpack�����ļ����Լ�������
+</code></pre><p>ES6: ģ�黯����</p>
+<pre><code>����ģ�飺
+
+    export default { }
+
+    export default {
+
+        data(){ return { name:&quot;melody&quot; } }
+
+    }
+
+����ģ��:
+
+    import ģ���� from ·��
+
+    import Vue form &quot;vue.js&quot;
+
+    import App form &quot;./App.vue&quot;
+</code></pre><p>—————————— ǰ���Ƶ� ———————————-</p>
+<p>webpak׼������:                �ֶ�����</p>
+<pre><code>cnpm install webpack --save-dev
+
+cnpm install webpack-dev-server --save-dev
+
+
+
+vue-loader  ----  App.vueת��Ϊ��������        
+
+    cnpm install vue-loader@8.5.4 --save-dev
+
+    cnpm install vue-html-loader --save-dev
+
+    vue-html-loader
+
+    css-loader
+
+    vue-style-loader
+
+    vue-hot-reload-api @1.3.2
+
+
+babel   ----  ES6�����ɶ�
+
+    babel-loader
+
+    babel-core
+
+    babel-plugin-transform-runtime
+
+    babel-preset-es2015
+
+    babel-runtime
+</code></pre><p>webpack.config.js �������� </p>
+<pre><code>module.exports = {
+
+    entry:&apos;./main.js&apos;        �����ļ�
+
+    output:{
+
+        filename:&apos;bunld.js&apos;    ģ���������ļ���
+
+    }
+
+    module:{
+
+        loader:[
+
+            { test: /\.vue$/, loader:&apos;vue&apos; },
+
+            { test: /\.js$/}, loader:&apos;babel&apos;, exclude:/node_modules
+
+        ]
+
+    },
+
+    babel:{
+
+        presets:[&apos;es2015&apos;],
+
+        plugins:[&apos;transform-runtime&apos;]
+
+    }
+
+}
+</code></pre><hr>
+<p>Vue-cli    </p>
+<pre><code>vue���ּ�
+
+    �����ṩ�û�����Ŀ�ṹ
+
+
+�������ɺܶ���Ŀģ��:
+
+    simple                ����
+
+    webpack                ����ʹ��(������Ŀ)
+
+                    Eslint ���������淶��
+
+                    ��Ԫ����
+
+
+    webpack-simple            �Ƽ�ʹ��, û�д�������    ��
+
+    browserify    
+
+    browserify-simple
+
+
+
+
+
+����ʹ������:
+
+
+    1. npm install vue-cli -g    ��װ vue�����
+
+        ��֤��װok?
+
+            vue --version
+
+
+    2. ������Ŀģ��
+
+        vue init &lt;ģ����&gt; �����ļ�������
+
+
+    3. ����Ŀ¼����װ��Ŀ����
+
+        cd �ļ�������
+
+        npm install
+
+    4. npm run dev
+</code></pre></div></header></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2017 John Doe</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
