@@ -1,24 +1,24 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>JavaScript面向对象手札 - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2016-07-06T10:38:13.000Z">July 6, 2016</time><h1 class="post__title"><a href="/2016/07/06/JavaScript面向对象手札/">JavaScript面向对象手札</a></h1><div class="post__main echo"><p>·</p>
-<h3 id="内容主要包括"><a href="#内容主要包括" class="headerlink" title="内容主要包括"></a>内容主要包括</h3><blockquote>
-<ul>
-<li>原型与原型链</li>
-<li>词法作用域与作用域链</li>
-<li>函数的四种调用模式</li>
-</ul>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>JavaScript面向对象手札 - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2016-07-06T10:38:13.000Z">July 6, 2016</time><h1 class="post__title"><a href="/2016/07/06/JavaScript面向对象手札/">JavaScript面向对象手札</a></h1><div class="post__main echo"><h3 id="Step-01-内容主要包括"><a href="#Step-01-内容主要包括" class="headerlink" title="Step-01 内容主要包括"></a>Step-01 内容主要包括</h3><blockquote>
+<p>原型与原型链<br>词法作用域与作用域链<br>函数的四种调用模式</p>
 </blockquote>
 <p>.</p>
-<h5 id="开始之前的语法基础测试"><a href="#开始之前的语法基础测试" class="headerlink" title="开始之前的语法基础测试:"></a>开始之前的语法基础测试:</h5><blockquote>
-<p>   var datas = [<br>　　{ name: ‘jim’, age: 19, gender: ‘男’ },<br>　　{ name: ‘jim’, age: 19, gender: ‘男’ },<br>　　{ name: ‘jim’, age: 19, gender: ‘男’ }<br>    ];</p>
+<h3 id="Step-00-开始之前的语法基础测试"><a href="#Step-00-开始之前的语法基础测试" class="headerlink" title="Step-00 开始之前的语法基础测试:"></a>Step-00 开始之前的语法基础测试:</h3><blockquote>
+<p>   var datas = [<br>　　{ name: ‘jim’, age: 19, gender: ‘男’ },<br>　　{ name: ‘jim’, age: 19, gender: ‘男’ },<br>　　{ name: ‘jim’, age: 19, gender: ‘男’ }<br>    ];<br>要求以表格的形式将其展示出来( table ),诸君可以自己尝试并给自己打个分~</p>
 </blockquote>
-<p>要求以表格的形式将其展示出来( table ),诸君可以自己尝试并给自己打个分~<br>·<br>·<br>.</p>
-<h4 id="有必要进行的DOM-操作复习"><a href="#有必要进行的DOM-操作复习" class="headerlink" title="有必要进行的DOM 操作复习"></a>有必要进行的DOM 操作复习</h4><h5 id="gt-创建节点"><a href="#gt-创建节点" class="headerlink" title="-&gt; 创建节点"></a>-&gt; 创建节点</h5><blockquote>
-<p>document.createElement　　　该方法用于创建元素节点对象<br>document.createTextNode　　该方法用于创建文本节点对象<br>document.createAttribute　　　该方法用于创建属性节点对象<br>.</p>
+<p>·</p>
+<h3 id="Stop-00-有必要进行的DOM-操作复习"><a href="#Stop-00-有必要进行的DOM-操作复习" class="headerlink" title="Stop-00 有必要进行的DOM 操作复习"></a>Stop-00 有必要进行的DOM 操作复习</h3><h4 id="gt-0-1-创建节点"><a href="#gt-0-1-创建节点" class="headerlink" title="-&gt; 0.1 创建节点"></a>-&gt; 0.1 创建节点</h4><blockquote>
+<p>document.createElement　　　该方法用于创建元素节点对象<br>document.createTextNode　　  该方法用于创建文本节点对象<br>document.createAttribute　　　该方法用于创建属性节点对象</p>
 </blockquote>
-<h5 id="gt-将节点加到父容器中"><a href="#gt-将节点加到父容器中" class="headerlink" title="-&gt; 将节点加到父容器中"></a>-&gt; 将节点加到父容器中</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line"> 　&lt;p class=&quot;c&quot;&gt;123&lt;/p&gt; </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>div 标签就是 p 标签的容器,p 标签是文本 123 的容器，是属性 class=”c” 的容器<br>.</p>
-<h5 id="gt-属性节点操作"><a href="#gt-属性节点操作" class="headerlink" title="-&gt; 属性节点操作"></a>-&gt; 属性节点操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">创建节点：　　　　var attr = document.createAttribute(&quot;属性名&quot;);</div><div class="line"></div><div class="line">节点赋值: 　　　　attr.nodeValue = &quot;属性值&quot;</div><div class="line"></div><div class="line">设置属性：　　　　node.setAttributeNode( attr )</div></pre></td></tr></table></figure>
 <p>.</p>
-<h5 id="gt-文本节点操作"><a href="#gt-文本节点操作" class="headerlink" title="-&gt; 文本节点操作"></a>-&gt; 文本节点操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">创建节点： 　　　var text = document.createTextNode(&quot;文本内容&quot;);</div><div class="line"></div><div class="line">节点赋值:  　　　text.nodeValue = &quot;文本内容&quot;</div><div class="line"></div><div class="line">设置属性： 　　　node.appendChild( text )</div></pre></td></tr></table></figure>
+<h4 id="gt-0-2-将节点加到父容器中"><a href="#gt-0-2-将节点加到父容器中" class="headerlink" title="-&gt; 0.2 将节点加到父容器中"></a>-&gt; 0.2 将节点加到父容器中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line"> 　&lt;p class=&quot;c&quot;&gt;123&lt;/p&gt; </div><div class="line">&lt;/div&gt;  //div标签就是p标签的容器,p标签是文本123的容器,是属性class=&quot;c&quot;的容器</div></pre></td></tr></table></figure>
+<p>.</p>
+<h5 id="gt-0-3-属性节点操作"><a href="#gt-0-3-属性节点操作" class="headerlink" title="-&gt; 0.3 属性节点操作"></a>-&gt; 0.3 属性节点操作</h5><blockquote>
+<p>创建节点：　　　　var attr = document.createAttribute(“属性名”);<br>节点赋值: 　　　　 attr.nodeValue = “属性值”<br>设置属性：　　　　node.setAttributeNode( attr )</p>
+</blockquote>
+<p>.</p>
+<h5 id="gt-0-4-文本节点操作"><a href="#gt-0-4-文本节点操作" class="headerlink" title="-&gt; 0.4 文本节点操作"></a>-&gt; 0.4 文本节点操作</h5><blockquote>
+<p>创建节点： 　　　var text = document.createTextNode(“文本内容”);<br>节点赋值:  　　　　text.nodeValue = “文本内容”<br>设置属性： 　　　node.appendChild( text )</p>
+</blockquote>
 <p>.</p>
 <h5 id="gt-DOM-文档对象模型"><a href="#gt-DOM-文档对象模型" class="headerlink" title="-&gt; DOM 文档对象模型"></a>-&gt; DOM 文档对象模型</h5><p>　　所有的 dom 结构的的文件都可以使用 dom 的思想进行处理.具有通用性, 如果要具体的完成某件事情就需要复杂的代码.我们称这组方法为 DOM-Core( 核心 DOM ).html 发展很快, 所以专门为 html 的操作制定了一套 api.这类 api 快捷方便, 将这一类方法称为 HTML-DOM. 指的是专门用于 html 操作的 DOM.</p>
 <p>．</p>
