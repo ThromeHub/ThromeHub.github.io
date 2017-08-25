@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="JavaScript 特效手札"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Hexo"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.comundefined"/>
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Hexo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">JavaScript 特效手札</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/levblanc">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:levblanc@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2015-07-22</span>
+            <span class="time">21:50:18</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <blockquote>
+ <font size="4">手动触发事件</font>
+
+</blockquote>
+<pre>
+
+节点.事件类型（）   主动触发该节点的事件
+
+节点.click()        主动触发点击事件
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">offset系列的相关属性</font>
+
+</blockquote>
+<pre>
+> offsetLeft    
+
+    计算方式：当前元素的左边框左侧，到定位父盒子的左边框距离
+
+        边框 -- 边框的距离
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+> offsetTop
+
+    计算方式：当前元素的顶部边框，到定位父盒子的顶部距离
+
+        边框 -- 边框的距离
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+> offsetWidth
+
+    表示元素的真实宽度
+
+        除了margin以外的宽度值
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+> offsetHeight
+
+    表示元素的真实高度
+
+        除了margin以外的高度值
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+
+> offsetParent
+
+    选择器：可以获取到定位的父盒子
+
+    parentNode  获取的是父元素
+
+    offsetParent  获取定位的父元素
+
+
+
+
+ </pre>
+
+<blockquote>
+ <font size="4">轮播图效果</font>
+
+</blockquote>
+<pre>
+    参照资料
+
+    JavaScript / 特效 / 5完整轮播图 / prefect.html
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">获取元素补充</font>
+
+</blockquote>
+<pre>
+  通过document直接获取某些元素
+
+      获取tittle标签，并设置里边的显示内容
+
+          document.title = "内容"
+
+      获取body标签
+
+          document.body
+
+      获取html标签
+
+          document.documentElement
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">scroll系列的相关属性</font>
+
+</blockquote>
+<pre>
+    如果实际内容并没有达到元素的高度和宽度
+
+        此时获取的结果为元素的高度与宽度
+
+  > scrollHeight    
+
+      元素中实际内容的高度
+
+      获取的是数值类型
+
+
+  > scrollWidth
+
+      元素中实际内容的宽度
+
+      获取的是数值类型
+
+
+  > scrollTop
+
+      获取元素向上滚出的距离
+
+          scrollHeight内容高度 - Height元素高度 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">使用需要配合滚动事件</div><div class="line"></div><div class="line">    <span class="built_in">Object</span>.onsrcoll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.srcollTop)</div><div class="line">    </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+  > scrollLeft
+
+      获取元素向左滚出的距离
+
+          scrollHeight内容宽度 - Height元素宽度 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">使用需要配合滚动事件</div><div class="line"></div><div class="line">  <span class="built_in">Object</span>.onsrcoll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line"></div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.srcollLeft)</div><div class="line">    </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+</pre>
+
+<blockquote>
+ <font size="4">对比总结</font>
+
+</blockquote>
+<pre>
+      offsetLeft:     元素距离左边的距离
+
+      offsetTop:      元素距离顶部的距离
+
+      offsetWidth:    元素的宽度 有边框
+
+      offsetHeight:   元素的高度 有边框
+
+
+      scrollWidth：  元素中内容的实际宽度
+
+      scrollHeight： 元素中内容的实际高度
+
+      scrollLeft：   元素向左滚出的距离
+
+      scrollTop：    元素向上滚出的距离
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">scroll系列属性封装</font>
+
+</blockquote>
+<pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScrollTop</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.pageYOffset || <span class="built_in">document</span>.body.offsetTop </div><div class="line"></div><div class="line">    || <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScrollLeft</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.pageXOffset || <span class="built_in">document</span>.body.offsetLeft </div><div class="line"></div><div class="line">    || <span class="built_in">document</span>.documentElement.scrollLeft || <span class="number">0</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">获取元素的css属性</font>
+
+</blockquote>
+<pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.getComputedStyle(<span class="built_in">Object</span>, <span class="literal">null</span>).top</div><div class="line"></div><div class="line">windwo.getComputedStyle(<span class="built_in">Object</span>, <span class="literal">null</span>)[<span class="string">"top"</span>]</div><div class="line"></div><div class="line"></div><div class="line">ie低版本</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.currentStyle.left;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.currentStyle[<span class="string">"left"</span>];</div></pre></td></tr></table></figure>
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">完美动画封装函数</font>
+
+</blockquote>
+<pre>
+  参考  皇家动画函数animate（tag，json，fn）
+
+  功能  可设置多样式json
+
+              json形式设置
+
+              { "width":200, "height":160 }
+
+        追加了回调函数fn
+
+        可用于动画嵌套使用
+
+        追加了透明度样式opacity
+
+        追加了层叠样式zIndex
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">tag, json, fn</span>)</span>&#123;</div><div class="line"></div><div class="line">        clearInterval(tag.Ds);</div><div class="line"></div><div class="line">        tag.Ds =setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">            <span class="keyword">var</span> flag =<span class="literal">true</span>;</div><div class="line"></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> json)&#123;</div><div class="line"></div><div class="line">                <span class="keyword">if</span>(key == <span class="string">"opacity"</span>)&#123;</div><div class="line"></div><div class="line">                    <span class="comment">//获取当前样式</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> current = getStyle(tag, key)*<span class="number">100</span>;</div><div class="line"></div><div class="line">                    <span class="keyword">var</span> target = json[key]*<span class="number">100</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//设置样式变化间隔</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> step = (target - current)/<span class="number">10</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//更新样式</span></div><div class="line"></div><div class="line">                    step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</div><div class="line"></div><div class="line">                    <span class="comment">//样式重设</span></div><div class="line"></div><div class="line">                    current += step;</div><div class="line"></div><div class="line">                    tag.style[key] = current/<span class="number">100</span>;</div><div class="line"></div><div class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(key == <span class="string">"zIndex"</span>)&#123;</div><div class="line"></div><div class="line">                    tag.style.zIndex = json[key];</div><div class="line"></div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">                    <span class="comment">//获取当前样式</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> current = <span class="built_in">parseInt</span>(getStyle(tag, key));</div><div class="line"></div><div class="line">                    <span class="keyword">var</span> target = json[key];</div><div class="line"></div><div class="line">                    <span class="comment">//设置样式变化间隔</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> step = (target - current)/<span class="number">10</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//更新样式</span></div><div class="line"></div><div class="line">                    step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</div><div class="line"></div><div class="line">                    <span class="comment">//样式重设</span></div><div class="line"></div><div class="line">                    current += step;</div><div class="line"></div><div class="line">                    tag.style[key] = current + <span class="string">"px"</span>;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">//判断当前样式是否到位</span></div><div class="line"></div><div class="line">                <span class="keyword">if</span>(current != target)&#123;</div><div class="line"></div><div class="line">                    flag = <span class="literal">false</span>;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//判断所有样式是否就位</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span>(flag)&#123;</div><div class="line"></div><div class="line">                <span class="comment">//清除定时器</span></div><div class="line"></div><div class="line">                clearInterval(tag.Ds);</div><div class="line"></div><div class="line">                <span class="comment">//如果回调函数存在，则调用回调函数</span></div><div class="line"></div><div class="line">                <span class="keyword">if</span>(fn)&#123;</div><div class="line"></div><div class="line">                    fn();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,<span class="number">20</span>)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+    综合案例：筋斗云案例  手风琴案例  旋转木马案例等
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">event事件参数对象</font>
+
+</blockquote>
+<pre>
+    可视化区域坐标：鼠标不动滚轮动时，client值不变
+
+    > clientX：页面中可视区域的横坐标
+
+          数值类型
+
+    > clientY：页面中可视区域的纵坐标
+
+          数值类型
+
+
+    页面坐标
+
+    > pageX：页面中的横坐标
+
+          数值类型
+
+    > pageY：页面中的纵坐标
+
+          数值类型
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">三大系列总结</font>
+
+</blockquote>
+<pre>
+  offset --- scroll --- client
+
+
+  > offsetLeft
+
+      获取的是元素距离左边位置的横坐标
+
+  > offsetTop
+
+      获取的是元素距离顶部位置的纵坐标
+
+  >offsetWidth
+
+      获取的是元素的宽度，有边框不包含marign
+
+  > offsetHeight
+
+      取的是元素的宽高度，有边框不包含marign
+
+
+
+  > scrollLeft
+
+      获取的是滚出去的横坐标值
+
+  > scrollTop
+
+      获取的是滚出去的纵坐标值
+
+  > scrollWidth
+
+      元素中内容的实际宽度，无边框
+
+  > scroll Height
+
+      元素中内容的实际高度，无边框
+
+
+
+
+
+  兼容性问题：
+
+      ie8中的事件参数对象;window.event
+
+      谷歌支持参数e和window.event
+
+      火狐支持参数e，不支持window.event
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params">e</span>)</span>&#123;</div><div class="line"></div><div class="line">    e = <span class="built_in">window</span>.event?<span class="built_in">window</span>.event:e; </div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+    想要保证这个值可以准确获取，不需等到图片完全加载后
+
+        方法A 入口函数
+              window.onload = function(){
+                  console.log(pic.offsetWidth)
+              }
+
+        方法B：使用可视区域的宽度
+
+        方法C：读取json中的数据值（从服务器端接收过来的数据）
+
+
+
+
+
+
+
+
+
+
+
+ </pre>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

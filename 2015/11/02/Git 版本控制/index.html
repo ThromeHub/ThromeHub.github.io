@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Git 分布式版本控制手札"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Hexo"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.comundefined"/>
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Hexo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Git 分布式版本控制手札</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/levblanc">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:levblanc@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2015-11-02</span>
+            <span class="time">21:50:18</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <blockquote>
+ <font size="5">shell 简介</font>
+
+</blockquote>
+<pre>
+      shell俗称壳，有别于kemel核心，指代提供使用者使用界面的命令解析器
+
+  类似于DOS下的command
+
+  用户 ---- shell ---- 核心 ---- 硬件
+
+  shell：接收来自使用者的指令，与核心进行沟通交互
+
+  核心kemel：控制硬件工作的部件，处理CPU排程 记忆体管理等工作
+
+  硬件：系统中的实际工作者，包含硬碟 显示卡 网络卡 CPU 记忆体等
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="5">shell由来</font>
+
+</blockquote>
+<pre>
+-> 早期计算机是非常复杂的, 而且单一的用于计算.由于早期程序非常单一, 仅仅是为了提高计算的精度与速度
+
+  该阶段的编程主要是直接操作硬件来进行计算
+
+-> 后来的计算机变得丰富了, 由于直接操作硬件, 对于恶性的程序, 或考虑不周到的程序容易造成资源的占用.
+
+  为了改良这个现状在中间加了一个层。我们在需要完成某些事情的时候直接跟层进行交互, 将实际任务交给层完成
+
+  这个层就是用来保护系统资源的. 我们称这个层为 shell( 贝壳 )，其主要功能就是帮助我们进行计算机的交互
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="5">shell的表现形式</font>
+
+</blockquote>
+<pre>
+  基于命令行的shell 通过命令行指令的方式进行操作交互
+
+  基于图形化的shell 通过图形界面的. 利用鼠标键盘在桌面上对图标进行操作来交互.
+
+      两者仅是操作方式不同，其结果与含义均相同
+
+          例如在windows中打开一个文件夹
+
+      gui：使用双击
+
+          bash：使用cd + 文件夹路径，cat + 文件名
+
+
+</pre>
+
+<blockquote>
+ <font size="5">常见的shell</font>
+
+</blockquote>
+<pre>
+  -> Linux 平台 默认使用bash
+
+  -> windows平台下默认使用cmd( 命令行提示符 )
+
+  win7+的操作系统默认包含 powerShell
+
+      cmd 仅仅支持 windows 独有的命令行形式与命令.
+
+      powerShell 则能够兼容Linux系列的命令
+
+
+  -> Mac OS X 平台默认使用的是自带的命令行( bash ). 同时也支持自定义安装.
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="5">基本的 linux 命令</font>
+
+</blockquote>
+<pre>
+  -> 命令的基本语法
+
+    $ 命令名 [选项] [参数]
+
+        选项通常用于控制如何操作, 带有 - 或 -- 引导符号, 单个命令可以带有多个选项
+
+        参数通常用于表示处理什么东西
+
+</pre>
+
+<blockquote>
+ <font size="4">目录指令</font>
+
+</blockquote>
+<pre>
+      $ pwd               打印当前目录的全路径( print working directory )
+
+      $ cd                切换当前目录( change directory )
+
+      $ ls                列出当前目录下的所有非隐藏文件
+
+      $ ls  -a / --all    列出所有的文件
+
+      $ ls  -l            详细列举当前目录中的文件
+
+
+
+  注意点：
+
+    1.与window不同，在linux或mac中, 带有前置点的文件为隐藏文件
+
+    2.在linux中命令的选择项一般有两种形态,
+
+    3.长选项通常用完整的单词来描述, 语义清晰适用于正式场合.短选项用于快捷使用
+
+    4.ls 除了可以列举当前目录外, 还可以列举指定目录, 可以使用相对路径或绝对路径
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">文件指令</font>
+
+</blockquote>
+<pre>
+      $ touch 文件名                 创建文件
+
+      $ rm  文件名 / *.html          删除文件
+
+      $ cat   文件名                 查看文件的内容( 文件内容较少 )
+
+      $ head  文件名                 查看文件的前 10 行, 如果带有 -数字 表示查看前 n 行 
+
+      $ tail  文件名                 查看文件的后 10 行, 如果带有 -数字 表示查看后 n 行 
+
+      $ more 或 less ( more 命令只允许在 linux 下使用, more 原本是 unix 的名字 )
+
+    该命令以回车的形式查看每一行, 使用 q 退出
+
+        文件的编辑使用 vi 编辑器, 后面再讨论
+
+
+      $ mkdir 文件夹名               创建文件夹
+
+      $ rmdir 文件夹名               删除文件夹
+
+    如果希望递归删除文件夹 需要使用命令 rm -rf
+
+
+      $ mv 移动文件 目标文件        移动文件或重命名
+
+      $ cp 复制文件                 复制文件
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">功能指令</font>
+
+</blockquote>
+<pre>
+      clear               清屏
+
+      tab                 自动补全
+
+      histroy             查看操作历史
+
+      >                   覆盖重定向
+
+      >>                  追加重定向
+
+          对于非常复杂的帮助文档, 可以使用 重定向命令 > 将其内容保存到文件中
+
+      |                   管道
+
+          执行顺序自左向右例如：touch dir/one.txt | mkdir main
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"> 查看命令帮助</font>
+
+</blockquote>
+<pre>
+        $命令 --help      可以打印出该命令的含义以及用法
+
+
+
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="5">vi/vim 编辑器</font>
+
+</blockquote>
+<pre>
+    如同windows记事本，vi编辑器时Linux平台的标配
+
+    用于编辑文件
+
+编辑模式
+
+    命令模式    文件阅览
+
+    插入模式    文件编辑
+
+    底行模式    文件操作
+
+    默认模式为命令模式，同时默认模式也是其余两种模式的中转站
+
+          命令模式 ---- i插入/a追加 ---- 插入模式
+
+          插入模式 ---- esc ---- 命令模式
+
+          命令模式 ---- ： ----- 底行模式
+
+          底行模式 ---- esc ---- 命令模式
+
+
+
+底行模式指令
+--------------
+
+  :w      保存
+
+  :q      退出
+
+  :e!     撤销更改
+
+  :q!     不保存强制退出
+
+  :set nu     设置行号
+
+
+命令模式指令
+--------------
+
+  ZZ      保存并退出
+
+  u     撤销
+
+  dd      删除当前行
+
+  yy      复制当前行
+
+  p     粘贴内容
+
+  ctrl + f    向前翻页
+
+  ctrl + b    向后翻页
+
+
+
+
+
+ </pre>
+
+<blockquote>
+ <font size="5">Git版本控制</font>
+
+</blockquote>
+<pre>
+  -> 集中式管理      代表SVN
+
+      使用唯一服务器作为代码的仓库( 代码在里面备份 )
+
+      所有的程序员在编写代码的时候, 先从服务器上将代码 下载下来, 然后编辑, 调试没有问题了 提交到服务器上.
+
+
+      缺点:   1.服务器一旦宕机, 数据难以恢复. 
+
+          2.代码冲突很难解决.
+
+
+
+
+  -> 分布式管理      代表git
+
+      首先分步式管理也有一个服务器专门作为仓库进行使用, 一般称为远程仓库. 它里面放的也是代码备份.
+
+      不同之处是每一个程序员的计算机中含有代码的完整副本, 本地也有一个代码仓库.
+
+      每一个程序员在代码编辑的时候, 直接在自己的仓库中进行操作, 待代码没有问题了, 将数据与操作情况上传到服务器中.
+
+
+  -> github
+
+      github 是一个代码托管的网站
+
+      这个网站使用的代码版本控制系统就是 git
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="3">需要配置用户信息</font>
+
+</blockquote>
+<pre>
+   全局配置：表达的含义是在当前计算机中, 创建的项目仓库均默认使用该用户名与邮箱
+
+      $ git config --global user.name "用户名"
+
+      $ git config --global user.email "邮箱"
+
+
+   局部配置：局部配置的前提是先创建本地仓库
+
+      $ git config user.name "用户名"
+
+      $ git config user.email "邮箱"
+
+</pre>
+
+<blockquote>
+ <font size="3">初始化仓库</font>
+
+</blockquote>
+<pre>
+      $ git init
+
+      初始化仓库以后, 会在当前目录下创建 .git 的隐藏文件夹作为仓库使用
+
+      局部配置的用户信息会存储到 .git 文件夹中
+
+      全局配置的数据会存储到用户目录里
+
+</pre>
+
+<blockquote>
+ <font size="3">查看状态</font>
+
+</blockquote>
+<pre>
+      $ git status        查看git当前的工作环境
+
+</pre>
+
+<blockquote>
+ <font size="3">添加缓存</font>
+
+</blockquote>
+<pre>
+      $ git add .       当前文件夹中的所有文件加入到管理的缓存中
+
+      $ git add -A        同上
+
+</pre>
+
+<blockquote>
+ <font size="3">创造节点</font>
+
+</blockquote>
+<pre>        
+      $ git commit -m "提交信息"    将缓存中的 代码一次性存储到仓库里.
+
+</pre>
+
+<blockquote>
+ <font size="3">查看日志</font>
+
+</blockquote>
+<pre>      
+      $ git log 
+
+
+
+</pre>
+
+<blockquote>
+ <font size="3">Gitignore 文件</font>
+
+</blockquote>
+<pre>
+用于过滤不提交的数据
+
+  .gitignore 文件里面编写的东西就是不备份的文件与文件夹的路径
+
+      .gitignore编辑内容
+
+        test      选择忽略的文件夹
+
+    html/index.html   选择忽略的文件夹下的指定文件
+
+  window下默认无法新建点开头的文件，可采用如下两种方式建立：
+
+    1> 使用命令行方式创建
+
+    2> 新建点开头点结尾的文件
+
+
+
+</pre>
+
+<blockquote>
+ <font size="3">Git恢复</font>
+
+</blockquote>
+<pre>
+      git reset --hard SHA1码（至少六位） 
+
+      回到指定节点后, 若想查询最新节点的信息, 可以使用
+
+      git reflog  命令查看我们的所有改动
+
+
+  补充： 使用该命令可以将没有提交的一次更改恢复到起始状态
+
+      git reset --hard HEAD
+
+
+</pre>
+
+<blockquote>
+ <font size="3">Git分支</font>
+
+</blockquote>
+<pre>
+    分支：版本控制列表中分离出来一个平行的独立的备份列表
+
+    这个新的备份列表与以前的那个备份列表的操作相同, 但是两者独立
+
+
+应用场景:
+
+1> 代码编写中发现有新的算法, 可以创建一个分支, 编写新的代码. 如果出现问题删除分支即可, 不影响原始代码.
+
+    如果算法成功, 合并分之, 即可将新算法无缝衔接到当前项目中.
+
+2> 代码编写中发现了 bug. 常常使用分支来修改 bug, 那么修改完成后, 合并到当前分支, 
+
+    从而实现不影响当前项目的情况下, 修复 bug.
+
+3> 团队开发过程中, 不同程序员负责不同分支, 在功能实现后进行合并, 使得各个程序员无不影响.
+
+4> 项目上线后, 对项目扩展, 修复 bug 等一系列操作. 创建分支,在分支上进行操作. 从而不影响线上项目的运行.
+
+    在完成分支以后, 合并项目分支, 以达到修复目的.
+
+
+
+
+    默认分支：         master 主分支
+
+    查看分支：         git branch 
+
+    创建分支：         git branch 分支名
+
+    快速创建并切换分支：    git branch -b 分知名
+
+    切换分支：         git checkout 分支名
+
+    删除分支：         git branch -d 分支名
+
+    合并分支：
+
+    若将指定分支中的内容合并至 master 分支
+
+        1> 先切换到master 分支
+
+        2> 在该分支上执行命令git merge 目标分支
+
+
+-> 冲突
+
+    冲突：指多人协作或分支合并时, 相同文件被两个操作修改, 并同时保存到仓库时出现的冲突现象
+
+    git在合并或保存的时候, 如果文件出现了冲突会同时保存两个版本的代码. 并抛出一个错误要求修改错误
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="3">远程仓库</font>
+
+</blockquote>
+<pre>
+    -> 远程仓库顾名思义仓库存储在其他计算机中.
+
+      克隆仓库:         git clone url(可通过Http/SSH下载项目)
+
+      上传至远程仓库：  git push 
+
+      下载数据至本地：  git pull
+
+
+  注意点：多人协同开发时，当其他开发人员更新数据导致我方数据滞后时，我方无法上传数据
+
+    需要先从服务器下载数据，更新本地仓库后才能上传数据
+
+
+
+
+  常规远程仓库
+
+      1> github 
+
+      2> git.oschina.net      中文版Github
+
+      3> coding       逐渐没落
+
+      4> gitlab       仅支持Linux平台
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
