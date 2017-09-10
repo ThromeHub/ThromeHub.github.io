@@ -1,0 +1,706 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>node - io模块 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2016-10-24">2016-10-24</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Node - IO模块</h2>
+            <div class="post-meta">
+                本文总共8923个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <style>
+    u{
+        display: block;
+        height:100px;
+      }
+    i{
+        display: block;
+        height:10px;
+      }
+</style>
+
+
+
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul>
+<li><p>崭新的JS文件就是一个模块,模块内部具备独立的作用域</p>
+</li>
+<li><p>合格的模块需要导出，模块间必须通过导入导出的方式协同<br><i></i></p>
+</li>
+</ul>
+<h4 id="导出方式"><a href="#导出方式" class="headerlink" title="导出方式"></a>导出方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">exports.name = value;</div><div class="line"><span class="built_in">module</span>.exports = &#123; <span class="attr">name</span>:value &#125;</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="自定义模块加载示例"><a href="#自定义模块加载示例" class="headerlink" title="自定义模块加载示例"></a>自定义模块加载示例</h4><ul>
+<li><p>模块内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">substract</span>(<span class="params"></span>)</span>&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>导出模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span> exports = &#123; add,substract &#125;;</div><div class="line">	<span class="comment">//es6语法等价于&#123;add:add,substract:substract&#125;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>引入模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> calute = <span class="built_in">require</span>(<span class="string">"文件路径"</span>)</div><div class="line">calute.add ---- <span class="comment">//调用模块函数</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="系统核心模块"><a href="#系统核心模块" class="headerlink" title="系统核心模块"></a>系统核心模块</h4><ul>
+<li>Node平台自带的基本功能模块，如fs<br><i></i></li>
+</ul>
+<h4 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h4><ul>
+<li>社区或第三方开发的功能模块</li>
+</ul>
+<p><i></i>    </p>
+<h4 id="模块内全局变量"><a href="#模块内全局变量" class="headerlink" title="模块内全局变量"></a>模块内全局变量</h4><ul>
+<li><p>__dirname          :获取当前脚本所在路径</p>
+</li>
+<li><p>__filename        :获取文件所在路径</p>
+</li>
+</ul>
+<p><i></i></p>
+<h3 id="require加载规则"><a href="#require加载规则" class="headerlink" title="require加载规则"></a>require加载规则</h3><ul>
+<li>加载文件时可以省略扩展名</li>
+</ul>
+<h4 id="语法：require-“-text”"><a href="#语法：require-“-text”" class="headerlink" title="语法：require(“./text”)"></a>语法：require(“./text”)</h4><h4 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h4><ul>
+<li><p>第三方加载：    require(“text”)</p>
+<ul>
+<li><p>搜索node_module文件夹，顺序自当前目录向上至盘符。</p>
+</li>
+<li><p>载入node_module/text/package.json中的main指向的文件    </p>
+</li>
+<li><p>载入node_module/text/text.js文件</p>
+</li>
+<li><p>载入node_module/text/index.js文件</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>通过./或者../加载    </p>
+<ul>
+<li><p>按照相对路径从当前文件所在目录开始寻找模块</p>
+</li>
+<li><p>require(“./module/calute.js”)    </p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>直接加载模块（文件）</p>
+<ul>
+<li><p>1.自定义模块需要放于node_modules文件夹下</p>
+<pre><code>require(&quot;calute.js&quot;);
+</code></pre></li>
+<li><p>2.加载系统模块 </p>
+<pre><code>require(&quot;fs&quot;)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="require缓存机制"><a href="#require缓存机制" class="headerlink" title="require缓存机制"></a>require缓存机制</h4><ul>
+<li><p>首次加载模块时，Node会缓存该模块</p>
+</li>
+<li><p>再次加载该模块时，就会直接从缓存中取出模块</p>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h1><h4 id="文档资料：http-nodejs-org-api"><a href="#文档资料：http-nodejs-org-api" class="headerlink" title="文档资料：http://nodejs.org/api/"></a>文档资料：<a href="http://nodejs.org/api/" target="_blank" rel="external">http://nodejs.org/api/</a></h4><ul>
+<li><p>单纯的js在服务端无法实现如读写文件 访问网络等功能</p>
+</li>
+<li><p>Node提供了一系列功能模块用于与操作系统互动</p>
+</li>
+</ul>
+<hr>
+<h3 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h3><ul>
+<li><p>path —-            处理文件路径</p>
+</li>
+<li><p>fs—-            操作（CRUD）文件系统</p>
+</li>
+<li><p>child process—-        新建子进程、</p>
+</li>
+<li><p>util—-            提供一系列使用小工具</p>
+</li>
+<li><p>http—-            提供HTTP服务器功能</p>
+</li>
+<li><p>url—-            用于解析URL</p>
+</li>
+<li><p>querystring—-        解析URL中的查询字符串</p>
+</li>
+<li><p>crypto—-            提供加密和解密功能</p>
+</li>
+</ul>
+<hr>
+<h3 id="包的概念"><a href="#包的概念" class="headerlink" title="包的概念"></a>包的概念</h3><ul>
+<li><p>与核心模块相似，包是将一些预先设计好的功能或API封装到一个文件夹，提供给开发者使用</p>
+</li>
+<li><p>npm官网：https;//www.npmjs.com    </p>
+</li>
+</ul>
+<hr>
+<h3 id="包的加载机制"><a href="#包的加载机制" class="headerlink" title="包的加载机制"></a>包的加载机制</h3><h4 id="语法：-require（”http”）"><a href="#语法：-require（”http”）" class="headerlink" title="语法： require（”http”）"></a>语法： require（”http”）</h4><h4 id="加载顺序："><a href="#加载顺序：" class="headerlink" title="加载顺序："></a>加载顺序：</h4><ul>
+<li><p>先在系统核心的模块中查询<br>  不要创建和系统重名的包 </p>
+</li>
+<li><p>然后再到当前项目中的node_modules目录中找</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="NPM-用户配置文件"><a href="#NPM-用户配置文件" class="headerlink" title="NPM 用户配置文件"></a>NPM 用户配置文件</h4><ul>
+<li><p>配置文件：     C://user/melody/.npmrc    </p>
+<ul>
+<li><p>cache：            缓存文件，提高下载速度</p>
+</li>
+<li><p>prefix：            全局地址</p>
+</li>
+<li><p>register：        镜像（<a href="http://registry.npm.taobao.org/）" target="_blank" rel="external">http://registry.npm.taobao.org/）</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>设置：    npm config set prefix 路径</p>
+</li>
+<li><p>删除：    npm config rm prefix </p>
+</li>
+<li><p>获取：    npm config get prefix</p>
+</li>
+<li><p>查看：    npm config ls</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="NRM"><a href="#NRM" class="headerlink" title="NRM"></a>NRM</h4><ul>
+<li><p>Node Registry Manager</p>
+</li>
+<li><p>nrm ls：        列出所有可用数据源</p>
+</li>
+<li><p>nrm test：        检测连接时间，国内通常淘宝最快</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="NPM-常用命令"><a href="#NPM-常用命令" class="headerlink" title="NPM 常用命令"></a>NPM 常用命令</h4><ul>
+<li>安装：    npm install(i) 包名@1.1.1 –save-dev(-D)</li>
+</ul>
+<p>　　　　　npm i 可用于恢复依赖</p>
+<ul>
+<li>卸载：    npm uninstall(un) 包名@1.1.1 –save(-S)</li>
+</ul>
+<p>　　　　　- -D||-S 在安装的时候是记录，在卸载的时候是删除记录</p>
+<ul>
+<li><p>npm config：            配置用户信息</p>
+</li>
+<li><p>npm init：            初始化配置文件</p>
+</li>
+<li><p>npm info package：        输入包id，可以打印出相应的信息</p>
+</li>
+<li><p>npm docs package：        查看包文档</p>
+</li>
+<li><p>npm list：            打印出当前项目中的npm依赖项</p>
+</li>
+<li><p>npm outdated    ：        判断哪个包可以更新</p>
+</li>
+<li><p>npm update：            更新包</p>
+</li>
+<li><p>npm run ：            运行脚本代码块</p>
+</li>
+<li><p>npm cache    ：        打印缓存清单</p>
+</li>
+<li><p>npm cache[clean|ls]：        清空缓存</p>
+</li>
+<li><p>npm ls –depth 0：         查看根节点包</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="package-json配置文件"><a href="#package-json配置文件" class="headerlink" title="package.json配置文件"></a>package.json配置文件</h4><ul>
+<li><p>name：            包名</p>
+</li>
+<li><p>main：          程序入口    </p>
+</li>
+</ul>
+<ul>
+<li><p>dependencies：        开发依赖 -D</p>
+<p>  　　 webpack browserify gulp..</p>
+</li>
+<li><p>devDependencies:    生产依赖 -S</p>
+<p>   　　jquery bootstrap..</p>
+</li>
+</ul>
+<ul>
+<li><p>scripts：        代码区块执行</p>
+<p>  　　json对象格式:key对应命令名，value对相应具体命令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>:&#123; <span class="string">"dev"</span>:<span class="string">"npm i jquery &amp;&amp; node main.js"</span> &#125;</div><div class="line">cmd:npm run dev ---- <span class="comment">//执行dev中命令集合</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
+<li><p>fs:        基础的文件操作API</p>
+</li>
+<li><p>path:        提供和路径相关的操作API</p>
+</li>
+<li><p>readline:    用于读取大文本文件</p>
+</li>
+<li><p>fs-extra:    第三方文件模块</p>
+</li>
+<li><p>npm资料：<a href="https://www.npmjs.com/package/fs-extra" target="_blank" rel="external">https://www.npmjs.com/package/fs-extra</a></p>
+</li>
+</ul>
+<p><i></i></p>
+<h3 id="读写操作"><a href="#读写操作" class="headerlink" title="读写操作"></a>读写操作</h3><h4 id="同步异步读取文件"><a href="#同步异步读取文件" class="headerlink" title="同步异步读取文件"></a>同步异步读取文件</h4><ul>
+<li><p>异步读取：        </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fs.readFile(path.join(__dirname,<span class="string">"index.html"</span>),<span class="string">"utf-8"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步读取：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">	fs.readFile(path.join(__dirname,<span class="string">"index.html"</span>),<span class="string">"utf-8"</span>);</div><div class="line">&#125;<span class="keyword">catch</span>(error)&#123;</div><div class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="缓存区buffer"><a href="#缓存区buffer" class="headerlink" title="缓存区buffer"></a>缓存区buffer</h4><ul>
+<li><p>过大文件的读取相当消耗内存，需要缓存区帮助完成加载</p>
+</li>
+<li><p>fs.readFile 在未指定编码格式时会读出buffer的二进制数据,需要toString()方法转化数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(<span class="string">"C://user/melody/hydra.txt"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>;</div><div class="line">	<span class="built_in">console</span>.log(data.toString(<span class="string">"utf-8"</span>))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="同步异步写入文件"><a href="#同步异步写入文件" class="headerlink" title="同步异步写入文件"></a>同步异步写入文件</h4><ul>
+<li><p>异步写入： fs.writeFile()            </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fs.writeFile( <span class="string">"./index.html"</span>, <span class="string">"文本内容"</span>, fnnction(err)&#123; &#125; )</div><div class="line">fs.writeFile( <span class="string">"./index.html"</span>, <span class="string">"文本内容"</span>, &#123;<span class="attr">flag</span>:<span class="string">"a"</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;&#125; )</div><div class="line"><span class="comment">//默认覆盖内容，添加第三个配置参数可设置内容追加</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>同步写入： fs.writeFileSync();    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>&#123;</div><div class="line">	fs.writeFileSync(<span class="string">"./index.html"</span>, <span class="string">"文本"</span>)</div><div class="line">&#125;<span class="keyword">catch</span>(err)&#123;</div><div class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>非阻塞流写入： fs.createWriteStream();        </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> streamWrite = fs.createWriteStream(<span class="string">"./index.html"</span>);</div><div class="line">streamWrite.write(<span class="string">"文本内容"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="追加内容：-默认写入方式为覆盖"><a href="#追加内容：-默认写入方式为覆盖" class="headerlink" title="追加内容：        默认写入方式为覆盖"></a>追加内容：        默认写入方式为覆盖</h4><ul>
+<li><p>异步追加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">			    fs.appendFile(<span class="string">"./index.html"</span>,<span class="string">"文本内容"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;&#125;)</div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line">- 同步追加</div><div class="line">`<span class="string">``</span>js</div><div class="line">			    fs.appendFileSync(<span class="string">"./index.html"</span>,<span class="string">"文本内容"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>报错原因:1.找不到写入文件夹</p>
+<pre><code>2.文件权限问题
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="获取属性"><a href="#获取属性" class="headerlink" title="获取属性"></a>获取属性</h3><h4 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h4><ul>
+<li>异步操作：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fs.stat(path,<span class="function"><span class="keyword">function</span>(<span class="params">err,st</span>)</span>&#123; &#125;)</div><div class="line"><span class="comment">//stat对象方法</span></div><div class="line">	st.isFile()		<span class="comment">//判断是否是文件 bool</span></div><div class="line">	st.isDirectory()	<span class="comment">//判断是否是目录 bool</span></div><div class="line">	st.birthtime		<span class="comment">//获取文件创建时间</span></div><div class="line">	st.size			<span class="comment">//获取文件字节数</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>同步操作：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.stateSync(path) ----- 返回实例 fs.Stats</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="文件操作-1"><a href="#文件操作-1" class="headerlink" title="文件操作"></a>文件操作</h3><h4 id="检索目录"><a href="#检索目录" class="headerlink" title="检索目录"></a>检索目录</h4><ul>
+<li><p>异步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   fs.readdir(<span class="string">"路径"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error,files</span>)</span>&#123; &#125;)</div><div class="line">files[<span class="string">"子文件名"</span>，<span class="string">"子文件名"</span>]</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.readdirSync(path) ---- 返回files</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>打印文件目录实例:    stat方法用于获取多种文件属性<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">fs.readdir(<span class="string">"./"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error,files</span>)</span>&#123;</div><div class="line">	files.foreach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">		fs.stat(path.join(__dirname,item),<span class="function"><span class="keyword">function</span>(<span class="params">error,st</span>)</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(st.mtime);			<span class="comment">//文件修改时间</span></div><div class="line">			<span class="built_in">console</span>.log(st.size);			<span class="comment">//文件字节大小</span></div><div class="line">		&#125;)</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="重命名文件-对应命令行-mv-currentPath-targetPath"><a href="#重命名文件-对应命令行-mv-currentPath-targetPath" class="headerlink" title="重命名文件:        对应命令行 mv currentPath targetPath"></a>重命名文件:        对应命令行 mv currentPath targetPath</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> current = path.join(__dirname,<span class="string">"./index.html"</span>);</div><div class="line"><span class="keyword">const</span> target = path.join(__dirname,<span class="string">"./meldoy.html"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>异步操作： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.rename( current,target,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123; &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.renameSync(current,target)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> current = path.join(__dirname,<span class="string">"./index.html"</span>);</div><div class="line"><span class="keyword">const</span> target = path.join(__dirname,<span class="string">"../project/index.html"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>异步操作： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.rename( current,target,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123; &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.renameSync(current,target)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="删除文件-对应命令行-rm-path"><a href="#删除文件-对应命令行-rm-path" class="headerlink" title="删除文件:        对应命令行 rm path"></a>删除文件:        对应命令行 rm path</h4><ul>
+<li>异步操作：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">		    fs.unlink(path,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123; &#125;) </div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line">- 同步操作:</div><div class="line">`<span class="string">``</span>js</div><div class="line">		    fs.unlinkSync(path)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h3><h4 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h4><ul>
+<li><p>异步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.mkdir(path,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123; &#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.mkdirSync(path)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="删除空目录"><a href="#删除空目录" class="headerlink" title="删除空目录"></a>删除空目录</h4><ul>
+<li><p>异步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.rmdir(path,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123; &#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>同步操作：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fs.rmdirSync(path)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="监听操作"><a href="#监听操作" class="headerlink" title="监听操作"></a>监听操作</h3><h4 id="监视文件："><a href="#监视文件：" class="headerlink" title="监视文件："></a>监视文件：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.watchFile( <span class="function"><span class="keyword">function</span>(<span class="params"> cur,prev </span>)</span>&#123; &#125; )</div><div class="line">	curr:	修改后的文件状态对象，stat实例，可调用stat属性</div><div class="line">	prev：	修改前的文件状态对象，stat实例，可调用stat属性</div><div class="line"><span class="comment">//例如：	curr.size curr.mtime</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h3><h4 id="文件流-网络流"><a href="#文件流-网络流" class="headerlink" title="文件流 网络流"></a>文件流 网络流</h4><ul>
+<li><p>任何数据的最根本表现形式都是二进制，设备输入和输出都是用流处理的</p>
+</li>
+<li><p>非流IO问题：</p>
+<ul>
+<li><p>1.大文件拷贝占用内存</p>
+</li>
+<li><p>2.无法获取读写进度信息</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="可读流相关API"><a href="#可读流相关API" class="headerlink" title="可读流相关API"></a>可读流相关API</h4><h5 id="创建可读流："><a href="#创建可读流：" class="headerlink" title="创建可读流："></a>创建可读流：</h5><ul>
+<li><p>在内存中创建缓存区，并没有读取正式的数据            </p>
+</li>
+<li><p>语法：var reader = fs.createReadSteam(“路径/存在文件”)</p>
+</li>
+</ul>
+<ul>
+<li><p>添加事件：        </p>
+<p>   data事件 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> reader.on(<span class="string">"data"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"> chunk </span>)</span>&#123;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"读取了部分数据"</span> + chuuk.length)  ---- <span class="number">65536</span></div><div class="line"> &#125;)</div><div class="line"> <span class="comment">//chunk数据块（buffer格式）</span></div></pre></td></tr></table></figure>
+<p>   End事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">reader.on(<span class="string">"end"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="string">"写入完成"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>   Pipe方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reader.pipe(write)	<span class="comment">//关联可读可写流实现流传输</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="可写流相关API"><a href="#可写流相关API" class="headerlink" title="可写流相关API"></a>可写流相关API</h4><ul>
+<li><p>创建可写流：</p>
+<ul>
+<li><p>在内存中创建缓存区，并没有写入正式的数据</p>
+</li>
+<li><p>语法：var writer = fs.createWriteStream(“路径/目标文件”)</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>添加事件：</p>
+<p>   write事件 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> writer.write(<span class="string">"写入内容"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"写入了部分数据"</span> + chunk.length) ---- <span class="number">65536</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>  End事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">writer.end(<span class="string">"最后写入内容"</span>);</div></pre></td></tr></table></figure>
+<p>  Finsh事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">write.on(<span class="string">"finish"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line"> <span class="built_in">console</span>.log(<span class="string">"写入完成"</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>  Pipe事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">write.on(<span class="string">"pipe"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">src</span>)</span>&#123; &#125;)</div><div class="line"><span class="comment">//src对应写入流源数据</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="路径模块"><a href="#路径模块" class="headerlink" title="路径模块"></a>路径模块</h1><ul>
+<li>以此路径为例说明:C://user/melody/hydra.txt</li>
+</ul>
+<p><i></i></p>
+<h3 id="路径名操作"><a href="#路径名操作" class="headerlink" title="路径名操作"></a>路径名操作</h3><h4 id="path-basename-path"><a href="#path-basename-path" class="headerlink" title="path.basename(path)"></a>path.basename(path)</h4><ul>
+<li><p>获取路径文件名</p>
+<p>  hypdra.txt</p>
+</li>
+</ul>
+<h4 id="path-dirname-path"><a href="#path-dirname-path" class="headerlink" title="path.dirname(path)"></a>path.dirname(path)</h4><ul>
+<li><p>获取路径中目录部分</p>
+<pre><code>C://user/melody
+</code></pre></li>
+</ul>
+<h4 id="path-extname-path"><a href="#path-extname-path" class="headerlink" title="path.extname(path)"></a>path.extname(path)</h4><ul>
+<li><p>获取扩展名,含点</p>
+<pre><code>.txt
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="分隔符操作"><a href="#分隔符操作" class="headerlink" title="分隔符操作"></a>分隔符操作</h3><h4 id="path-delimiter"><a href="#path-delimiter" class="headerlink" title="path.delimiter"></a>path.delimiter</h4><ul>
+<li><p>获取不同操作系统中默认的路径分隔符</p>
+<pre><code>windows是分号；linux是冒号：
+</code></pre></li>
+<li><p>通常用于分割环境变量</p>
+<pre><code>console.log(process.env.Path.split(path.delimiter));
+</code></pre></li>
+</ul>
+<h4 id="path-sep"><a href="#path-sep" class="headerlink" title="path.sep"></a>path.sep</h4><ul>
+<li><p>获取当前操作系统中默认使用的路径成员分隔符        </p>
+<pre><code>window：\      linux:/
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="路径格式操作"><a href="#路径格式操作" class="headerlink" title="路径格式操作"></a>路径格式操作</h3><h4 id="path-parse-pathString"><a href="#path-parse-pathString" class="headerlink" title="path.parse(pathString)"></a>path.parse(pathString)</h4><ul>
+<li>路径字符串转换为路径对象<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">root</span>:<span class="string">"C://"</span>,</div><div class="line">	<span class="attr">dir</span>:<span class="string">"C://user/melody/hydra.txt"</span>,</div><div class="line">	<span class="attr">base</span>:<span class="string">"hydra.txt"</span>,</div><div class="line">	<span class="attr">ext</span>:<span class="string">".txt"</span>,</div><div class="line">	<span class="attr">name</span>:<span class="string">"hydra"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="path-format-pathString"><a href="#path-format-pathString" class="headerlink" title="path.format(pathString)"></a>path.format(pathString)</h4><ul>
+<li>路径对象转换为路径字符串    </li>
+</ul>
+<hr>
+<h3 id="路径类型操作"><a href="#路径类型操作" class="headerlink" title="路径类型操作"></a>路径类型操作</h3><h4 id="path-isAbsolute-path"><a href="#path-isAbsolute-path" class="headerlink" title="path.isAbsolute( path )"></a>path.isAbsolute( path )</h4><ul>
+<li>判断路径是否为绝对路径 Bool<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">path.isAbsolute(<span class="string">"C://user/melody/hydra.txt"</span>) ---- <span class="literal">true</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="path-relative-from-to"><a href="#path-relative-from-to" class="headerlink" title="path.relative( from,to )"></a>path.relative( from,to )</h4><ul>
+<li>获取to路径相对from路径的路径<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">path.relative(<span class="string">"C://user"</span>,<span class="string">"C://user/melody/hydra.txt"</span>);</div><div class="line">	./melody/hydra.txt</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="path-join-path-path"><a href="#path-join-path-path" class="headerlink" title="path.join( path,path )"></a>path.join( path,path )</h4><ul>
+<li>修正并拼接路径,结束的/可以省略<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">path.join(__dirname, <span class="string">".."</span> , <span class="string">"./temp"</span> , <span class="string">"melody.html"</span>)	   </div><div class="line"></div><div class="line">   <span class="comment">//对应当前目录上级中的temp文件中的meldoy文件</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="path-normalize-path"><a href="#path-normalize-path" class="headerlink" title="path.normalize( path )"></a>path.normalize( path )</h4><ul>
+<li>按照当前系统规范，常规化一个路径<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">path.normalize(<span class="string">"C://user\\melody///hydra.txt"</span>)</div><div class="line">	-- <span class="string">"C://user/melody/hydra.txt"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="path-resolve-path"><a href="#path-resolve-path" class="headerlink" title="path.resolve( path )"></a>path.resolve( path )</h4><ul>
+<li>相对路径转化绝对路径<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">path.resolve(<span class="string">"./throme"</span>) --- C:<span class="comment">//user/melody/throme</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="操作系统差异"><a href="#操作系统差异" class="headerlink" title="操作系统差异"></a>操作系统差异</h3><h4 id="path-win32"><a href="#path-win32" class="headerlink" title="path.win32"></a>path.win32</h4><ul>
+<li><p>=== path</p>
+<p>  准许在任意操作系统中使用windows的方法操作路径</p>
+</li>
+</ul>
+<h4 id="path-posix"><a href="#path-posix" class="headerlink" title="path.posix"></a>path.posix</h4><ul>
+<li><p>=== path</p>
+<p>  准许在任意操作系统中使用linux的方法操作路径</p>
+</li>
+</ul>
+<h4 id="path-会自己判断使用方法"><a href="#path-会自己判断使用方法" class="headerlink" title="path    会自己判断使用方法"></a>path    会自己判断使用方法</h4><p><u></u></p>
+<h1 id="readline模块"><a href="#readline模块" class="headerlink" title="readline模块"></a>readline模块</h1><h4 id="引入模块："><a href="#引入模块：" class="headerlink" title="引入模块："></a>引入模块：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">"readline"</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="创建可读流：-1"><a href="#创建可读流：-1" class="headerlink" title="创建可读流："></a>创建可读流：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> streamReader = fs.createReadSrteam(<span class="string">"./index.html"</span>);</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="创建接口读取文件："><a href="#创建接口读取文件：" class="headerlink" title="创建接口读取文件："></a>创建接口读取文件：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> rs = readline.createInterface(&#123;</div><div class="line">	<span class="attr">input</span>:steamReader</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="绑定事件："><a href="#绑定事件：" class="headerlink" title="绑定事件："></a>绑定事件：</h4><ul>
+<li><p>单行读取成功时触发</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">line.on(<span class="string">"line"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; &#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>GBK编码问题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> streamReader = fs.createInterface(<span class="string">"./index.html"</span>)</div><div class="line">	.pipe(iconv.decodeStream(<span class="string">"gbk"</span>))</div></pre></td></tr></table></figure>
+</li>
+<li><p>实现简单命令行界面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> rs = readline.createInterface(			<span class="comment">//创建接口</span></div><div class="line">	input: process.stdin, </div><div class="line">	<span class="attr">output</span>:process.stdout</div><div class="line">)	<span class="comment">//控制台输入内容会以流的形式逐行读取，写入控制台	</span></div><div class="line"></div><div class="line">rs.question(<span class="string">"提出问题"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"> answer </span>)</span>&#123; 		<span class="comment">//通过回调获取回答</span></div><div class="line">	rs.setPrompt(<span class="string">"请开始输入&gt;"</span>);					<span class="comment">//置追加流格式</span></div><div class="line">	rs.prompt();								<span class="comment">//追加流</span></div><div class="line">	rs.on(<span class="string">"line"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">line</span>)</span>&#123;				<span class="comment">//逐行读取完成触发</span></div><div class="line">		rs.setPrompt(<span class="string">"输入内容&gt;"</span> + line)		</div><div class="line">		rs.prompt();					</div><div class="line">	&#125;)		</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="Marked-模块-Third"><a href="#Marked-模块-Third" class="headerlink" title="Marked 模块                    (Third)"></a>Marked 模块                    (Third)</h1><h4 id="模块安装：-npm-install-marked-–save"><a href="#模块安装：-npm-install-marked-–save" class="headerlink" title="模块安装：         npm install marked –save"></a>模块安装：         npm install marked –save</h4><h4 id="模块引入：-const-marked-require-“marked”"><a href="#模块引入：-const-marked-require-“marked”" class="headerlink" title="模块引入：         const marked = require(“marked”)"></a>模块引入：         const marked = require(“marked”)</h4><h4 id="转译html：-marked-“Markdown文本内容”"><a href="#转译html：-marked-“Markdown文本内容”" class="headerlink" title="转译html：         marked( “Markdown文本内容” )"></a>转译html：         marked( “Markdown文本内容” )</h4><h4 id="脚本引入："><a href="#脚本引入：" class="headerlink" title="脚本引入：        "></a>脚本引入：        <script src="lib/marked.js"></script></h4><h4 id="转译html："><a href="#转译html：" class="headerlink" title="转译html："></a>转译html：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	<span class="keyword">var</span> markText = marked(<span class="string">"Markdown文本内容"</span>)</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p><u></u><u></u></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/用于模板使用/">用于模板使用</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

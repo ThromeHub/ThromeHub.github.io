@@ -1,0 +1,1065 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>javascript dom手札 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2015-07-22">2015-07-22</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">JavaScript DOM手札</h2>
+            <div class="post-meta">
+                本文总共10727个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <pre>
+    document        文档
+
+    object          对象
+
+    model           模型
+
+    DOM给我们提供一些方式，操作页面内容
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">节点</font>
+
+</blockquote>
+<pre>
+  当页面加载中，首先根据当前页面的html结构生成结构树
+
+  js会根据结构树生成同样的节点树（每个标签会以对象形式呈现）
+
+      这个树称为节点树，作用是方便用户操作
+
+  节点树准许我们根据每个节点的上下级/同级间的关系进行访问（给我们提供访问方式）
+
+
+
+  节点的分类：
+
+      1.元素节点：标签（最常用）
+
+      2.属性节点：标签的属性
+
+      3.文本节点：标签的内容
+
+      4.根节点：document（document实际上是DOM中的顶级对象）
+
+
+  节点获取.
+
+      访问父级元素
+
+      子节点.parentNode
+
+
+      访问子节点：    返回数组
+
+      子节点.children
+
+      问题：在ie低版本中可以获取注释节点
+
+
+
+
+      追加子节点   剪切过去
+
+      内部最后：
+
+          父节点.appendChild(添加节点)
+
+      指定位置：
+
+          父元素.insertBefore(添加节点，位置节点)
+
+          父元素.insertBefore(添加节点，null)
+
+          如果位置节点为空，默认插入最后位置
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">获取操作</font>
+
+</blockquote>
+<pre>
+  id获取：     注意大小写
+
+        document.getElementById ( "id名" )
+
+        如果获取结果为null，表示获取失败
+
+        可能情况
+
+            - 大小写问题
+
+            - id 拼写及存在问题
+
+            - 执行顺序问题（script在head中）
+
+
+        执行顺序问题解决
+
+            window.onload = function(){ 
+
+                document.getElementById ( "id名" )
+
+            }
+
+            内部所有代码在页面加载后执行
+
+
+
+
+  标签名获取：      注意Element‘s’
+
+        document.getElementsByTagName ( "标签名" )
+
+        返回的是一个伪数组（不能使用数组方法）
+
+        前边的document对应window，可以换成别的标签
+
+
+        操作特定元素：
+
+            var tag = document.getElementsByTagName ( "标签名" );
+
+            tag[0].innerHTML = 内容；
+
+
+        操作每个元素：
+
+            var tag = document.getElementsByTagName ( "标签名" );
+
+            for(var i = 0; i < tag.length; ++i){
+
+                tag[i].innerHTML = i;
+
+            }
+
+
+
+
+  类名获取：     与标签名相似  
+
+        HTMLObject.getElementsByClassName("类名");
+
+
+        ie9以下不支持该方法，也没有替代，需要自己书写功能实现
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">能力检测：</div><div class="line"></div><div class="line">    <span class="keyword">if</span>( <span class="built_in">document</span>.getElementsByClassName )&#123;</div><div class="line"></div><div class="line">        <span class="built_in">document</span>.getElementsByClassName(<span class="string">"类名"</span>)</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">//自己书写根据类名获取元素的功能</span></div><div class="line">        <span class="comment">//1.获取所有标签</span></div><div class="line">        <span class="keyword">var</span> tags = getElementsByTagName(<span class="string">"*"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">var</span> arr = [ ];</div><div class="line"></div><div class="line">        <span class="comment">//2.依次检测每个标签的类名属性</span></div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; tags.length; ++i)&#123;</div><div class="line"></div><div class="line">        <span class="comment">//3.检测付过className和我需要的类名相同，获取并保存</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span>(tags[i].className.split(<span class="string">" "</span>).indexOf(<span class="string">"box"</span>) &gt;= <span class="number">0</span>)&#123;</div><div class="line"></div><div class="line">              arr[arr.length] = tags[i];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    <span class="comment">//4.返回数组</span></div><div class="line">    <span class="keyword">return</span> arr</div></pre></td></tr></table></figure>
+
+  全局获取：
+
+        document.querySelectorAll(选择器)
+
+        取得的是静态数组，不会实时更新
+
+
+  body的获取：
+
+        document.body
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">属性操作</font>
+
+</blockquote>
+<pre>
+  取值：htmlObject.属性名
+
+  赋值：htmlObject.属性名 = 属性值
+
+  自定义属性：htmlObject.定义属性 = 属性值
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">css样式操作： </font>
+
+</blockquote>
+<pre>   
+      HTMLObject.style.样式
+
+      使用js生效的样式会以行内嵌入的方式完成
+
+
+  获取：如果不是行内样式，获取不到结果
+
+        可以使用getComputStyle方法获取：
+
+            getComputedStyle（box，null）.width
+
+            参数A:要获取的元素
+
+            参数B：伪元素，如果有书写字符串的为元素，如果没有可以设置null
+
+            返回值为对象
+
+
+
+        ie低版本不支持
+
+        可以使用标签.currentStyle属性功能与上式相同
+
+            box.currentStyle.width
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">能力检测</div><div class="line">    getComputedStyle是函数形式不是属性，如果不支持会报错，所以先检测currentStyle</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(box.currentStyle)&#123;</div><div class="line"></div><div class="line">            <span class="built_in">console</span>.log(box.currentStyle.width);      </div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">            <span class="built_in">console</span>.log( getComputedStyle( box, <span class="literal">null</span> ).width )</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+
+  赋值：
+      HtmlObject.style.fontSize = "18px";
+
+          在css样式中，名称内含有-的样式，需要修改为驼峰命名法
+
+      HTMLObject.style.cssText = "width:100px; height:40px"
+
+          可直接设置css属性
+
+
+
+  简化函数
+      定义函数：
+          function setStyle(tag, data){
+
+              for(var k in data){
+
+                  tag.style[k] = data[k];
+              } 
+          }
+
+      调用：
+          setStyle(htmlObject,{
+
+              width:"100px",
+
+              height:"70px",
+          });
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">Class操作</font>
+
+</blockquote>
+<pre>
+  当JS需要样式较多时推荐使用
+
+  取值：
+
+        HtmlObject.className
+
+  添加类：
+
+        HTMLObject.className = 类名
+
+  更替类：
+
+        HtmlObject.className.replace("目标"，"替换内容")
+
+        字符串方法不改变原值,返回值为修改后的值
+
+
+
+        当元素具有类似命名时，用replace操作时会出现问题
+
+        1.取元素的类，字符串格式
+
+              var str = HtmlObject.className;
+
+        2.字符串.split（" "）  以空格分割字符串组成数组
+
+              var arr = str.split(' ');
+
+        3.检索数组中的字符串‘hide’，并修改
+
+              var index = arr.indexof("hide");
+
+              arr[index] = "show"；
+
+        4.数组.join(" ")  以空格组合数组成字符串
+
+              var str = arr.join(" ");
+
+        5.类的返还，字符串格式
+
+              HTMLObject.className = str;
+
+
+        更多练习实例参考：
+
+            tab动态窗口.html    按钮变色练习.html   
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">文本操作</font>
+
+</blockquote>
+<pre>
+  innerHTML 包含标签及文本
+
+    htmlObject.innerHtml = "标签<span>可以</span>被获取"
+
+          ----  标签 可以 被获取
+
+          设置innerHTML会覆盖原本标签内内容
+
+    解决：
+
+          btn.innerHTML += "新内容";
+
+          依然是复制，只是内容更新
+
+
+
+  innerText 包含文本 不识别标签，性能佳
+
+        htmlObject.innerText = "标签<span>可以</span>被获取"
+
+          ----  标签<span>可以</span>被获取
+
+          不能转译标签，标签会以字符串方式添加
+
+
+
+  在JS中，有一些操作在不同的浏览器中的实现方式不同，需要统一
+
+        这种操作称为浏览器的兼容性操作
+
+    innerText     不是标准属性，由ie提出，其他浏览器低版本不支持
+
+    textContent   标准属性，其他浏览器支持，ie678低版本不支持
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">兼容性解决方式：能力检测方式</div><div class="line"></div><div class="line">      如果浏览器可以识别innerText属性，会得到一个字符串</div><div class="line"></div><div class="line">      否则会检测到属性不存在，返回<span class="literal">undefined</span></div><div class="line"></div><div class="line">      <span class="keyword">if</span>( box.innerText != <span class="literal">undefined</span> )</div><div class="line"></div><div class="line">          box.innerText = <span class="string">"innerText内容"</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">  <span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">    box.textContent = <span class="string">"textContent内容"</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">表单操作</font>
+
+</blockquote>
+<pre>
+  设置文本方式不同：可以使用自带的value属性
+
+  相关事件操作：
+
+        onfocus   获取焦点事件
+
+        onblur    失去焦点事件
+
+
+  textarea可采用innerHTML及value两种方式操作，推荐后者
+
+  select-option除外，其value并不对应文本内容
+
+
+
+  常用的表单属性：  设置值为布尔值
+
+        disabled  不可用
+
+        onlyread  只读
+
+        checked   默认选择
+
+        selected下拉菜单默认选择  
+
+
+  参考实例：   表单验证-Css.html
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">事件</font>
+
+</blockquote>
+<pre>
+  事件源：  触发事件的元素
+
+  事件类型： 触发事件的方式
+
+  事件效果： 内部为事件触发后需要做的事情
+
+
+
+  方式A:
+
+    事件源.事件类型 = function（）{
+
+          事件处理程序
+        }
+
+    事件处理程序函数并不是由函数调用进行执行的，而是由用户操作触发的
+
+    当我们给指定标签设置函数值后，事件机制会实时检测这个事件
+
+
+
+  方式B：
+
+    标签内添加属性方式
+
+          li onclick = 'add( )'
+
+    在script中添加对应函数
+
+          function add(){ }
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">常用事件类型；</div><div class="line"></div><div class="line">    onclick         点击事件</div><div class="line"></div><div class="line">    ondblclick      双击事件</div><div class="line"></div><div class="line">    contextmenu     右键点击</div><div class="line"></div><div class="line">    onmouseover     鼠标移入</div><div class="line"></div><div class="line">    onmouseout      鼠标移出</div><div class="line"></div><div class="line">    onmousemove     鼠标移动</div><div class="line"></div><div class="line">    onkeyup         按键抬起</div><div class="line"></div><div class="line">    onkeydown       按键按下</div><div class="line"></div><div class="line">    onchange        内容修改后通过onbulur触发</div></pre></td></tr></table></figure>
+
+      onclick事件细化
+
+        onmousedown 鼠标按下
+
+        onmouseup 鼠标按起
+
+
+
+    阻止默认点击效果：
+
+        在点击事件末尾添加，如果阻止未生效说明前边有错
+
+        retrun false  
+
+
+    阻止文字选中的效果：
+
+        添加 onmousedown onmouseup事件
+
+        返回 retrun false   
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">事件冒泡：</div><div class="line">    当前事件源触发事件后，如果父元素有同类型事件会在之后触发</div><div class="line"></div><div class="line">    事件执行顺序：从里向外</div><div class="line"></div><div class="line">    &lt;div onclick="tode()"&gt;</div><div class="line"></div><div class="line">        &lt;p onclick="add()"&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    事件顺序：    p.click() ---- div.click()</div></pre></td></tr></table></figure>
+
+    阻止方法：
+      window.event.cancelBubble = true;
+
+          谷歌和IE8支持，火狐不支持
+
+      e.stopPropagation()
+
+          谷歌和火狐支持，IE8不支持
+    <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">兼容性处理</div><div class="line">      e = <span class="built_in">window</span>.event?<span class="built_in">window</span>.event:e;</div><div class="line"></div><div class="line">        首先处理事件对象的兼容</div><div class="line">        <span class="keyword">if</span>(e.stopPropagation)&#123;</div><div class="line"></div><div class="line">            e.stopPropagation();</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">            e.cancelBubble = <span class="literal">true</span>;</div><div class="line"></div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">事件高级处理</font>
+
+</blockquote>
+<pre>
+调用系统的方法为元素绑定事件
+
+    节点.addEventListener（"click",function(){},false）
+
+    参数  1.事件类型  String
+
+          2.事件的处理函数
+
+          3.事件冒泡顺序  true（默认）
+
+            事件捕获顺序  false
+
+    兼容： 谷歌 火狐 ie11支持 ie8不支持
+
+    this： 指向节点
+
+
+
+    节点.attachEvent（"onclick",function(){}）
+
+    参数  1.事件类型  String
+
+          2.事件的处理函数
+
+    兼容： ie8兼容，谷歌和火狐不支持
+
+    this: 指向window
+
+
+
+  调用系统的方法为元素解绑事件
+
+    节点.removeEventListener（"click",命名函数,false）
+
+    参数  1.事件类型  String
+
+          2.事件的处理函数
+
+          3.事件冒泡顺序  true（默认）
+
+            事件捕获顺序  false
+
+    兼容： 谷歌 火狐 ie11支持 ie8不支持
+
+    this： 指向节点
+
+
+
+    节点.detachEvent（"onclick",命名函数）
+
+    参数  1.事件类型  String
+
+          2.事件的处理函数
+
+    兼容： ie8兼容，谷歌和火狐不支持
+
+    this: 指向window
+
+
+
+    区别：
+          1.参数个数不同，前者三个参数，后者两个
+
+          2.前者中的this指向当前对象，后者指向window
+
+          3.前者谷歌火狐ie11都支持，后者ie8支持
+
+          4.解绑需要使用命名函数
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">事件阶段e.eventPhase</font>
+
+</blockquote>
+<pre>
+    1.事件捕获阶段  
+
+        事件捕获：事件执行顺序从外到内 
+
+    2.事件目标阶段  
+
+        当前对象触发事件  
+
+    3.事件冒泡阶段  
+
+        事件冒泡：事件执行顺序从内到外     
+
+
+
+  事件对象属性：
+
+      事件源：
+          e.target（火狐）  
+          window.event.srcElement（ie）
+
+      当前事件对象
+          e.currentTarget
+
+      事件类型
+          e.type
+
+      鼠标按键
+          e.button
+          0：左键    2：右键
+
+      获取按键
+          e.ctrlKey    
+          e.shiftKey     
+          e.altKey
+          true:用户按下ctrl键      false:用户未按下ctrl键
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">DOM添加节点</font>
+
+</blockquote>
+<pre>
+  document.write      页面添加文本及标签
+
+  - 问题：页面中的所有内容被替换为新内容
+
+        obj.onclick = funciton(){
+
+            document.write("内容");
+        }
+
+  - 原因：页面的首次加载会开启一个输出流，当页面加载完毕后，输出流随之关闭。
+
+        页面加载后使用document.write会开启一个新的输出流，导致旧的输出流被覆盖
+
+  - 问题：可以在加载过程中使用，但是不能指定位置创建内容
+
+
+
+
+  innerHTML     更改对象文本及标签内容
+
+  -适用：内部结构比较复杂时 
+
+  -问题：对原内容进行覆盖
+
+        使用+=可以保留数据，但不能保留事件
+
+  -问题：性能低
+
+        向div中添加2000个空div
+
+        打印执行时间 ----- 2+s
+
+              console.time("标识符"0
+
+                执行内容
+
+              console.timeEnd("标识符")
+
+  -解决：var str = "Object.innerHTML";
+
+        每次循环执行
+
+            str += "添加内容"
+
+        循环结束后统一赋值 
+
+            Object.innerHTML = str
+
+
+
+  节点.createElement（"标签"）  如("p"）
+
+  父节点.appendChild（节点）   
+
+        通常配合appendChild 或 insertBefore
+
+        打印执行时间 ----- 0.002s
+
+              console.time("标识符"0
+
+                执行内容
+
+              console.timeEnd("标识符")
+
+        -问题：添加结构复杂时不宜用
+
+
+
+  动态创建元素
+
+      会导致重新发生页面的渲染效果
+
+      重排：当元素大小改变或者位置改变
+
+      重绘：更改背景图景色，内容文本
+
+
+      重排必定引发重绘
+
+      我们在操作过程中需要尽量减少重排次数
+
+
+  优化方案
+
+      借助documentFragment文档片段
+
+            可以解决重排次数过多的问题
+
+      特性：添加到页面中式，自身不会被添加，却可以 添加自身的子元素
+      <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">创建方式：</div><div class="line"></div><div class="line">    var n;</div><div class="line"></div><div class="line">    var df = document.createDocumentFragment();</div><div class="line"></div><div class="line">for(var i =0; i &lt; 10; ++i)&#123;</div><div class="line">  </div><div class="line">  n = document.createElement(&quot;div&quot;);</div><div class="line"></div><div class="line">  df.appendChild(n)     </div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">document.body.appendChild(df);</div></pre></td></tr></table></figure>
+
+  需要对页面中的某元素进行大小的修改
+
+  可能这个元素的高度自适应，通过内部多次添加子元素，撑开父元素会引发重排
+
+  先对这个元素进行display：none，只会在显示和隐藏时发生两次重排
+
+
+
+DOM移除节点
+
+  父节点.removeChild（移除节点） 
+
+
+
+替换节点
+
+  父节点.replaceChild（替换标签，目标标签）
+
+
+
+克隆节点
+
+  节点.cloneNode()
+
+      可以设置参数，如果不传参默认false 
+
+          false浅复制 ---- 只复制标签本身不复制内容
+
+          true深复制  ---- 复制标签好内容
+
+
+  注意：  要进行克隆的标签不要设置id名，防止id重复
+
+      事件效果不能复制
+
+
+
+节点类型：
+
+  节点.nodeType
+
+      返回数值1.代表元素节点
+
+          2.代表属性节点
+
+          3.代表文本节点
+
+          9.document
+
+          11.documentFragment
+
+
+  节点.nodeName
+
+      返回标签名html大写形式
+
+          xhtml小写形式
+
+
+  节点.nodeValue
+
+      返回属性值
+
+
+
+
+节点属性：
+
+      标签行内自带的属性，通过标签.属性名的方式可以直接操作
+
+      标签行内自定义书写的属性，无法通过标签.属性名的方式操作
+
+
+      获取属性：
+
+          节点.getAttribute("属性名")
+
+      设置属性;
+
+          节点.setAttribute("属性名", "设定值")
+
+      移除属性：
+
+          节点.removeAttribute("属性名")
+
+      使用上述方式操作标签，可以对任意形式属性进行操作
+
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">补充问题</font>
+
+</blockquote>
+<pre>
+-> for中打印索引 i
+
+      由于打印时for已经执行完毕，所以i始终为lis.length
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">解决方式：自定义标签属性index保存每个标签的索引值 </div><div class="line">  </div><div class="line">    for(var i = 0; i &lt; lis.length; ++i)&#123;</div><div class="line"></div><div class="line">          lis[i].index = i;</div><div class="line">  </div><div class="line">          lis[i].onclick = function()&#123;</div><div class="line"></div><div class="line">                console.log(this.index)</div><div class="line"></div><div class="line">          &#125;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+-> 伪数组为动态数组，内部数据发生改变时能实时更新
+
+  目前已知伪数组：
+
+      arguments[]；
+
+      getElementsByClassName[];
+
+      getElementsByTagName[];
+
+
+  数组删除方法
+
+      数组.splice（目标，删除个数）
+
+
+  表格的tr具有属性rowIndex
+
+      表示当前的行号，从零开始，包含thead中的tr
+
+
+
+
+
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

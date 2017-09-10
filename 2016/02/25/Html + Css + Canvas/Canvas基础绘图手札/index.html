@@ -1,0 +1,872 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>canvas基础绘制手札 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2016-02-25">2016-02-25</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Canvas基础绘制手札</h2>
+            <div class="post-meta">
+                本文总共8861个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <blockquote>
+ <font size="4"><b>Canvas-Base</b></font>
+
+</blockquote>
+<pre>
+  -> Canvas 是 html5 中引入的用于展示图片的标签
+
+     canvas 可以自定义展示的内容, 与绘制展示的内容
+
+
+  -> 应用领域
+
+     canvas 就是一个用于展示图形的荧幕. 凡是可以看到的东西 canvas 都可以展示
+
+     最典型的有广告 视频 二维动画游戏, 甚至是三维的视频游戏等.
+
+     canvas 就是基于浏览器的图形引擎.前期目标：完成数据的可视化
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>基础绘制</b></font>
+
+</blockquote>
+<pre>
+-> <b>开启工具包</b>
+
+   1> 设置 canvas标签
+
+   2> 放置canvas 标签后, 如果浏览器支持就会为其开辟一个 300 * 150 像素的区域.
+
+   3> 需要更改画布大小时, 使用 canvas 标签的属性 width 和 height.
+
+           不要使用css设置宽高.单位不同并且会拉伸有效像素点
+
+   4> canvas 提供一套绘图工具. 利用绘图工具可以进行画图. 
+
+      语法:     canvas.getContext( "2d" )           //2d工具包
+
+                canvas.getContext( "webgl" )        //3d工具包
+
+
+-> <b>创建图层</b>
+
+    context.beginPath();
+
+    调用该方法即会创建新的图层, 注意以前的图层将无法访问.如果未描线会丢失内容
+
+
+-> <b>直线绘制</b>
+
+    canvas 绘图与我们用笔绘图类似但又不完全相同   
+
+        canvas 绘图采用先描点, 再连线的形式
+
+        context.moveTo( x, y )      落笔的方法
+
+        context.lineTo( x, y )      绘制到的方法( 绘制直线的 )
+
+        context.stroke()            描线的方法
+
+            注意: 我们在绘制的时候画笔画到哪里, 就会停到那里, 下次绘制的时候, 
+
+             如果没有 moveTo 就会从这里继续开始绘制. 但是如果 beginPath 就需要重新moveTo. 
+
+             同时在代码中如果没有moveTo, 首个lineTo即相当于moveTo.
+
+
+-> <b>坐标系</b>
+
+    canvas 的坐标系与css3类似
+
+    x轴水平向右为正,y轴垂直向下为正
+
+
+-> <b>路径闭合</b>
+
+    线宽较大时, 会出现闭合的问题.
+
+    通常采用 ：context.closePath()
+
+
+
+-> <b>线会变浅的原因</b>
+
+      与canvas绘图的机制有关. 默认的 canvas 绘图采用的是线宽为 1 像素, 颜色为纯黑色.
+
+  实际上canvas在绘制水平或垂直线的时候, 如果绘制的线宽是 1, 实际上绘制了 2 个像素的线宽.
+
+  是在绘制的直线上下或左右两端各延展一个像素, 然后颜色降半.
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>设置参数</b></font>
+
+</blockquote>
+<pre>
+
+    <b>设置绘制颜色</b>
+
+        语法： context.strokeStyle = CSS格式 
+
+        修改后的样式会被默认保留，修改后需要新建画布
+
+
+    <b>设置线宽</b>    context.lineWidth = Num
+
+      canvas绘制的原理上是同图层一次性描点连线
+
+      所以设置线宽后需要重新开启新图层绘制（更换颜色同样适用）
+
+           如果在绘制直线的时候, 设置线宽为2px     需要在直线两端各延展1像素, 颜色不降半.
+
+           如果在绘制直线的时候, 设置线宽为3px.     需要在直线两端各延展2像素, 相近像素颜色不降半.相隔像素颜色降半
+
+
+    <b>设置颜色</b>    context.strokeStyle = CSS格式
+
+
+    <b>设置连接方式</b>    context.lineJoin
+
+          context.lineJoin = "round"    圆形尖端
+
+          context.lineJoin = "bevel"    切除尖端
+
+          context.lineJoin = "miter"    默认连接
+
+
+     <b>设置线帽</b>    context.lineCap
+
+          context.lineCap = "round"    圆形端点
+
+          context.lineCap = "square"    端点处多出单个矩形
+
+          注意: 每次只允许在一个路径中绘制一个特征的图形
+
+              所谓的特征包含: 线宽, 颜色, 描线还是填充, 线帽, 线的拐点等特征
+
+              开启路径就好比在更换画笔, 需要新建画布 context.beginPath();
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>曲线绘制</b></font>
+
+</blockquote>
+<pre>
+<b>绘制曲线</b>
+
+    注意: 所谓的曲线实际上就是很多间距很小的直线连接起来构成曲线
+
+    实例：二次函数 y = x^2        x作用域 0-20
+</pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for ( var i = 0; i &lt;= 20; i++ ) &#123;</div><div class="line">      var x = i;</div><div class="line">      var y = x * x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+<pre>
+    1> 图片变宽： 
+
+        可将x的计算值缩小, 并将x的取值要扩大相应倍数
+
+
+    2> 图片水平位移：        x 的取值范围需要变化.
+
+            右移：x 减去位移值
+            左移：x 加上位移值
+
+    3> 图片竖直位移    
+
+            下移：y 加上位移值
+            上移：y 减去位移值
+
+    4> 图像竖直拉伸：
+
+            y值与拉伸比例的乘积
+          练习: 绘制三角函数的图像
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>填充绘制</b></font>
+
+</blockquote>
+<pre>
+
+<b>封闭填充</b>
+
+      在绘制的时候, 我们可以连线一个封闭的区域. 使用 fill 方法将这个封闭的区域填充
+
+      填充颜色：     canvas.fillStyle = CSS格式 
+
+      注意事项：     如果绘制的不是闭合曲线, 那么fill会自动连接始末点并填充.
+
+
+
+如果在填充的时候, 我们的绘制路径有交叉怎么办?
+
+  <b>非零环绕原则:</b>
+
+            canvas在绘制填充的时候只会填充闭合的区域. 如果没有闭合会
+
+      默认将开始与结束的点相连构成闭合. 一旦闭合可能会将闭合区域分割中很多部分.
+
+      此时判断这个部分要不要填充就可以使用 ---- 非零环绕原则:
+
+        1> 在这个区域内任意的选一点( 越简单, 越孤立越好 )
+
+        2> 以选择的这个点为圆心, 绘制一条完全穿过图形的射线( 越简单越好 )
+
+        3> 以这个点为圆心, 看穿过射线的线的方向( 以圆周方向 )
+
+        4> 将顺时针记为 +1, 将逆时针记为 -1, 最后看所有穿过的线的对应数字求和. 
+
+        5> 如果求和的结果为 0 即不填充, 如果求和的结果 非零 0, 则填充.
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>虚线绘制</b></font>
+
+</blockquote>
+<pre>
+<b>绘制虚线</b>
+
+          设置虚线的时候就是在设置实线部分与空白部分的大小
+
+      利用数组来描述其中的关系，技巧就在于如何利用该数组.
+
+        语法：context.setLineDash( 数组 )
+
+        虚线改回实线：用空数组即可
+
+
+  例如: 
+
+    数组 [ 10, 10 ]  表示实线部分 10 像素 - 空白部分 10 像素
+
+    数组 [ 10, 5 ]  表示实线部分 10 像素 - 空白部分 5 像素.
+
+            如果给定的数组是奇数项, 那么实线空白部分轮询
+
+
+    数组 [ 10, 5, 3 ] 则表示先实线部分 10 像素 - 空白部分 5 像素 - 
+
+            实线部分 3 像素 - 空白部分 10 像素,
+
+            再实线部分 5 像素, 空白部分 3 像素, 
+
+            相当于 [ 10, 5, 3, 10, 5, 3 ]
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>练习</b></font>
+
+</blockquote>
+<pre>
+  <b>1> 在坐标系中绘制 ( 10, 10 ) 这个点.</b>
+
+            考虑到在坐标系中只有一个点. 那么这个点无论坐标是什么. 都应该绘制在正中心.
+
+        如果绘制的时候是 10 个点, 就应该考虑将 这个 10 个点按照规律平均的分配在坐标系中.
+
+        那么这 10 个点中, x 的最大值应该符合 坐标系中 x 对应的最大值. 十个点中, y 的最大值
+
+        应该符合坐标系 y 轴的最大取值.
+
+
+  <b>2> 绘制多点图</b>
+
+    思路:
+
+     1) 随机数生成坐标
+
+     2) 求对应的 x,y 的最大值
+
+     3) 计算比例
+
+     4) 绘制点
+
+     5) 连线
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>文本绘制</b></font>
+
+</blockquote>
+<pre>
+
+    <b>文字填充：</b>    context.fillText( 文本内容, x坐标, y坐标 )
+
+    <b>文字描边：</b>    context.strokeText( 文本内容, x坐标, y坐标 )
+
+        测量长度：    context.measureText( 文本 )
+
+        字体样式：    context.font = CSS格式
+
+
+    <b>水平对齐方式：</b>     context.textalign
+
+            left        定位点在文字左边
+
+            center      定位点在文字中间
+
+            right       定位点在文字右边
+
+
+    <b>垂直对齐方式:</b>     context.textbaseline
+
+            top         定位点在上面
+
+            middle      定位点在中间
+
+            bottom      定位点在下面
+
+
+    <b>练习：</b>给定一个定位点, 在定位点的右方或左方绘制直线, 然后在直线上方绘制文字
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>绘制矩形</b></font>
+
+</blockquote>
+<pre>
+    <b>绘制矩形：</b>        context.strokeRect("x坐标","y坐标","长度","宽度")
+
+    <b>填充矩形：</b>        context.fillRect("x坐标","y坐标","长度","宽度")
+
+    <b>清除矩形区域：</b>    context.clearRect("x坐标","y坐标","清除长度","清除宽度")
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>绘制圆弧</b></font>
+
+</blockquote>
+<pre>
+
+    <b>语法：</b>    context.arc("x坐标","y坐标","半径"，"起始弧度"，"截止弧度")；
+
+              cibtext.arc("300","200","100",0，Math.PI)    ---- 半弧
+
+
+    <b>注意点：</b> 圆弧绘制的起始弧度为水平向右方向
+
+            圆弧绘制时，会默认连线圆弧起始点与之前绘图的终点
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>图片绘制</b></font>
+
+</blockquote>
+<pre>
+        context.drawImage( 图片对象, x, y )
+
+        context.drawImage( 图片对象, x, y, width, height )
+
+        context.drawImage( 图片对象,sx,sy,swidth,sheight,dx,dy,dwidth,dheight )
+
+            参数：图片对象可以通过实例化方式得到，html赋予图片的特权方式，非通用
+
+
+        var img = new Image；
+
+        img.src = "图片路径"
+
+        context.drawImage(img,x,y);
+
+            参数x y：绘制图片的横纵坐标
+
+            参数width height：绘制图片的长宽，设置单个值时另一个参数不会等比缩放
+
+            参数s-：图片源的坐标及长宽
+
+            参数d-：绘制图片的坐标及长宽
+
+
+
+      注意：    1> 图片对象可以是img标签  canvas   video 等.
+
+                2> 图片除支持本地资源外, 还支持网络资源
+
+                3> 长宽比不保留，设置单个值时另一个参数不会等比缩放
+
+                4> 使用绘图api的第三种形式, 可以利用精灵图绘制动画
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>坐标变换</b></font>
+
+</blockquote>
+<pre>
+
+    <b>通过移动 旋转 拉伸坐标系</b>  利用新的坐标系来绘制一些复杂的图形.
+
+            坐标系平移：    context.translate( x, y )          
+
+            坐标系旋转：    context.rotate( Radian )           
+
+            坐标系拉伸：    context.scale( x, y )  默认为1         
+
+
+    <b>单位变换</b>        用于初始化坐标系
+
+          context.translate(1,0,0,1,0,0)
+
+              变换可以叠加, 经历多次变换需要后初始化坐标系时使用
+
+
+    <b>绘制设置存档</b>
+
+         每次绘制图形时, 会绘制设置一些绘制样式( 线宽, 颜色, 虚线, 线帽 .. )
+
+         保存绘制样式：    context.save() 
+
+         恢复绘制样式：    context.restore()
+
+             如此中间修改过的状态就不再影响其后的绘制了.此功能常常使用在绘制封装中.
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>封装绘制图形</b></font>
+
+</blockquote>
+<pre>
+      <b>考虑函数的名字:</b>
+
+            矩形:   drawRect
+
+            正方形: drawSquare
+
+            圆形:   drawCircle
+
+            星形:   drawStar
+
+
+      <b>考虑函数的参数</b>
+
+            提供参数, 中心坐标, cx, cy
+
+            提供线宽, 线帽, 线连接
+
+            平移, 旋转, 缩放
+
+            描线, 填充
+
+            所以函数的参数以对象的形式存在,还提供一个参数, 是否使用角度制
+
+
+
+<b>实现一个正方形</b>                                    options为参数对象
+
+    function drawSquare( ctx, options ) {       考虑到完整性与语义化不建议直接使用ctx. 
+
+        var cx = options.cx,                    绘制原点横坐标
+
+        var cy = options.cy,                    绘制原点纵坐标
+
+        var width = options.width,              设置矩形宽度
+
+
+        var lineWidth = options.lineWidth || 1,               设置线宽
+
+        var lineDash = options.lineDash || [],                设置虚线
+
+        var lineJoin = options.lineJoin || "miter",           设置链接方式
+
+        var lineCap = options.lineCap || "butt",              设置线帽
+
+        var translate = options.translate || [ 0, 0 ],        设置坐标系平移
+
+        var rotate = options.rotate || 0,                     设置坐标系旋转
+
+        var scale = options.scale || [ 1, 1 ],                设置坐标系拉伸
+
+        var isAngle = options.isAngle || false,               设置旋转参数是否为角度形式
+
+        var fill = options.fill || false,                     设置绘图方式是否为填充
+
+        var stroke = options.stroke || false;                 设置绘图方式是否为描线
+
+
+
+      // 开始绘制
+
+          ctx.save();              保存绘图设置
+
+          ctx.beginPath();         新建画布
+
+
+
+     // 初始化设置
+
+          ctx.lineWidth = lineWidth;
+
+          ctx.setLineDash( lineDash );
+
+          ctx.lineJoin = lineJoin;
+
+          ctx.lineCap = lineCap;
+
+          ctx.translate( translate[ 0 ], translate[ 1 ] );
+
+          ctx.rotate( isAngle ? aToR( rotate ) : rotate );
+
+          ctx.scale( scale[ 0 ], scale[ 1 ] );
+
+          fill && ( ctx.fillStyle = fill );
+
+          stroke && ( ctx.strokeStyle = stroke );
+
+
+
+      // 开始描点
+
+          ctx.rect( cx-width / 2, cy-width / 2, width, width );绘制矩形
+
+          fill?ctx.fill():ctx.stroke();                        填充或描线
+
+          ctx.restore();                                       恢复绘制设置
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4"><b>画布保存</b></font>
+
+</blockquote>
+<pre>
+       将图片转换成 base64 格式的字符串，为了方便在网络上传输
+
+       html5为a标签设置了下载功能
+
+           var cas = document.queryselector("canvas");
+
+           cas.width = 600;
+
+           cas.height = 400;
+
+           var ctx = cas.getContent("2d");
+
+
+
+           var img = new Image;
+
+           img.src = "图片路径";
+
+           img.onload = function(){
+
+                  ctx.drawImage(this,0,0,400,400);
+
+           }
+
+           document.queryselector("a").onclick = function(){
+
+                  this.href = cas.toDataURL("image/png",1)        
+
+                          //保存格式必须为png  压缩比                  
+
+                  this.download = "保存文件名"            
+
+           }
+
+
+
+
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

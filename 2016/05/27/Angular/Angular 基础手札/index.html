@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>angular 基础手札 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2016-05-27">2016-05-27</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Angular 基础手札</h2>
+            <div class="post-meta">
+                本文总共7064个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <style>
+  u{
+    display: block;
+    height:100px;
+  }
+  i{
+      display: block;
+    height:30px;
+  }
+</style>
+
+<h1 id="Angularjs铺垫"><a href="#Angularjs铺垫" class="headerlink" title="Angularjs铺垫"></a>Angularjs铺垫</h1><ul>
+<li><p>由谷歌团队负责开发维护的前端高级JS框架</p>
+</li>
+<li><p>帮助我们快速构建当页面应用</p>
+</li>
+<li><p>Angular自身有很多颠覆性的特性 改变了前端的编码方式 简化了我们的操作</p>
+</li>
+</ul>
+<hr>
+<h3 id="框架与库的区别"><a href="#框架与库的区别" class="headerlink" title="框架与库的区别"></a>框架与库的区别</h3><ul>
+<li><p>范围不同:库针对特定方面,框架涵盖的范围更广</p>
+</li>
+<li><p>库只是调用封装好的方法,框架会提供代码书写规则</p>
+</li>
+</ul>
+<hr>
+<h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><ul>
+<li><p>其核心是通过指令扩展了HTML，通过表达式绑定数据到HTML。</p>
+</li>
+<li><p>Angular最大程度减少了页面上的DOM操作，让JS能专注于业务逻辑代码</p>
+<p>通过简单指令结合页面结构与逻辑数据，实现组件化，降低维护成本</p>
+</li>
+</ul>
+<hr>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p>官网： <a href="http://angularjs.org" target="_blank" rel="external">http://angularjs.org</a></p>
+</li>
+<li><p>CDN资源：  <a href="https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js" target="_blank" rel="external">https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><span class="string">`</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>版本版本说明</p>
+<ul>
+<li><p>Angularjs有两个重要的版本分支 1.2 - 1.6</p>
+</li>
+<li><p>Angular 和 Angularjs是两个完全不同的框架</p>
+<p>当下企业里面用的比较多的仍然是Angularjs框架</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  <u></u></p>
+<h1 id="Angular快速入门"><a href="#Angular快速入门" class="headerlink" title="Angular快速入门"></a>Angular快速入门</h1><ul>
+<li>指令：Angular模块挂载范围内的标签中，以ng-开头的属性称为指令 </li>
+</ul>
+<ul>
+<li><p>官方网站  <a href="http://angularjs.org" target="_blank" rel="external">http://angularjs.org</a></p>
+</li>
+<li><p>官方文档  <a href="https://code.angularjs.org/1.6.4/docs/api" target="_blank" rel="external">https://code.angularjs.org/1.6.4/docs/api</a></p>
+</li>
+<li><p>学习网站</p>
+<ul>
+<li><p><a href="http://www.angularjs.net.cn" target="_blank" rel="external">http://www.angularjs.net.cn</a></p>
+</li>
+<li><p><a href="http://www.apjs.net" target="_blank" rel="external">http://www.apjs.net</a></p>
+</li>
+<li><p><a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank" rel="external">http://www.runoob.com/angularjs/angularjs-tutorial.html</a></p>
+</li>
+<li><p><a href="https://stackoverflow.com/" target="_blank" rel="external">https://stackoverflow.com/</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><ul>
+<li><p>ng-app      模块挂载</p>
+<ul>
+<li><p>告诉Angularjsjs当前页面中需要控制的范围</p>
+</li>
+<li><p>告诉angularjs当前页面由哪个模块来管理</p>
+</li>
+<li><p>页面加载完成后Angularjs会自动在页面中查找该指令，如未查询到Angularjs将不会启动</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>ng-model        双向数据绑定</p>
+<ul>
+<li>ng-model = “tode”   可绑定变量</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>ng-init       初始化变量</p>
+<ul>
+<li>ng-init = “tode=’melody’” 很少使用</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>ng-click        绑定点击事件</li>
+</ul>
+<hr>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li><p>局部作用域</p>
+<ul>
+<li><p>angularjs中控制器控制的区域就是一块局部作用域</p>
+</li>
+<li><p>本质上$scope代表着局部作用域</p>
+</li>
+<li><p>相邻控制器之间是独立的 互不影响的</p>
+<ul>
+<li>作用域嵌套的请求下 数据是逐层向外部查找的 直到全局作用域</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>全局作用域</p>
+<ul>
+<li><p>angularjs中$rootScope代表的就是全局作用域</p>
+</li>
+<li><p>挂载到全局作用域中的数据 每个控制器中都可以拿到</p>
+</li>
+<li><p>可以注入到run方法中使用 用作项目初始化</p>
+<ul>
+<li>run方法优先于控制器方法执行且仅执行一次</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>实例说明：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">"main"</span>,[])</div><div class="line">     .run([<span class="string">"$rootScope"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$rootScope</span>)</span>&#123;		</div><div class="line">		$rootScope.name = <span class="string">"Rose"</span></div><div class="line">	&#125;])	<span class="comment">//初始化全局变量</span></div><div class="line">     .controller(<span class="string">"one"</span>,[<span class="string">"$scope"</span>,<span class="string">"$rootScope"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,$rootScope</span>)</span>&#123;</div><div class="line">	    	alert($rootScope.name)		----	<span class="string">"Rose"</span></div><div class="line">	&#125;])	<span class="comment">//子作用域调用全局变量</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="差值表达式"><a href="#差值表达式" class="headerlink" title="差值表达式"></a>差值表达式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+ 可嵌入ng中的变量       &#123;&#123; tode &#125;&#125;</div><div class="line"></div><div class="line">+ 可嵌入字符串          &#123;&#123; "melody" &#125;&#125;</div><div class="line"></div><div class="line">+ 在表达式中可以进行基础计算 支持三目运算符 &#123;&#123; tode == "melody" ? 1 : 0 &#125;&#125;</div><div class="line"></div><div class="line">+ 可执行angularjs函数        &#123;&#123; callname() &#125;&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="数据的双向绑定"><a href="#数据的双向绑定" class="headerlink" title="数据的双向绑定"></a>数据的双向绑定</h3><ul>
+<li><p>数据双向绑定</p>
+<ul>
+<li><p>数据：angularjs中的变量</p>
+</li>
+<li><p>双向: html js</p>
+</li>
+<li><p>html=&gt;js  js=&gt;html</p>
+</li>
+</ul>
+</li>
+<li><p>实现双向数据绑定的条件</p>
+<ul>
+<li><p>1.html部分需要表单元素</p>
+</li>
+<li><p>2.为表单元素添加ng-model指令</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="MVC模型"><a href="#MVC模型" class="headerlink" title="MVC模型"></a>MVC模型</h3><ul>
+<li><p>module模型：与数据库交互通信</p>
+</li>
+<li><p>views视图：以友好的方式展示数据</p>
+</li>
+<li><p>controller控制器：组织调度相应的数据模型</p>
+</li>
+<li><p>以登录为例</p>
+<ul>
+<li><p>模型：接收控制器传来的用户信息并进行校验的业务逻辑</p>
+<ul>
+<li>返回true/false</li>
+</ul>
+</li>
+<li><p>控制器：接收用户在界面填写的信息</p>
+<ul>
+<li>将用户信息发送给模型</li>
+</ul>
+</li>
+<li><p>视图：给用户提供表单，接收用户输入信息</p>
+<ul>
+<li>将信息提交给控制器，根据控制器返回的 信息响应用户页面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="模块化开发Module"><a href="#模块化开发Module" class="headerlink" title="模块化开发Module"></a>模块化开发Module</h1><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
+<li><p>1 方便管理 复用,后期维护方便</p>
+</li>
+<li><p>2 解决代码冲突,方便多人协作开发</p>
+</li>
+</ul>
+<hr>
+<h3 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">   angular.module(<span class="string">"main"</span>,[])</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>调用angular全局变量的方法module创建并返回模块对象</p>
+<ul>
+<li><p>参数A: 模块名，挂载时需要关联模块名</p>
+</li>
+<li><p>参数B：依赖模块，无此参数时意为获取模块</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="挂载模块-规定作用范围"><a href="#挂载模块-规定作用范围" class="headerlink" title="挂载模块      规定作用范围"></a>挂载模块      规定作用范围</h3><ul>
+<li><p>指令挂载：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>手动挂载：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    angular.module(<span class="string">"main"</span>,[])</div><div class="line">    angular.bootstrap(<span class="built_in">document</span>,[<span class="string">"main"</span>])</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="模块引入"><a href="#模块引入" class="headerlink" title="模块引入"></a>模块引入</h3><ul>
+<li><p>引入文件：input.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">"input"</span>,[])</div><div class="line">  .controller(<span class="string">"second"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">    $scope.sec = <span class="string">"我是引入模块的数据"</span></div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>本地文件：index.html</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"input.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script&gt;</div><div class="line">  angular.module(<span class="string">"main"</span>,[<span class="string">"input"</span>])</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>本地文件挂载引入模块控制器：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"second"</span>&gt;</span> &#123;&#123; sec &#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   <span class="comment">&lt;!--挂载引入控制器并调用内部数据--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="控制器Controller"><a href="#控制器Controller" class="headerlink" title="控制器Controller"></a>控制器Controller</h1><h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><ul>
+<li><p>1 为应用中的模型设置初始状态</p>
+</li>
+<li><p>2 通过$scope对象将数据模型或函数行为与视图关联</p>
+</li>
+<li><p>3 监视模型变化，实时更新视图数据</p>
+</li>
+</ul>
+<hr>
+<h3 id="创建控制器"><a href="#创建控制器" class="headerlink" title="创建控制器"></a>创建控制器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  angular.module(<span class="string">"main"</span>,[])</div><div class="line">    .controller(<span class="string">"控制器名"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;  回调函数中添加参数$scope</div><div class="line">      $scope.tode = <span class="string">"meldoy"</span>;     设置变量</div><div class="line">      <span class="built_in">console</span>.log($scope.tode)    获取并打印变量</div><div class="line">    &#125;)  </div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="安全方式创建控制器"><a href="#安全方式创建控制器" class="headerlink" title="安全方式创建控制器"></a>安全方式创建控制器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">"main"</span>,[])</div><div class="line">         .controller(<span class="string">"one"</span>,[<span class="string">"$scope"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;&#125;])      </div><div class="line">         angularjs是根据形参的名字去传递实参的，故控制器中的$scope无法任意更名</div><div class="line"> 采用安全方式的优势：</div><div class="line">         避免Js代码压缩过程中的形参压缩（字符串在压缩过程中是不被压缩的）</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="挂载控制器"><a href="#挂载控制器" class="headerlink" title="挂载控制器"></a>挂载控制器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controoler</span>=<span class="string">"控制器名"</span>&gt;</span> &#123;&#123; tode &#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!--挂载标签内部可以调用内部数据--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="scope作用域对象-用于关联数据模型-函数行为与视图"><a href="#scope作用域对象-用于关联数据模型-函数行为与视图" class="headerlink" title="$scope作用域对象         用于关联数据模型/函数行为与视图"></a>$scope作用域对象         用于关联数据模型/函数行为与视图</h3><ul>
+<li><p>设置变量： $scope.变量名 = 变量值</p>
+</li>
+<li><p>获取变量： $scope.变量名</p>
+</li>
+<li><p>监听方法： $scope.$watch</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$scope.$watch(<span class="string">"控制器内变量名"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"> now, old </span>)</span>&#123;&#125;)</div><div class="line"><span class="comment">//参数now：变量改变后的值</span></div><div class="line"><span class="comment">//参数old：变量改变前的值</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>更新视图： $scope.$apply</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">"main"</span>,[])     <span class="comment">//使用内置定时器能够实现数据监听及视图更新</span></div><div class="line">  .controller(<span class="string">"one"</span>,[<span class="string">"$scope"</span>,<span class="string">"$timeout"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,$timeout</span>)</span>&#123;</div><div class="line">    $scope.val = <span class="string">"初始值"</span>;</div><div class="line">    $timeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      $scope.val = <span class="string">"melody"</span></div><div class="line">    &#125;,<span class="number">2000</span>)</div></pre></td></tr></table></figure>
+<p>　　</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">"main"</span>,[])     <span class="comment">//使用Js定时器无法实现数据监听及视图更新</span></div><div class="line">  .controller(<span class="string">"one"</span>,[<span class="string">"$scope"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,$timeout</span>)</span>&#123;</div><div class="line">    $scope.val = <span class="string">"初始值"</span>;</div><div class="line">    settimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      $scope.val = <span class="string">"melody"</span>;</div><div class="line">      $scope.$apply();    <span class="comment">//提示angular更新数据及视图</span></div><div class="line">    &#125;,<span class="number">2000</span>)</div></pre></td></tr></table></figure>
+<p><u></u> </p>
+<h3 id="模块-控制器与视图之间的关系示意"><a href="#模块-控制器与视图之间的关系示意" class="headerlink" title="模块 控制器与视图之间的关系示意"></a>模块 控制器与视图之间的关系示意</h3><pre>
+        view视图                                module模块
+
+    body ng-app="main"          <---->     angular.module("main",[])
+     |        挂载                              |     （上下级作用域）
+
+  div ng-controller="控制器名"   <---->   .controller("控制器名",fucntion($scope){})
+                              数据双向绑定
+</----></----></pre> 
+
+
+
+<p><u></u></p>
+<h1 id="单页Web应用介绍"><a href="#单页Web应用介绍" class="headerlink" title="单页Web应用介绍"></a>单页Web应用介绍</h1><ul>
+<li><p>single page web application —-  spa</p>
+</li>
+<li><p>回顾传统网站(<a href="http://www.kuoda.com.cn/indexs.html" target="_blank" rel="external">http://www.kuoda.com.cn/indexs.html</a>)</p>
+</li>
+<li><p>单页应用网站(<a href="http://m.daqizhong.com/index.html#/" target="_blank" rel="external">http://m.daqizhong.com/index.html#/</a>)</p>
+</li>
+<li><p>单页Web应用：</p>
+<ul>
+<li>即只有一张Web页面的应用，用户与页面交互时,用Javascript动态更新页面</li>
+</ul>
+</li>
+<li><p>单页面应用程序的特点</p>
+<ul>
+<li><p>整个网站由一个页面构成</p>
+</li>
+<li><p>公共部分只加载一次</p>
+</li>
+<li><p>利用Ajax局部刷新达到页面切换的目的*</p>
+</li>
+<li><p>不会发生页面跳转白屏的现象</p>
+</li>
+<li><p>锚点与页面对应</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>单页web应用的应用场景</p>
+<ul>
+<li><p>单页面应用对搜索引擎不友好 不适合做面向大众的展示型网站</p>
+</li>
+<li><p>网站后台管理系统办公OA 混合App 等等不需要被搜索引擎搜索到的应用</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>原生JS实现单页面<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     域名中锚点改变时触发事件</div><div class="line">  <span class="keyword">if</span>(location.hash == <span class="string">"#index"</span>)&#123;      </div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.open(<span class="string">"get"</span>,<span class="string">"index.html"</span>);</div><div class="line">    xhr.send();</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>).innerHTML = xhr.response</div><div class="line">      &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="Angularjs路由"><a href="#Angularjs路由" class="headerlink" title="Angularjs路由"></a>Angularjs路由</h1><ul>
+<li><p>官方说明文档    <a href="https://docs.angularjs.org/api/ngRoute" target="_blank" rel="external">https://docs.angularjs.org/api/ngRoute</a></p>
+</li>
+<li><p>CDN的方式引入    <a href="https://cdn.bootcss.com/angular.js/1.6.4/angular-route.min.js" target="_blank" rel="external">https://cdn.bootcss.com/angular.js/1.6.4/angular-route.min.js</a></p>
+</li>
+</ul>
+<hr>
+<h3 id="路由模块引入"><a href="#路由模块引入" class="headerlink" title="路由模块引入"></a>路由模块引入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"angular-route.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span>    引入模块</div><div class="line">&lt;script&gt;</div><div class="line">  angular.module(<span class="string">"main"</span>,[<span class="string">"ngRoute"</span>])    添加依赖</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">"main"</span>,[<span class="string">"ngRoute"</span>])</div><div class="line">  .config(<span class="function"><span class="keyword">function</span>(<span class="params"> $routeProvider </span>)</span>&#123;     </div><div class="line">    <span class="comment">//调用config方法配置参数 回调函数中传入需要配置的参数</span></div><div class="line">    $routeProvider.when(<span class="string">"/锚点"</span>,&#123; <span class="comment">//配置参数 &#125;)，</span></div><div class="line">    $routeProvider.when(<span class="string">"/index"</span>,&#123;      </div><div class="line">      <span class="attr">template</span>:<span class="string">"&lt;div&gt; &#123;&#123;msg&#125;&#125; 领空&lt;/div&gt;"</span>，  <span class="comment">//调用挂载控制器内数据  </span></div><div class="line">      controller:<span class="string">"con"</span>      <span class="comment">//挂载控制器</span></div><div class="line">    &#125;)   </div><div class="line">  &#125;)</div><div class="line">  .controller(<span class="string">"con"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">    $scope.msg = index</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="视图设置"><a href="#视图设置" class="headerlink" title="视图设置"></a>视图设置</h3> <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"main"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#!/锚点"</span>&gt;</span> 说明 <span class="tag">&lt;/<span class="name">a</span>&gt;</span>     <span class="comment">&lt;!-- #!/为angular锚点的固定格式 ！用于引擎搜索 --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#!/index"</span>&gt;</span> 主页 <span class="tag">&lt;/<span class="name">a</span>&gt;</span>       </div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>             <span class="comment">&lt;!--用于展示路由视图</span></div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h3><ul>
+<li><p>template:”<div>index领空</div>“,        字符串视图模板</p>
+</li>
+<li><p>templateUrl：”data.html”,          读取文件内容作为模板使用</p>
+</li>
+<li><p>controller:”控制器名”           挂载控制器</p>
+</li>
+</ul>
+<hr>
+<h3 id="路由传递参数"><a href="#路由传递参数" class="headerlink" title="路由传递参数"></a>路由传递参数</h3><ul>
+<li><p>在实际的项目中,访问文章详情页面的时候,一般地址栏上都会显示当前文章的ID</p>
+</li>
+<li><p>让控制器知道我们当前访问的是哪篇文章,得到文章ID,去请求具体的文章数据</p>
+</li>
+<li><p>代码示例</p>
+<pre><code class="js">angular.module(<span class="string">"main"</span>,[<span class="string">"ngRoute"</span>])
+  .config(<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>{
+    $routeProvider.when(<span class="string">"/锚点/:id"</span>,{
+      <span class="attr">template</span>:<span class="string">"&lt;div&gt; "</span>用户的ID为：<span class="string">" + id &lt;/div&gt;"</span>,
+      <span class="attr">controller</span>:<span class="string">"con"</span>
+    })
+  })
+  .controller(<span class="string">"con"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,$routeParams</span>)</span>{  
+    $scope.id = $routeParams.id；      <span class="comment">//$scope.id为锚点末尾的参数</span>
+  })
+</code></pre>
+<p><u></u></p>
+</li>
+</ul>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/基础构架与MVC思想/">基础构架与MVC思想</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>node - 网络模块 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2016-11-06">2016-11-06</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Node - 网络模块</h2>
+            <div class="post-meta">
+                本文总共7019个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <style>
+    u{
+        display: block;
+        height:100px;
+      }
+    i{
+        display: block;
+        height:10px;
+      }
+</style>
+
+
+<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><h4 id="Http作用-传输统一规范"><a href="#Http作用-传输统一规范" class="headerlink" title="Http作用:传输统一规范"></a>Http作用:传输统一规范</h4><ul>
+<li><p>服务端与客户端间的数据格式需要统一的规定，用于解析数据使用</p>
+<p>   采取问答模式约定数据应该以怎样的格式交互</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="Http特点：简单灵活-快速-无连接-无状态"><a href="#Http特点：简单灵活-快速-无连接-无状态" class="headerlink" title="Http特点：简单灵活 快速 无连接 无状态"></a>Http特点：简单灵活 快速 无连接 无状态</h4><ul>
+<li><p>无连接：</p>
+<ul>
+<li><p>http1.0时服务器不给客户端保持连接</p>
+</li>
+<li><p>一次请求即是一次连接，完毕后立即关闭</p>
+</li>
+<li><p>http1.1时服务器会给客户端保持连接</p>
+</li>
+</ul>
+</li>
+<li><p>无状态：</p>
+<ul>
+<li>服务器无法获取访问者确切详细信息</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>版本区分</p>
+<ul>
+<li><p>http1.0：无连接: 服务端响应后断开连接</p>
+<p>   对应请求头字段: connect：close</p>
+</li>
+<li><p>http:1.1:长链接：客户端关闭页面断开连接</p>
+<p>  对应请求头字段：connect:keep-alive</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>三次握手：</p>
+<ul>
+<li><p>客户端：请求码SYN请求建立连接</p>
+<pre><code>确定码ACK：服务端
+
+客户端：确认码ACK
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code>- 四次挥手：
+
+    客户端：完成码FIN
+
+        确定码ACK：服务端
+
+        完成码FIN：服务端
+
+    客户端：确认ACK码
+</code></pre><p><u></u></p>
+<h1 id="Net模块"><a href="#Net模块" class="headerlink" title="Net模块"></a>Net模块</h1><h4 id="载入模块：const-net-require-“net”"><a href="#载入模块：const-net-require-“net”" class="headerlink" title="载入模块：const net = require(“net”);"></a>载入模块：const net = require(“net”);</h4><h3 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h3><blockquote>
+<p>   Socket的设计理念是是将网络传输类比成文件的读取与写入<br>    传送的动作被视为是写入/接收的动作被视为是读取<br>    如此传送与接收就简化为编程人员比较容易懂的读取与写入，降低了网络编程的学习困难度。</p>
+</blockquote>
+<h4 id="socket方法："><a href="#socket方法：" class="headerlink" title="socket方法："></a>socket方法：</h4><ul>
+<li><p>socket.address():    获取与当前服务器连接的IP地址</p>
+</li>
+<li><p>socket.remoteAddress     获取远程IP</p>
+</li>
+<li><p>socket.remotePort    获取远程端口</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="data事件-socket获取数据时触发"><a href="#data事件-socket获取数据时触发" class="headerlink" title="data事件:        socket获取数据时触发"></a>data事件:        socket获取数据时触发</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">socket.on(<span class="string">"data"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(chunk.toString())</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><i></i>        </p>
+<h4 id="write事件-socket写入数据"><a href="#write事件-socket写入数据" class="headerlink" title="write事件        socket写入数据"></a>write事件        socket写入数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socket.write(<span class="string">"内容"</span>)</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="error事件"><a href="#error事件" class="headerlink" title="error事件"></a>error事件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">socket(<span class="string">"error"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(err);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="socket服务器"><a href="#socket服务器" class="headerlink" title="socket服务器"></a>socket服务器</h3><h4 id="创建socket服务端：-当有客户端与我链接的时候触发链接函数"><a href="#创建socket服务端：-当有客户端与我链接的时候触发链接函数" class="headerlink" title="创建socket服务端：        当有客户端与我链接的时候触发链接函数"></a>创建socket服务端：        当有客户端与我链接的时候触发链接函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> server= net.createServer( <span class="function"><span class="keyword">function</span>(<span class="params"> scoket </span>)</span>&#123;</div><div class="line">	conosole.log(<span class="string">"Connectiong..."</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><i></i>        </p>
+<h4 id="手动绑定链接事件："><a href="#手动绑定链接事件：" class="headerlink" title="手动绑定链接事件："></a>手动绑定链接事件：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server.on(<span class="string">"connection"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">socket</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(socket.address())	</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="监听端口"><a href="#监听端口" class="headerlink" title="监听端口"></a>监听端口</h4><ul>
+<li>成功监听端口后执行函数，端口被占用则报错<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">server.listen(<span class="number">2000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"> err </span>)</span>&#123;  </div><div class="line">	<span class="keyword">if</span>(err)</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"端口被占用"</span>)</div><div class="line">		<span class="keyword">throw</span> err</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"服务器正常启动监听"</span>)		</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="socket客户端"><a href="#socket客户端" class="headerlink" title="socket客户端"></a>socket客户端</h3><h4 id="创建socket客户端："><a href="#创建socket客户端：" class="headerlink" title="创建socket客户端："></a>创建socket客户端：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> socket = net.connect(&#123; <span class="attr">port</span>:<span class="number">2000</span>,<span class="attr">host</span>:<span class="string">"192.168.138.78"</span> &#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</div><div class="line">	<span class="comment">//connect方法首个参数传入访问信息，包含IP及端口号，返回socket实例对象</span></div></pre></td></tr></table></figure>
+<h4 id="模拟远程通话："><a href="#模拟远程通话：" class="headerlink" title="模拟远程通话："></a>模拟远程通话：</h4><ul>
+<li><p>通过创建服务器及客户端，可以模拟远程通话进行练习</p>
+</li>
+<li><p>参照net/bc-server.js bc-client.js    </p>
+</li>
+</ul>
+<hr>
+<h3 id="浏览器功能实质-Socket客户端"><a href="#浏览器功能实质-Socket客户端" class="headerlink" title="浏览器功能实质: Socket客户端"></a>浏览器功能实质: Socket客户端</h3><h4 id="请求阶段："><a href="#请求阶段：" class="headerlink" title="请求阶段："></a>请求阶段：</h4><ul>
+<li><p>1.将用户输入的URL封装为请求报文</p>
+</li>
+<li><p>2.建立与服务端的Socket链接</p>
+</li>
+<li><p>3.将封装好的请求报文通过Socket发送至服务端</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="响应阶段："><a href="#响应阶段：" class="headerlink" title="响应阶段："></a>响应阶段：</h4><ul>
+<li><p>1.接收服务端返回的响应报文</p>
+</li>
+<li><p>2.解析响应报文 JSON.parse</p>
+</li>
+<li><p>3.渲染内容到页面</p>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="Http核心模块"><a href="#Http核心模块" class="headerlink" title="Http核心模块"></a>Http核心模块</h1><ul>
+<li><p>服务器对象</p>
+</li>
+<li><p>客户端对象</p>
+</li>
+<li><p>请求对象 获取数据的对象</p>
+</li>
+<li><p>响应对象 响应需要的数据给浏览器</p>
+</li>
+</ul>
+<p><i></i></p>
+<h3 id="服务端对象"><a href="#服务端对象" class="headerlink" title="服务端对象"></a>服务端对象</h3><h4 id="引入模块："><a href="#引入模块：" class="headerlink" title="引入模块："></a>引入模块：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="创建服务器对象："><a href="#创建服务器对象：" class="headerlink" title="创建服务器对象："></a>创建服务器对象：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123; &#125;);</div><div class="line"></div><div class="line"><span class="comment">//回调函数响应用户，request请求对象 response响应对象</span></div></pre></td></tr></table></figure>
+<h4 id="设置IP-端口："><a href="#设置IP-端口：" class="headerlink" title="设置IP 端口："></a>设置IP 端口：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server.listen( 端口号 ,IP ,成功监听回调)</div><div class="line">server.listen(<span class="number">2000</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err) <span class="keyword">throw</span> err	</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"成功监听2000端口"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="请求对象-request"><a href="#请求对象-request" class="headerlink" title="请求对象: request"></a>请求对象: request</h3><h4 id="request-method-获取请求方式"><a href="#request-method-获取请求方式" class="headerlink" title="request.method:        获取请求方式"></a>request.method:        获取请求方式</h4><p>　　　　默认方式：GET</p>
+<h4 id="request-url-获取请求url"><a href="#request-url-获取请求url" class="headerlink" title="request.url:        获取请求url"></a>request.url:        获取请求url</h4><p>　　　　本地回环地址 —- “/“</p>
+<h4 id="request-headers-获取请求头数据对象"><a href="#request-headers-获取请求头数据对象" class="headerlink" title="request.headers:    获取请求头数据对象"></a>request.headers:    获取请求头数据对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123; [</div><div class="line">	host: <span class="string">'localhost:2000'</span></div><div class="line">			connection: <span class="string">'keep-alive'</span>,</div><div class="line">			<span class="string">'cache-control'</span>: <span class="string">'max-age=0'</span>,</div><div class="line">		<span class="string">'upgrade-insecure-requests'</span>: <span class="string">'1'</span>,</div><div class="line">			<span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ..'</span>,</div><div class="line">			 <span class="attr">accept</span>: <span class="string">'text/html,application/xhtml+xml...'</span>,</div><div class="line">		<span class="string">'accept-encoding'</span>: <span class="string">'gzip, deflate, br'</span>,</div><div class="line">			<span class="string">'accept-language'</span>: <span class="string">'zh-CN,zh;q=0.8'</span> </div><div class="line">] &#125;	<span class="comment">//浏览器封装的内容 有差异性存在</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="响应对象-response"><a href="#响应对象-response" class="headerlink" title="响应对象: response"></a>响应对象: response</h3><h4 id="设置响应体"><a href="#设置响应体" class="headerlink" title="设置响应体"></a>设置响应体</h4><ul>
+<li><p>response.end()        </p>
+<p>  响应数据并且结束响应 支持数据格式-Str-Buffer</p>
+<p>  避免浏览器持续等待响应</p>
+</li>
+<li><p>response.write()    </p>
+<p>  响应数据 可多次执行，支持数据格式 -Str-Buffer</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="设置响应头-需在设置请求体之前设置"><a href="#设置响应头-需在设置请求体之前设置" class="headerlink" title="设置响应头            需在设置请求体之前设置"></a>设置响应头            需在设置请求体之前设置</h4><ul>
+<li><p>response.writeHead( 状态码，headers对象)    </p>
+<p>  一次性设置响应头内容</p>
+</li>
+<li><p>response.writeHead( 200,{</p>
+<pre><code>&quot;connection&quot;:&quot;keep-alive&quot;,    //设置是否支持TCP长链接
+
+&quot;content-type&quot;:&quot;text/html;charset=utf-8&quot; //提示浏览器解析方式
+</code></pre><p>  })</p>
+<p>  response.setHeader(“key”,”value”)    //设置单项响应头内容 可多次执行</p>
+<pre><code>response.setHeader(&quot;connection&quot;,&quot;close&quot;)        
+
+response.setHeader(&quot;content-type&quot;,&quot;text/html;charset=utf-8&quot;)
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="HTTP属性"><a href="#HTTP属性" class="headerlink" title="HTTP属性"></a>HTTP属性</h3><h4 id="http-STATUS-CODES-状态码列表"><a href="#http-STATUS-CODES-状态码列表" class="headerlink" title="http.STATUS_CODES:        状态码列表"></a>http.STATUS_CODES:        状态码列表</h4><ul>
+<li><p>1：正在进行中</p>
+</li>
+<li><p>2：成功</p>
+</li>
+<li><p>3：重定向</p>
+</li>
+<li><p>4：客户端异常</p>
+</li>
+<li><p>5：服务器异常</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="http-METHODS-restfull风格规范谓词"><a href="#http-METHODS-restfull风格规范谓词" class="headerlink" title="http.METHODS:            restfull风格规范谓词"></a>http.METHODS:            restfull风格规范谓词</h4><ul>
+<li><p>GET：    偏向于获取数据时使用</p>
+</li>
+<li><p>POST：偏向于新添数据时使用</p>
+</li>
+<li><p>PUT：    偏向于更改数据时使用</p>
+</li>
+<li><p>DELETE：偏向于删除数据时使用</p>
+</li>
+<li><p>OPTION：预检请求，跨域时携带自定义头</p>
+<pre><code>浏览器在你请求之前会自动发起OPTION请求
+
+根据服务器是否准许你跨域的答复确定你实际的跨域请求是否发出
+</code></pre></li>
+</ul>
+<p><u></u></p>
+<h1 id="url模块"><a href="#url模块" class="headerlink" title="url模块:"></a>url模块:</h1><h4 id="功能：url的解析处理"><a href="#功能：url的解析处理" class="headerlink" title="功能：url的解析处理"></a>功能：url的解析处理</h4><h4 id="完整的UEL：协议-主机-端口-路径-路径-资源-html-锚点-查询字符串"><a href="#完整的UEL：协议-主机-端口-路径-路径-资源-html-锚点-查询字符串" class="headerlink" title="完整的UEL：协议://主机:端口/路径/路径../资源.html#/锚点?查询字符串"></a>完整的UEL：协议://主机:端口/路径/路径../资源.html#/锚点?查询字符串</h4><h4 id="url-parse-“-login-php-name-Rose-amp-age-25-“"><a href="#url-parse-“-login-php-name-Rose-amp-age-25-“" class="headerlink" title="url.parse(“ /login.php?name=Rose&amp;age=25 “)"></a>url.parse(“ /login.php?name=Rose&amp;age=25 “)</h4><ul>
+<li><p>返回对象包含协议 主机 端口 查询字符串..</p>
+</li>
+<li><p>query:    “name=Rose&amp;age=25”</p>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="url-parse-“-login-php-name-Rose-amp-age-25-“，true"><a href="#url-parse-“-login-php-name-Rose-amp-age-25-“，true" class="headerlink" title="url.parse(“ /login.php?name=Rose&amp;age=25 “，true)"></a>url.parse(“ /login.php?name=Rose&amp;age=25 “，true)</h4><ul>
+<li>query：{ name:”Rose”,age:”25” }</li>
+</ul>
+<p><u></u></p>
+<h1 id="querystring模块"><a href="#querystring模块" class="headerlink" title="querystring模块:"></a>querystring模块:</h1><h4 id="功能：序列化url字符串"><a href="#功能：序列化url字符串" class="headerlink" title="功能：序列化url字符串"></a>功能：序列化url字符串</h4><p><i></i></p>
+<h4 id="querystring-parse"><a href="#querystring-parse" class="headerlink" title="querystring.parse()"></a>querystring.parse()</h4><ul>
+<li><p>示例：</p>
+<p>  querstring.parse(“user=melody&amp;pass=123”) —- { user:”melody”,pass:”123” }</p>
+</li>
+<li><p>问题提示：不能处理问号格式</p>
+<p>  querystring.parse(“?user=melody&amp;pass=123”) — { ?user:”melody”,pass:123 }</p>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="Buffer模块"><a href="#Buffer模块" class="headerlink" title="Buffer模块"></a>Buffer模块</h1><h4 id="功能：缓存区处理"><a href="#功能：缓存区处理" class="headerlink" title="功能：缓存区处理"></a>功能：缓存区处理</h4><h4 id="Buffer-form-“数据源”，”输出格式”"><a href="#Buffer-form-“数据源”，”输出格式”" class="headerlink" title="Buffer.form(“数据源”，”输出格式”)"></a>Buffer.form(“数据源”，”输出格式”)</h4><h4 id="Buffer-form-str-—-转换为buffer格式"><a href="#Buffer-form-str-—-转换为buffer格式" class="headerlink" title="Buffer.form(str)        —- 转换为buffer格式"></a>Buffer.form(str)        —- 转换为buffer格式</h4><h4 id="Buffer-form-str-”base64”-—-转换为base64格式"><a href="#Buffer-form-str-”base64”-—-转换为base64格式" class="headerlink" title="Buffer.form(str,”base64”)    —- 转换为base64格式"></a>Buffer.form(str,”base64”)    —- 转换为base64格式</h4><p><u></u></p>
+<h1 id="nodemon模块"><a href="#nodemon模块" class="headerlink" title="nodemon模块"></a>nodemon模块</h1><h4 id="定位：第三方自执行工具"><a href="#定位：第三方自执行工具" class="headerlink" title="定位：第三方自执行工具"></a>定位：第三方自执行工具</h4><h4 id="node自动重启执行工具"><a href="#node自动重启执行工具" class="headerlink" title="node自动重启执行工具"></a>node自动重启执行工具</h4><h4 id="全局安装：-npm-i-nodemon-g"><a href="#全局安装：-npm-i-nodemon-g" class="headerlink" title="全局安装：     npm i nodemon -g"></a>全局安装：     npm i nodemon -g</h4><h4 id="node平台运行：-nodemon-main-js"><a href="#node平台运行：-nodemon-main-js" class="headerlink" title="node平台运行：    nodemon main.js"></a>node平台运行：    nodemon main.js</h4><h4 id="re指令：重新执行命令"><a href="#re指令：重新执行命令" class="headerlink" title="re指令：重新执行命令"></a>re指令：重新执行命令</h4><p><u></u></p>
+<h1 id="Winodw功能补充"><a href="#Winodw功能补充" class="headerlink" title="Winodw功能补充"></a>Winodw功能补充</h1><h4 id="Telnet：控制面板-–-程序-–-启动或关闭windows功能-–-Telnet"><a href="#Telnet：控制面板-–-程序-–-启动或关闭windows功能-–-Telnet" class="headerlink" title="Telnet：控制面板 – 程序 – 启动或关闭windows功能 – Telnet"></a>Telnet：控制面板 – 程序 – 启动或关闭windows功能 – Telnet</h4><ul>
+<li>本地回环地址：127.0.0.1  —-  对应操作系统</li>
+</ul>
+<p><u></u></p>
+<h1 id="前后台交互"><a href="#前后台交互" class="headerlink" title="前后台交互"></a>前后台交互</h1><h3 id="同步交互：浏览器发起请求，页面跳转"><a href="#同步交互：浏览器发起请求，页面跳转" class="headerlink" title="同步交互：浏览器发起请求，页面跳转"></a>同步交互：浏览器发起请求，页面跳转</h3><pre><code>后台配合模板引擎返回html字符串，前端渲染页面
+</code></pre><hr>
+<h3 id="异步交互：ajax没有页面跳转，页面体验更好"><a href="#异步交互：ajax没有页面跳转，页面体验更好" class="headerlink" title="异步交互：ajax没有页面跳转，页面体验更好"></a>异步交互：ajax没有页面跳转，页面体验更好</h3><pre><code>后台返回字符串数据，前端配合模板应请渲染页面
+</code></pre><hr>
+<h3 id="GET请求处理传参：-url后缀形式"><a href="#GET请求处理传参：-url后缀形式" class="headerlink" title="GET请求处理传参：            url后缀形式"></a>GET请求处理传参：            url后缀形式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	url.parse(req.url,<span class="literal">true</span>).query  	<span class="comment">//&#123; user:"",pass:"" &#125;</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="POST请求处理传参：-请求体传参"><a href="#POST请求处理传参：-请求体传参" class="headerlink" title="POST请求处理传参：            请求体传参"></a>POST请求处理传参：            请求体传参</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">		<span class="comment">//获取请求体内的数据"user=melody&amp;pass=123"</span></div><div class="line">	req.on(<span class="string">"data"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">			querystring.parse(data)</div><div class="line">	&#125;)	<span class="comment">// &#123; user:"melody",pass:123 &#125;				</span></div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="异步POST请求头设置："><a href="#异步POST请求头设置：" class="headerlink" title="异步POST请求头设置："></a>异步POST请求头设置：</h3><ul>
+<li><p>设置请求头：xhr.setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”);</p>
+</li>
+<li><p>请求体数据类型: Content-Type:application/x-www-form-urlencoded</p>
+</li>
+<li><p>请求体实际数据: uname=123&amp;pwd=456&amp;isAgree=on</p>
+</li>
+</ul>
+<hr>
+<h3 id="A标签传参的两种形式"><a href="#A标签传参的两种形式" class="headerlink" title="A标签传参的两种形式"></a>A标签传参的两种形式</h3><ul>
+<li><p>查询字符串</p>
+<ul>
+<li><p>传参形式：<a href="服务器地址 ? age = 24">Llink</a></p>
+</li>
+<li><p>参数获取：url模块解析</p>
+<pre><code>url.parse(req.url,true).query ---- { age:24 }
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<ul>
+<li><p>path的方式:   </p>
+<ul>
+<li><p>传参形式：<a href="服务器地址 / age / 24">Link</a></p>
+</li>
+<li><p>参数获取：正则匹配</p>
+<pre><code>\/\.*/\(.*)\.exec(req.url)[1] ---- 24
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="防盗链与重定向"><a href="#防盗链与重定向" class="headerlink" title="防盗链与重定向"></a>防盗链与重定向</h3><ul>
+<li><p>重定向：res.writeHead(302,{‘location’:’/list’});  </p>
+<pre><code>设置响应头要求浏览器追加请求至/list
+</code></pre></li>
+<li><p>防盗链  req.headers.referer</p>
+<pre><code>获取页面定向前的地址
+
+可用于检测登录
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="主流跨域方式重申"><a href="#主流跨域方式重申" class="headerlink" title="主流跨域方式重申"></a>主流跨域方式重申</h3><h4 id="JSONP原理重申"><a href="#JSONP原理重申" class="headerlink" title="JSONP原理重申"></a>JSONP原理重申</h4><ul>
+<li><p>缺陷：限于src的功能，仅支持get类型请求</p>
+</li>
+<li><p>前端要写代码 </p>
+<ul>
+<li><p>1:给window挂载全局函数</p>
+</li>
+<li><p>2:动态生成script标签 规避同源规范</p>
+</li>
+<li><p>3:将函数名挂载到url上    </p>
+</li>
+<li><p>4.代码示例:    //首个callback用于前后端对接，第二个callback对应全局函数名    </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	function callback( data )&#123; 处理返回数据 &#125;；</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;script src="服务器地址 ? callback = callback"&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<ul>
+<li><p>后端要写代码</p>
+<ul>
+<li><p>1:获取callback参数</p>
+</li>
+<li><p>2:回写一个执行代码的字符串</p>
+</li>
+<li><p>3.设置响应</p>
+</li>
+<li><p>4.代码示例;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> funName = url.parse(req.url,<span class="literal">true</span>).query.callback; </div><div class="line">res.end(<span class="string">"winodw."</span> + funName + <span class="string">"('"</span> + 数据 + <span class="string">"')"</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><i></i><i></i></p>
+<h4 id="CORS原理重申"><a href="#CORS原理重申" class="headerlink" title="CORS原理重申"></a>CORS原理重申</h4><ul>
+<li><p>COES：cross origin resource share跨域资源共享)</p>
+<ul>
+<li>兼容性：IE9 +</li>
+</ul>
+</li>
+<li><p>原理：服务器端设置响应头，准许特定类型的跨域</p>
+<pre><code>Access-Control-Allow-Origin     准许域名
+
+    res.setHeader(&quot;Access-Control-Allow-Orgin&quot;,&quot;localhost:2000&quot;)
+
+ Access-Control-Allow-Methods     准许请求方式
+
+    res.setHeader(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,DELETE,GET,POST&quot;)
+
+Access-Control-Allow-Headers     准许的自定义请求头
+
+    res.setHeader(&quot;Access-Control-Allow-Headers&quot;,&quot;自定义请求头&quot;)
+
+*意为所有类型
+</code></pre></li>
+</ul>
+<p><i></i><i></i></p>
+<h4 id="服务器代理重申"><a href="#服务器代理重申" class="headerlink" title="服务器代理重申"></a>服务器代理重申</h4><ul>
+<li><p>常用跨域处理方式：服务器代理 - JSONP - CORS</p>
+</li>
+<li><p>原理：借助代理服务器发送请求获取跨域数据后返回数据</p>
+</li>
+<li><p>实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> options = &#123;		<span class="comment">//请求参数</span></div><div class="line">	protocol:<span class="string">"http"</span>,	<span class="comment">//默认协议</span></div><div class="line">	host:<span class="string">"请求url"</span>,		<span class="comment">//请求url</span></div><div class="line">	port:<span class="string">"请求端口"</span>		<span class="comment">//http默认80 https默认443端口</span></div><div class="line">	path:<span class="string">"/"</span>		<span class="comment">//根目录设置</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">reqHtml,resHtml</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(req.url == <span class="string">"/proxy"</span>)&#123;</div><div class="line">		<span class="keyword">let</span> client = http.request( options,<span class="function"><span class="keyword">function</span>(<span class="params"> res </span>)</span>&#123;</div><div class="line">			res.pipe(resHtml)	<span class="comment">//数据传输</span></div><div class="line">		&#125;)</div><div class="line">	&#125;</div><div class="line">&#125;)	<span class="comment">//创建客户端对象发送请求获取跨域数据返回</span></div><div class="line"></div><div class="line">server.listen(<span class="number">2000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line">	<span class="keyword">if</span>(err) <span class="keyword">throw</span> eerr;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"成功监听2000端口"</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h1><h4 id="功能：-类似小型的Apache服务器，开启单个node服务器，接受请求并向其他服务器发起请求"><a href="#功能：-类似小型的Apache服务器，开启单个node服务器，接受请求并向其他服务器发起请求" class="headerlink" title="功能：    类似小型的Apache服务器，开启单个node服务器，接受请求并向其他服务器发起请求"></a>功能：    类似小型的Apache服务器，开启单个node服务器，接受请求并向其他服务器发起请求</h4><h4 id="下载：-npm-i-g-http-server"><a href="#下载：-npm-i-g-http-server" class="headerlink" title="下载：    npm i -g http-server"></a>下载：    npm i -g http-server</h4><h4 id="启动：-进入到指定目录执行命令"><a href="#启动：-进入到指定目录执行命令" class="headerlink" title="启动：  进入到指定目录执行命令"></a>启动：  进入到指定目录执行命令</h4><ul>
+<li><p>hs -o -p 端口号        //o-open p-port</p>
+</li>
+<li><p>默认启动index.html 作为服务器响应的首页内容</p>
+</li>
+</ul>
+<p><u></u><u></u></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/用于模板使用/">用于模板使用</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

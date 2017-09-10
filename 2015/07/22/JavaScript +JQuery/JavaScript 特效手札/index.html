@@ -1,0 +1,561 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>javascript 特效手札 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2015-07-22">2015-07-22</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">JavaScript 特效手札</h2>
+            <div class="post-meta">
+                本文总共5185个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <blockquote>
+ <font size="4">手动触发事件</font>
+
+</blockquote>
+<pre>
+
+节点.事件类型（）   主动触发该节点的事件
+
+节点.click()        主动触发点击事件
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">offset系列的相关属性</font>
+
+</blockquote>
+<pre>
+> offsetLeft    
+
+    计算方式：当前元素的左边框左侧，到定位父盒子的左边框距离
+
+        边框 -- 边框的距离
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+> offsetTop
+
+    计算方式：当前元素的顶部边框，到定位父盒子的顶部距离
+
+        边框 -- 边框的距离
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+> offsetWidth
+
+    表示元素的真实宽度
+
+        除了margin以外的宽度值
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+> offsetHeight
+
+    表示元素的真实高度
+
+        除了margin以外的高度值
+
+    取值类型：数值类型，获取结果四舍五入
+
+
+
+> offsetParent
+
+    选择器：可以获取到定位的父盒子
+
+    parentNode  获取的是父元素
+
+    offsetParent  获取定位的父元素
+
+
+
+
+ </pre>
+
+<blockquote>
+ <font size="4">轮播图效果</font>
+
+</blockquote>
+<pre>
+    参照资料
+
+    JavaScript / 特效 / 5完整轮播图 / prefect.html
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">获取元素补充</font>
+
+</blockquote>
+<pre>
+  通过document直接获取某些元素
+
+      获取tittle标签，并设置里边的显示内容
+
+          document.title = "内容"
+
+      获取body标签
+
+          document.body
+
+      获取html标签
+
+          document.documentElement
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">scroll系列的相关属性</font>
+
+</blockquote>
+<pre>
+    如果实际内容并没有达到元素的高度和宽度
+
+        此时获取的结果为元素的高度与宽度
+
+  > scrollHeight    
+
+      元素中实际内容的高度
+
+      获取的是数值类型
+
+
+  > scrollWidth
+
+      元素中实际内容的宽度
+
+      获取的是数值类型
+
+
+  > scrollTop
+
+      获取元素向上滚出的距离
+
+          scrollHeight内容高度 - Height元素高度 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">使用需要配合滚动事件</div><div class="line"></div><div class="line">    <span class="built_in">Object</span>.onsrcoll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.srcollTop)</div><div class="line">    </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+  > scrollLeft
+
+      获取元素向左滚出的距离
+
+          scrollHeight内容宽度 - Height元素宽度 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">使用需要配合滚动事件</div><div class="line"></div><div class="line">  <span class="built_in">Object</span>.onsrcoll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line"></div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.srcollLeft)</div><div class="line">    </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+</pre>
+
+<blockquote>
+ <font size="4">对比总结</font>
+
+</blockquote>
+<pre>
+      offsetLeft:     元素距离左边的距离
+
+      offsetTop:      元素距离顶部的距离
+
+      offsetWidth:    元素的宽度 有边框
+
+      offsetHeight:   元素的高度 有边框
+
+
+      scrollWidth：  元素中内容的实际宽度
+
+      scrollHeight： 元素中内容的实际高度
+
+      scrollLeft：   元素向左滚出的距离
+
+      scrollTop：    元素向上滚出的距离
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">scroll系列属性封装</font>
+
+</blockquote>
+<pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScrollTop</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.pageYOffset || <span class="built_in">document</span>.body.offsetTop </div><div class="line"></div><div class="line">    || <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScrollLeft</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.pageXOffset || <span class="built_in">document</span>.body.offsetLeft </div><div class="line"></div><div class="line">    || <span class="built_in">document</span>.documentElement.scrollLeft || <span class="number">0</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">获取元素的css属性</font>
+
+</blockquote>
+<pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.getComputedStyle(<span class="built_in">Object</span>, <span class="literal">null</span>).top</div><div class="line"></div><div class="line">windwo.getComputedStyle(<span class="built_in">Object</span>, <span class="literal">null</span>)[<span class="string">"top"</span>]</div><div class="line"></div><div class="line"></div><div class="line">ie低版本</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.currentStyle.left;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.currentStyle[<span class="string">"left"</span>];</div></pre></td></tr></table></figure>
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">完美动画封装函数</font>
+
+</blockquote>
+<pre>
+  参考  皇家动画函数animate（tag，json，fn）
+
+  功能  可设置多样式json
+
+              json形式设置
+
+              { "width":200, "height":160 }
+
+        追加了回调函数fn
+
+        可用于动画嵌套使用
+
+        追加了透明度样式opacity
+
+        追加了层叠样式zIndex
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">tag, json, fn</span>)</span>&#123;</div><div class="line"></div><div class="line">        clearInterval(tag.Ds);</div><div class="line"></div><div class="line">        tag.Ds =setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">            <span class="keyword">var</span> flag =<span class="literal">true</span>;</div><div class="line"></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> json)&#123;</div><div class="line"></div><div class="line">                <span class="keyword">if</span>(key == <span class="string">"opacity"</span>)&#123;</div><div class="line"></div><div class="line">                    <span class="comment">//获取当前样式</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> current = getStyle(tag, key)*<span class="number">100</span>;</div><div class="line"></div><div class="line">                    <span class="keyword">var</span> target = json[key]*<span class="number">100</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//设置样式变化间隔</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> step = (target - current)/<span class="number">10</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//更新样式</span></div><div class="line"></div><div class="line">                    step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</div><div class="line"></div><div class="line">                    <span class="comment">//样式重设</span></div><div class="line"></div><div class="line">                    current += step;</div><div class="line"></div><div class="line">                    tag.style[key] = current/<span class="number">100</span>;</div><div class="line"></div><div class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(key == <span class="string">"zIndex"</span>)&#123;</div><div class="line"></div><div class="line">                    tag.style.zIndex = json[key];</div><div class="line"></div><div class="line">                &#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">                    <span class="comment">//获取当前样式</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> current = <span class="built_in">parseInt</span>(getStyle(tag, key));</div><div class="line"></div><div class="line">                    <span class="keyword">var</span> target = json[key];</div><div class="line"></div><div class="line">                    <span class="comment">//设置样式变化间隔</span></div><div class="line"></div><div class="line">                    <span class="keyword">var</span> step = (target - current)/<span class="number">10</span>;</div><div class="line"></div><div class="line">                    <span class="comment">//更新样式</span></div><div class="line"></div><div class="line">                    step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</div><div class="line"></div><div class="line">                    <span class="comment">//样式重设</span></div><div class="line"></div><div class="line">                    current += step;</div><div class="line"></div><div class="line">                    tag.style[key] = current + <span class="string">"px"</span>;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">//判断当前样式是否到位</span></div><div class="line"></div><div class="line">                <span class="keyword">if</span>(current != target)&#123;</div><div class="line"></div><div class="line">                    flag = <span class="literal">false</span>;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">//判断所有样式是否就位</span></div><div class="line"></div><div class="line">            <span class="keyword">if</span>(flag)&#123;</div><div class="line"></div><div class="line">                <span class="comment">//清除定时器</span></div><div class="line"></div><div class="line">                clearInterval(tag.Ds);</div><div class="line"></div><div class="line">                <span class="comment">//如果回调函数存在，则调用回调函数</span></div><div class="line"></div><div class="line">                <span class="keyword">if</span>(fn)&#123;</div><div class="line"></div><div class="line">                    fn();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;,<span class="number">20</span>)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+    综合案例：筋斗云案例  手风琴案例  旋转木马案例等
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">event事件参数对象</font>
+
+</blockquote>
+<pre>
+    可视化区域坐标：鼠标不动滚轮动时，client值不变
+
+    > clientX：页面中可视区域的横坐标
+
+          数值类型
+
+    > clientY：页面中可视区域的纵坐标
+
+          数值类型
+
+
+    页面坐标
+
+    > pageX：页面中的横坐标
+
+          数值类型
+
+    > pageY：页面中的纵坐标
+
+          数值类型
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">三大系列总结</font>
+
+</blockquote>
+<pre>
+  offset --- scroll --- client
+
+
+  > offsetLeft
+
+      获取的是元素距离左边位置的横坐标
+
+  > offsetTop
+
+      获取的是元素距离顶部位置的纵坐标
+
+  >offsetWidth
+
+      获取的是元素的宽度，有边框不包含marign
+
+  > offsetHeight
+
+      取的是元素的宽高度，有边框不包含marign
+
+
+
+  > scrollLeft
+
+      获取的是滚出去的横坐标值
+
+  > scrollTop
+
+      获取的是滚出去的纵坐标值
+
+  > scrollWidth
+
+      元素中内容的实际宽度，无边框
+
+  > scroll Height
+
+      元素中内容的实际高度，无边框
+
+
+
+
+
+  兼容性问题：
+
+      ie8中的事件参数对象;window.event
+
+      谷歌支持参数e和window.event
+
+      火狐支持参数e，不支持window.event
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params">e</span>)</span>&#123;</div><div class="line"></div><div class="line">    e = <span class="built_in">window</span>.event?<span class="built_in">window</span>.event:e; </div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+    想要保证这个值可以准确获取，不需等到图片完全加载后
+
+        方法A 入口函数
+              window.onload = function(){
+                  console.log(pic.offsetWidth)
+              }
+
+        方法B：使用可视区域的宽度
+
+        方法C：读取json中的数据值（从服务器端接收过来的数据）
+
+
+
+
+
+
+
+
+
+
+
+ </pre>
+
+
+
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

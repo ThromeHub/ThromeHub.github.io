@@ -1,0 +1,1021 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>javascript基础语法手札 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2015-07-13">2015-07-13</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">JavaScript基础语法手札</h2>
+            <div class="post-meta">
+                本文总共9987个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <blockquote>
+ <font size="4">浏览器的基本组成部分</font>
+
+</blockquote>
+<pre>
+
+1.用户界面：让用户可以看到网页的内容
+
+2.浏览器引擎（核心功能，中控）
+
+3.渲染引擎：用户解析html和css文件
+
+4.js解析器;用户解析js代码
+
+
+</pre>
+
+<blockquote>
+ <font size="4">当浏览器读取到一个页面时</font>
+
+</blockquote>
+<pre>
+1.读取html文件，根据html中每个标签之间的相互关系生成一个树模型
+
+2.读取css文件，根据csss中每个样式，生成一个样式树模型
+
+3.将结构树和样式树进行结合，生成渲染树（页面准备显示了）
+
+4.根据渲染树生成网络页面
+
+
+src属性，会将读取到的文件内部代码，替换掉当前标签内的所有内容
+
+我们代码中书写的变量或者数据都是临时的。
+
+固定数据到存在硬盘中
+
+临时数据常规情况下保存在内存中
+
+变量保存的是内存中数据的地址
+
+
+
+
+语句：通过某一句代码无法得到一个结果
+
+var num = 100；
+
+表达式：通过某一句代码能够得到一个结果，得到的结果为返回值
+
+var num = prompt（）
+
+
+
+String-强制转换：
+-----------------
+
+  属性：int.toString（）；
+
+  方法：String（int）
+
+
+
+String-隐式转换：
+-----------------
+
+  int + string =>  string
+
+  通常：int + ""
+
+
+
+Number-强制转换
+-----------------
+
+  方法1：  
+  Number（“string”）  字符串中必须为混数字字符，失败为NAN
+
+  Number（NULL） = 0；
+
+  Number（underfined） = NAN；
+
+  方式2：  
+  parseInt（）    取到不是数字为止
+
+  方法3：
+  parseFloat（）    能取到小数
+
+  parseInt（NULL） = NAN
+
+  parseInt（underfined） = NAN；
+
+
+
+Number-隐式转换
+-----------------
+  ―*/%
+
+  “String” - 0  =>  Number
+
+  “String” * 1  =>  Number
+
+  “String” / 1  =>  Number
+
+  “String” % Infinity  =>  Number
+
+
+
+Boolean-转换
+-----------------
+
+   强制转换： Boolean（数据）
+
+   隐式转换： ！！数据
+
+  false 对应：false / 0 / “” / NAM / undefined / null
+
+  注意空arr对应true  
+
+
+
+
+运算符执行顺序：
+-----------------
+
+  一元运算符： ++ -- ！
+
+  算术运算符： * /   +  -
+
+  比较运算符： > < ..
+
+  逻辑运算符： && ||
+
+  三元运算符： ？ :
+
+  赋值运算符： = += -=
+
+
+  ( ):提高优先级
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">循环</font>
+
+</blockquote>
+<pre>
+> switch循环     
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span>（值）&#123; </div><div class="line">  <span class="keyword">case</span> 值：</div><div class="line">    内容；</div><div class="line">  <span class="keyword">break</span>；</div><div class="line">  <span class="keyword">case</span> 值：</div><div class="line">    内容；</div><div class="line">  <span class="keyword">break</span>；</div><div class="line">  <span class="keyword">default</span>：</div><div class="line">    内容；</div><div class="line">  <span class="keyword">break</span>；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+> switch逻辑判断
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span>（<span class="literal">true</span>）&#123; </div><div class="line"></div><div class="line">  <span class="keyword">case</span> （n &gt; <span class="number">80</span>）：</div><div class="line">    优秀；</div><div class="line">  <span class="keyword">break</span>；</div><div class="line"></div><div class="line">  <span class="keyword">case</span> （n &gt; <span class="number">60</span>）：</div><div class="line">    及格；</div><div class="line">  <span class="keyword">break</span>；</div><div class="line"></div><div class="line">  <span class="keyword">default</span>：</div><div class="line">    不及格；</div><div class="line">  <span class="keyword">break</span>；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+> if else语句
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>（条件A）&#123;</div><div class="line"></div><div class="line">  内容；</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span>（条件B）&#123;</div><div class="line"></div><div class="line">  内容；</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">  内容；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+> 三元运算符
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">判断式？ 功能A ： 功能B</div><div class="line"></div><div class="line">判断式<span class="literal">true</span> =》 执行前者</div><div class="line"></div><div class="line">判断式<span class="literal">false</span> =》 执行后者  如果有返回值则作为三元运算返回值</div></pre></td></tr></table></figure>
+
+> while循环
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = <span class="number">1</span>；      初始值</div><div class="line"><span class="keyword">while</span>（i &lt; <span class="number">10</span>）&#123;    循环结束条件</div><div class="line">  执行内容；</div><div class="line">  ++i     循环增量</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+> do-while循环        至少执行一次
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = <span class="number">1</span>；      初始值</div><div class="line"><span class="keyword">do</span>&#123;</div><div class="line">  执行内容；</div><div class="line">&#125;<span class="keyword">while</span>（ i &lt; <span class="number">10</span> ）    循环增量</div></pre></td></tr></table></figure>
+
+> for循环
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">for</span>（<span class="keyword">var</span> i = <span class="number">1</span>； i &lt; <span class="number">10</span>； ++i）&#123;</div><div class="line">    执行内容</div><div class="line">&#125; </div><div class="line">  执行顺序：初始值 - （ 判断-执行内容-增值 ）</div></pre></td></tr></table></figure>
+
+> 循环控制：
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">break</span>;    --中断循环</div><div class="line"></div><div class="line"><span class="keyword">continue</span>；   --执行下次循环</div><div class="line">  </div><div class="line">    通常能顾通过代码优化替代</div></pre></td></tr></table></figure>
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">数组</font>
+
+</blockquote>
+<pre>
+  可保存多数据，降低操作难度
+
+  > 创建方式A：
+
+    var arr = new Array(2, 5)；
+
+  > 创建方式B：      推荐使用方式
+
+    var arrr = [2, 5]；
+
+
+  > 获取与赋值
+
+    var i = arr[index]；
+
+    arr[index] = 数据；
+
+
+  > 长度属性：
+
+    arr.length；
+
+    可设置，设置值小于实际长度时数组会丢项，可利用该特性清除元素。
+
+
+
+
+> 简单数据传值方式;
+
+    var n = 2;    n -- 指针A -- 2
+
+    var m = n;    m -- 指针B -- 2
+
+    n,m分别指向内存中不同空间，保存相同数据
+
+> 复杂数据传值方法;
+
+    var n = [2, 5];   n -- 指针A -- [2, 5]
+
+    var m = n;    m ↑
+
+    n, m 指向内存中的相同空间
+
+
+    基本数据类型在内存单元中保存的是具体值
+
+    复杂数据类型保存的是指针
+
+
+
+
+> 检测数据类型
+
+    typeof 会把指针变量输出为Object类型
+
+    Null保存的是空指针。
+
+
+> 检验数组类型：
+
+    方式A:      推荐使用
+
+    数据 instanceof Arrary  
+
+        返回Boolean值
+
+    方式B：
+
+    Object.prototype.toString.call（ Arr ）
+
+        返回[object Array]
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">二维数组遍历</div><div class="line">    <span class="keyword">for</span>（<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; ++i）&#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>( arr[i].instanceof <span class="built_in">Array</span> )&#123;    检验元素是否为数组，是则遍历该数组</div><div class="line">  </div><div class="line">            <span class="keyword">for</span>( <span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr[i].length; ++j)&#123;</div><div class="line"></div><div class="line">                <span class="built_in">console</span>.log( arr[i][j] ); </div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>          不是则直接后台打印</div><div class="line">  </div><div class="line">            <span class="built_in">console</span>.log( arr[i] );</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+</pre>
+
+<blockquote>
+ <font size="4">函数</font>
+
+</blockquote>
+<pre>
+  > 函数声明：
+
+      function 函数名（ 形参 ）{ 内容 }
+
+  > 函数调用：
+
+      函数名（ 实参 ）；
+
+
+  > 实参与形参间的传值
+
+      基本类型 - 值传递：在内存中开辟不同空间，保存相同数据
+
+      复杂类型 - 引用传递：保存相同指针
+
+
+
+> 作用域
+
+  JS中只有函数可以分隔独立的作用域
+
+  作用域中声明的变量只能被内部使用
+
+
+  全局作用域：
+
+      Script内部，不在任何函数内部
+
+  局部作用域：（函数作用域）
+
+      在某函数内部，称为局部作用域
+
+
+  当我们在某作用域下使用一个变量时
+
+      1.会在当前作用域查找该变量的声明
+
+      2.如果没有找到，会向父级作用域查找
+
+      3.如果没有找到继续上访直至全局变量
+
+      4.如果还没有找到
+
+        使用方式为取值则直接报错
+
+            console.log（ num ）；
+
+        使用方式为设置则在全局作用域下声明一个全局变量
+
+            num = 10；
+
+
+
+> 预解析     声明提前化
+
+  代码开始执行之前，有一个步骤称为预解析：
+
+    1.查找当前作用域中的var变量声明语句，将声明语句提升到当前作用域
+
+    2.查找当前作用域中的fn函数声明语句，将函数体提升到当前作用域
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">实例：</div><div class="line"></div><div class="line">    fn（）；</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log（b）；   <span class="number">9</span></div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log（c）；   <span class="number">9</span></div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log（a）；   undifined</div><div class="line"></div><div class="line">    funciton fn()&#123;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> a = b = c = <span class="number">9</span>；;   <span class="comment">//a局部声明，b c全局声明 </span></div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log（a）； <span class="number">9</span></div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log（b）； <span class="number">9</span></div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log（c）； <span class="number">9</span></div><div class="line">  </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+> 匿名函数的调用：
+
+  声明：var dem = function( ){ };
+
+  调用：dem（）;
+
+  用法
+
+    1.保存在变量中作为函数表达式（上述方式）
+
+    2.可以使用自调用函数方式，立即执行
+
+      （function （）{ 
+
+          var num = 10；
+
+
+      }）（）；
+
+        后边的括号代表调用
+
+        作用A: 可以进行作用域的包裹
+
+        作用B： 模拟块级作用域（某些语言）
+
+    3.保存在数组中调用
+
+        声明：var arr =[function(){ }, function(){ }]；
+
+        调用：arr[0]( )；
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">实例问题</div><div class="line">  <span class="keyword">var</span> arr = [ ];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> &lt; i &lt; <span class="number">3</span>; ++i)&#123;</div><div class="line">      arr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  arr[<span class="number">0</span>]();</div><div class="line">  arr[<span class="number">1</span>]();</div><div class="line">  arr[<span class="number">2</span>]();</div><div class="line"></div><div class="line">执行结果：</div><div class="line">  <span class="number">3</span> <span class="number">3</span> <span class="number">3</span></div><div class="line">  原因：<span class="keyword">for</span>循环中的函数仅声明未执行内部代码,</div></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">修正方式：</div><div class="line">  <span class="keyword">var</span> arr = [ ];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> &lt; i &lt; <span class="number">3</span>; ++i)&#123;</div><div class="line"></div><div class="line">     循环执行<span class="number">3</span>次，每一次都会创建一个局部作用域</div><div class="line">    （<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">         局部作用域内部创建一个局部变量j，用于保存全局变量i的不同状态取值</div><div class="line">      varj = i;</div><div class="line"></div><div class="line">      arr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">         每个局部作用域中具有一个子作用域，子作用域中访问局部变量j的值</div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log(j);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;）（）；</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  arr[<span class="number">0</span>]();</div><div class="line"></div><div class="line">  arr[<span class="number">1</span>]();</div><div class="line"></div><div class="line">  arr[<span class="number">2</span>]();</div><div class="line"></div><div class="line"></div><div class="line">执行结果：</div><div class="line"></div><div class="line">  <span class="number">0</span> <span class="number">1</span> <span class="number">2</span></div><div class="line"></div><div class="line">  原因：<span class="keyword">for</span>循环中的函数声明，执行内部代码,</div></pre></td></tr></table></figure>
+
+
+
+> 函数伪数组arguments
+
+    当实参多于形参时：函数不能接受多余数据，会用伪数组arguments记录所有传参
+
+    arguments变量仅作用于函数内部
+
+    arguments.length可判断实参个数
+
+
+
+> 函数覆盖问题
+
+    1.多次赋值函数会被覆盖
+
+    2.函数与变量重名时，变量有值时会被覆盖
+
+
+
+> 回调函数
+
+  回调函数的作用，包裹代码传递
+
+  将函数作为参数传递给函数使用的方式
+
+      function game(tode){ 
+
+          tode();
+
+      }
+
+      function tode(){
+
+          console.log("我是传参函数")
+
+      }
+
+      game(tode)  不要加括号，否则传参的是返回值
+
+
+
+  > 匿名函数传递：
+
+      function game(tode){
+
+          tode();
+
+      }
+
+      game(function(){
+
+          console.log("匿名函数传参")
+
+      })
+
+
+> 递归
+
+    函数在内部对自身进行调用，称为递归
+
+    容易出现死循环
+
+    Loading....
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">对象</font>
+
+</blockquote>
+<pre>
+  js中的对象用于描述一个具体的事物
+
+      每个事物都具有一些特征，称为对象的属性
+
+      每个事物还具有一些行为，称为对象的方法
+
+
+  常规创建:
+
+      var obj = new Object();
+
+  属性赋值：
+
+      obj.name = "亚瑟"；
+
+      obj.age = "26"；
+
+      调用obj.name;
+
+
+  方法添加;
+
+      obj.add = function(){ }；
+
+      调用obj.add();
+
+
+      方法中的this:
+
+      object.add = function(){ this }
+
+      this指向函数的调用者Object，函数属于谁
+
+
+
+
+对象创建剖析：
+
+  将以下函数名改为Object即为常规构造函数创建方式
+
+    var obj = new Object(name，age); //传参
+
+    function Object( name ){    //构造函数
+
+        this.name = name;
+
+        this.age = age;
+
+    }
+
+
+    new的作用：
+
+       Stop-1. new帮我们创建对象
+
+       Stop-2. 将this指向修改为创建的对象
+
+       Stop-3. 返回此对象
+
+
+  构造函数内不需要设置返回值，如果设置返回值
+
+    基本类型：会被无视
+
+    复杂类型：会替换new新建的对象新建
+
+
+
+
+Instanceof的使用
+
+  instance 实例
+
+  格式：数据A instanceof 数据B
+
+  作用：检验数据A是否为数据B额实例（创建）
+
+  如上实例中：
+      console.log（obj instanceof Object）  ----- true
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">减少全局范围内函数命名的方法</div><div class="line"></div><div class="line">  在全局范围内新建对象，将众多函数作为该对象方法封装使用。</div><div class="line"></div><div class="line">  <span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="built_in">Object</span>();    </div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Object</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.callname:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; &#125;，    <span class="comment">//以对象方法的方式封装函数</span></div><div class="line"></div><div class="line">      <span class="keyword">this</span>.callage:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; &#125;    <span class="comment">//this指向调用者temp</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="string">"亚瑟"</span>，<span class="number">26</span>);</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Object</span>(<span class="params">name, age</span>)</span>&#123;</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.name = name;</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.age = age;</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.add = temp.callname;   <span class="comment">//直接通过temp方法的方式调用</span></div><div class="line"></div><div class="line">  &#125;           <span class="comment">//this指向调用者obj</span></div><div class="line"></div><div class="line"></div><div class="line">  调用方法时：temp.callname / temp.callage;</div></pre></td></tr></table></figure>
+
+对象自带属性prototype
+
+    var obj = new create();
+
+    obj.__proto__ == create.prototype
+
+
+    当我们使用一个对象的属性或方法时，首先会对这个对象自身进行查找
+
+    如果找不到会去__proto__查找，相当于查找构造函数的 prototype
+
+
+
+
+
+使用构造函数方式创建对象：
+
+  使用场景：
+
+      当我们需要大量类似对象构造时，可以使用
+
+  创建形式：
+
+      var obj = new Object("亚瑟"，26);
+
+      function Object(name, age){
+
+        this.name = name;
+
+        this.age = age;
+
+      }   
+
+
+使用对象字面量方式创建对象：
+
+  使用场景：
+
+      当我们将对象作为数据结构时，通常使用对象字面量形式创建
+
+      属性名：属性值的形式成为键值对
+
+  创建形式：
+
+    var obj = {
+
+      name: "Jack",
+
+      age:26,
+
+      act:function(){ }
+    }
+
+
+
+
+属性操作方法A：
+
+    obj.name = "Jack",
+
+
+属性操作方法B：
+
+    obj[属性值]  ----  字符串
+
+    使用场景：当属性值为传参值，或需要变化时
+
+    Js里没有数组类型，数组arr[index]用法来源于对象属性操作
+
+
+
+
+
+对象的遍历
+
+  数组中的数据按照索引排列，索引有序递增
+
+  对象中的数据按照属性名保存，属性名无序
+
+
+  对象的遍历需要特殊方式    for..in
+
+    var obj = {
+
+    name: "Jack",
+
+    age:26,
+
+    }
+
+
+    //k对应对象中的每个键，obj代表了需要遍历的对象
+
+    for（var k in obj）{ 
+
+      obj[ k ]  //对应对象中每个键对应的值
+
+    }
+
+
+
+JSON格式
+
+  书写方式:属性名必须是双引号
+
+    var json = {
+
+      "name" : "Jack",
+
+      "age" : 27  
+
+    }     
+
+
+JSON转换：     无法转换方法
+
+
+  JSON 转换 String
+
+    JSON.stringify（obj）
+
+  String 转换 JSON
+
+    JSON.parse（Str）
+
+
+  obj.toString() ---- 返回的是类型
+
+    对象的toString的作用不是转换字符串，而是显示数据类型
+
+
+
+
+
+
+
+
+</pre>
+
+<blockquote>
+ <font size="4">正则表达式</font>
+
+</blockquote>
+<pre>
+  又名规则表达式，由基本的元字符构成
+
+  作用：匹配字符串的
+
+
+  元字符
+
+       .   表示除\n以外的任意单个字符
+
+       []    表示该范围内的单个值
+
+            [a]  [a-z]  [0-9]  [0-9a-zA-Z]
+
+       |     或者
+
+            [0-9] | [0-9] 
+
+
+      （）   提升优先级
+
+            （[a-z] | [0-9]）[A-Z]
+
+
+
+  限定符
+
+      +   表示这个符号前面的表达式，最少出现1次
+
+            [0-9][a-z] ---- "4serl"
+
+      *   表示这个符号前面的表达式，最少出现0次
+
+            [a-zA-Z][0-9]* ---- "b2018" ---- "n"
+
+      ?   表示这个字符前面的表达式，出现0-1次
+
+            [0-9]? ---- "6" ---- ""
+
+    {1,3}   表示这个字符前面的表达式，出现1-3次
+
+            {1，} ---- 至少出现1次
+
+
+      \d    表示单个数字，相当于[0-9]
+      \D    表示单个非数字
+
+      \s    表示单个空白符号
+      \S    表示单个非空白符
+
+      \w    表示单个非特殊符号
+      \W    表示单个特殊符号@#%
+
+      ^   以何开头  ^[0-9]
+          取非    [^0-9]
+
+      $   以何结尾  [a-z]$
+
+
+
+
+
+  创建正则表达式对象
+
+    通多构造函数创造对象
+
+      var reg = new RegExp(/\d+/);
+
+    通多字面量方式创建对象
+
+      var reg =/\d+/;
+
+
+    调用方法测试
+
+      var flag = reg.test("10086");
+
+      console.log(flag); ---- true
+
+
+
+  正则分组匹配
+
+    括号分组正则表达式,调用exec方法转化为数组
+
+    var reg = /(\d{2,3}) \: (\d{2,3})/
+
+    var arr = reg.exec("00:42") ----  ["00", "42"]
+
+
+
+
+  邮箱的正则表达式：
+
+    shuaiYang131@126.com
+
+    //[0-9a-zA-Z_.\-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}
+
+
+  汉字的正则表达式
+
+    [\u4e00-\u9fa5]
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">密码的正则检验</div><div class="line"></div><div class="line">  function(tag)&#123;</div><div class="line"></div><div class="line">    var level = 0;</div><div class="line"></div><div class="line">    if(/\d+/.test(tag.innerText))&#123;</div><div class="line"></div><div class="line">      level++;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(/[a-zA-Z]+/.test(tag.innerText))&#123;</div><div class="line"></div><div class="line">      level++;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(/\W+/.test(tag.innerText))&#123;</div><div class="line"></div><div class="line">      level++;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if(level &lt; 3 || tag.innerText.length &lt;=6)&#123; </div><div class="line"></div><div class="line">      输入错误提示！！</div><div class="line">    </div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    else&#123;</div><div class="line"></div><div class="line">      输入正确提示！！</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+  字符串切掉空格
+
+    str.replace(/\s/g,"");
+
+      字符串替换方法，前个参数可以为字符串或正则
+
+      正则末尾加g该表全局
+
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>
