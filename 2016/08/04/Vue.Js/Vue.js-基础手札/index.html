@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>vue.js - 基础手札 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2016-08-04">2016-08-04</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Vue.js - 基础手札</h2>
+            <div class="post-meta">
+                本文总共6088个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <style>
+    u{
+        display: block;
+        height:100px;
+      }
+    i{
+        display: block;
+        height:30px;
+      }
+</style>
+
+
+<h1 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h1><h4 id="定位：以数据驱动和组件化思想构建的MVVM库。"><a href="#定位：以数据驱动和组件化思想构建的MVVM库。" class="headerlink" title="定位：以数据驱动和组件化思想构建的MVVM库。"></a>定位：以数据驱动和组件化思想构建的MVVM库。</h4><ul>
+<li>相比于Angular更加简洁与易于理解</li>
+</ul>
+<h4 id="官网-http-cn-vuejs-org"><a href="#官网-http-cn-vuejs-org" class="headerlink" title="官网:    http://cn.vuejs.org/"></a>官网:    <a href="http://cn.vuejs.org/" target="_blank" rel="external">http://cn.vuejs.org/</a></h4><h4 id="手册：-http-cn-vuejs-org-api"><a href="#手册：-http-cn-vuejs-org-api" class="headerlink" title="手册：     http://cn.vuejs.org/api/"></a>手册：     <a href="http://cn.vuejs.org/api/" target="_blank" rel="external">http://cn.vuejs.org/api/</a></h4><hr>
+<h3 id="Vue-Angular简要对比"><a href="#Vue-Angular简要对比" class="headerlink" title="Vue-Angular简要对比"></a>Vue-Angular简要对比</h3><h4 id="Vue："><a href="#Vue：" class="headerlink" title="Vue："></a>Vue：</h4><ul>
+<li><p>指令形式为 v-</p>
+</li>
+<li><p>属性及方法均挂载在组件上</p>
+</li>
+<li><p>适用: 移动端项目</p>
+</li>
+<li><p>发展：vue发展迅猛，github上start数量已超越Angular</p>
+</li>
+<li><p>组件化：将项目划分为独立的结构组件（vue文件），具备完整的样式 视图及逻辑代码</p>
+</li>
+</ul>
+<h3 id="Angular："><a href="#Angular：" class="headerlink" title="Angular："></a>Angular：</h3><ul>
+<li><p>指令形式为 ng-</p>
+</li>
+<li><p>属性及方法均挂载在作用域对象$scope上</p>
+</li>
+<li><p>angular由google维护</p>
+</li>
+<li><p>合适: pc端项目</p>
+</li>
+<li><p>模块化：依据功能将项目划分为独立的结构部分，每一模块能够独立实现某特定功能</p>
+</li>
+</ul>
+<h3 id="两者均不兼容低版本IE"><a href="#两者均不兼容低版本IE" class="headerlink" title="两者均不兼容低版本IE"></a>两者均不兼容低版本IE</h3><p><u></u></p>
+<h1 id="数据观测"><a href="#数据观测" class="headerlink" title="数据观测"></a>数据观测</h1><h4 id="Angular数据观测："><a href="#Angular数据观测：" class="headerlink" title="Angular数据观测："></a>Angular数据观测：</h4><ul>
+<li><p>采用脏值检查机制，指令内置名为watcher的应用用于观测作用域内的数据变化</p>
+<p>  当数据更新或页面刷新时，Angular会遍历当前页面中所有的watcher并逐一对其求值更新</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><p>1.数据庞大时应用的性能会受到影响，且很难优化</p>
+</li>
+<li><p>2.触发数据观测的条件有限，对于Js原生方法的数据更新需要手动调用$apply方法更新视图</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<h4 id="Vue-js数据观测："><a href="#Vue-js数据观测：" class="headerlink" title="Vue.js数据观测："></a>Vue.js数据观测：</h4><ul>
+<li><p>本质上调用ES5的Object.defineProperty（）方法，参数依次为对象-属性-配置对象</p>
+<p>  配置对象内置set及get方法用于监听对应数据的获取及赋值操作，从而能独立观测数据关联视图</p>
+</li>
+</ul>
+<p><u></u>    </p>
+<h1 id="vue基本结构"><a href="#vue基本结构" class="headerlink" title="vue基本结构"></a>vue基本结构</h1><h4 id="视图部分"><a href="#视图部分" class="headerlink" title="视图部分:"></a>视图部分:</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">	&#123;&#123; msg &#125;&#125;						<span class="comment">&lt;!--&#123;&#123; &#125;&#125;差值表达式--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="模型及控制器"><a href="#模型及控制器" class="headerlink" title="模型及控制器:"></a>模型及控制器:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;						<span class="comment">//Vue实例化</span></div><div class="line">	el:<span class="string">"#box"</span>,						<span class="comment">//el指定根组件挂载位置</span></div><div class="line">	data:&#123;							<span class="comment">//data存放组件数据</span></div><div class="line">	    msg:<span class="string">'welcome Vue！'</span></div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="常用实例选项："><a href="#常用实例选项：" class="headerlink" title="常用实例选项："></a>常用实例选项：</h4><ul>
+<li><p>el:                挂载位置”选择器”</p>
+</li>
+<li><p>data:                数据</p>
+</li>
+<li><p>methods:                方法</p>
+</li>
+<li><p>watch:                数据监听</p>
+</li>
+<li><p>mounted:                渲染完成 钩子函数</p>
+</li>
+<li><p>components:            子组件</p>
+</li>
+<li><p>router:                挂载路由</p>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h1><ul>
+<li><p>beforeCreate:            实例化之前</p>
+</li>
+<li><p>created:                实例化完成</p>
+</li>
+<li><p>beforeMount:            实例挂载，模板渲染前</p>
+</li>
+<li><p>mounted:                实现挂载，模板渲染后     *（ready V1.0）</p>
+</li>
+<li><p>beforeUpdate:            组件更新之前</p>
+</li>
+<li><p>updated:                组件更新完毕    *</p>
+</li>
+<li><p>beforeDestroy:            组件销毁前</p>
+</li>
+<li><p>destroyed:            组件销毁后</p>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="vue全局方法"><a href="#vue全局方法" class="headerlink" title="vue全局方法"></a>vue全局方法</h1><h4 id="vm-el-—-挂载的DOM元素"><a href="#vm-el-—-挂载的DOM元素" class="headerlink" title="vm.$el        —-         挂载的DOM元素"></a>vm.$el        —-         挂载的DOM元素</h4><h4 id="vm-data-—-实例数据-data"><a href="#vm-data-—-实例数据-data" class="headerlink" title="vm.$data      —-          实例数据 data"></a>vm.$data      —-          实例数据 data</h4><h4 id="vm-mount-—-手动挂载vue"><a href="#vm-mount-—-手动挂载vue" class="headerlink" title="vm.$mount     —-          手动挂载vue"></a>vm.$mount     —-          手动挂载vue</h4><h4 id="vm-options-—-获取自定义属性"><a href="#vm-options-—-获取自定义属性" class="headerlink" title="vm.$options    —-         获取自定义属性"></a>vm.$options    —-         获取自定义属性</h4><h4 id="vm-options-excord-—-“wode”"><a href="#vm-options-excord-—-“wode”" class="headerlink" title="vm.$options.excord —- “wode”"></a>vm.$options.excord —- “wode”</h4><h4 id="vm-destroy-—-销毁实例"><a href="#vm-destroy-—-销毁实例" class="headerlink" title="vm.$destroy    —-         销毁实例"></a>vm.$destroy    —-         销毁实例</h4><h4 id="vm-log-—-查看现在数据的状态"><a href="#vm-log-—-查看现在数据的状态" class="headerlink" title="vm.$log();    —-         查看现在数据的状态"></a>vm.$log();    —-         查看现在数据的状态</h4><hr>
+<h4 id="对应实例："><a href="#对应实例：" class="headerlink" title="对应实例："></a>对应实例：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">el</span>:<span class="string">"body"</span>,</div><div class="line">	<span class="attr">data</span>:&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;,</div><div class="line">	<span class="attr">excord</span>:<span class="string">"wode"</span>		<span class="comment">//自定义属性</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性:"></a>计算属性:</h1><h4 id="计算属性与data类似用于保存数据"><a href="#计算属性与data类似用于保存数据" class="headerlink" title="计算属性与data类似用于保存数据"></a>计算属性与data类似用于保存数据</h4><ul>
+<li>computed里面可以放置一些业务逻辑代码，记得要有返回值</li>
+</ul>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">computed:&#123;						</div><div class="line">	<span class="attr">list</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;					</div><div class="line">		<span class="keyword">return</span> 数据</div><div class="line">	&#125;,</div><div class="line">	arr()&#123;</div><div class="line">		<span class="keyword">return</span> 数据</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><ul>
+<li>扩展html标签功能及属性</li>
+</ul>
+<p><i></i></p>
+<h3 id="表单元素数据绑定"><a href="#表单元素数据绑定" class="headerlink" title="表单元素数据绑定"></a>表单元素数据绑定</h3><h4 id="v-model：双向数据绑定"><a href="#v-model：双向数据绑定" class="headerlink" title="v-model：双向数据绑定"></a>v-model：双向数据绑定</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input v-model = <span class="string">"msg"</span>/&gt;		</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></div><div class="line">	<span class="keyword">new</span> Vue(&#123;</div><div class="line">		<span class="attr">data</span>:&#123; <span class="attr">msg</span>:<span class="string">""</span> &#125;</div><div class="line">	&#125;).$mount（<span class="string">"body"</span>）</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="v-model-lazy-确认后数据更新"><a href="#v-model-lazy-确认后数据更新" class="headerlink" title="v-model.lazy:    确认后数据更新"></a>v-model.lazy:    确认后数据更新</h4><h4 id="v-model-number-强制数字类型"><a href="#v-model-number-强制数字类型" class="headerlink" title="v-model.number:强制数字类型"></a>v-model.number:强制数字类型</h4><hr>
+<h3 id="显示隐藏"><a href="#显示隐藏" class="headerlink" title="显示隐藏"></a>显示隐藏</h3><h4 id="v-show-true-false-样式操作（display：none）"><a href="#v-show-true-false-样式操作（display：none）" class="headerlink" title="v-show = true/false　　样式操作（display：none）"></a>v-show = true/false　　样式操作（display：none）</h4><h4 id="v-if-true-false-DOM节点操作"><a href="#v-if-true-false-DOM节点操作" class="headerlink" title="v-if = true/false　　　　DOM节点操作"></a>v-if = true/false　　　　DOM节点操作</h4><h4 id="v-else-为之后元素绑定，配合show或if显示隐藏"><a href="#v-else-为之后元素绑定，配合show或if显示隐藏" class="headerlink" title="v-else　　　　　　　　　为之后元素绑定，配合show或if显示隐藏"></a>v-else　　　　　　　　　为之后元素绑定，配合show或if显示隐藏</h4><h4 id="支持类型：true-false-判断语句-有布尔返回值的函数调用"><a href="#支持类型：true-false-判断语句-有布尔返回值的函数调用" class="headerlink" title="支持类型：true/false 判断语句 有布尔返回值的函数调用"></a>支持类型：true/false 判断语句 有布尔返回值的函数调用</h4><h4 id="配合数据："><a href="#配合数据：" class="headerlink" title="配合数据："></a>配合数据：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"flag"</span>&gt;</span>tode<span class="tag">&lt;/<span class="name">span</span>&gt;</span>					</div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-show</span>=<span class="string">"!flag"</span>&gt;</span>wode<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-else</span>&gt;</span>else<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">	</div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">new</span> Vue(&#123;</div><div class="line">		<span class="attr">data</span>:&#123; <span class="attr">flag</span>:<span class="literal">true</span> &#125;</div><div class="line">	&#125;).$mount(<span class="string">"body"</span>)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染:"></a>列表渲染:</h3><h4 id="数组：v-for-”（value-index）-in-list”"><a href="#数组：v-for-”（value-index）-in-list”" class="headerlink" title="数组：v-for=”（value, index） in list”"></a>数组：v-for=”（value, index） in list”</h4><ul>
+<li>value对应数组中的值</li>
+<li>index对应数组中的索引<br><i></i></li>
+</ul>
+<h4 id="对象：v-for-”（value-key-index）-in-json”"><a href="#对象：v-for-”（value-key-index）-in-json”" class="headerlink" title="对象：v-for=”（value, key, index） in json”"></a>对象：v-for=”（value, key, index） in json”</h4><ul>
+<li>value对应对象中的值</li>
+<li>key对应对象中的键</li>
+<li>index对应索引值<br><i></i></li>
+</ul>
+<h4 id="1-0重复项处理："><a href="#1-0重复项处理：" class="headerlink" title="1.0重复项处理："></a>1.0重复项处理：</h4><ul>
+<li>默认不支持重复项，需配置track-by</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">v-<span class="keyword">for</span>=<span class="string">"(value,index) in list"</span> track-by=<span class="string">"$index"</span></div></pre></td></tr></table></figure>
+<h4 id="2-0重复项处理："><a href="#2-0重复项处理：" class="headerlink" title="2.0重复项处理："></a>2.0重复项处理：</h4><ul>
+<li>默认支持重复项，不支持$index</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">v-<span class="keyword">for</span>=<span class="string">"(value,index) in list"</span> :key=<span class="string">"index"</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定:"></a>事件绑定:</h3><h4 id="语法：v-on-事件类型-“函数”"><a href="#语法：v-on-事件类型-“函数”" class="headerlink" title="语法：v-on:事件类型 = “函数”"></a>语法：v-on:事件类型 = “函数”</h4><h4 id="类型：v-on-click-mouseout-mouseover-dblclick-mousedown"><a href="#类型：v-on-click-mouseout-mouseover-dblclick-mousedown" class="headerlink" title="类型：v-on:click /mouseout /mouseover /dblclick/ mousedown.."></a>类型：v-on:click /mouseout /mouseover /dblclick/ mousedown..</h4><h4 id="简写：-v-on可简化为"><a href="#简写：-v-on可简化为" class="headerlink" title="简写： v-on可简化为@"></a>简写： v-on可简化为@</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@click=“show（）”			<span class="comment">//推荐使用</span></div></pre></td></tr></table></figure>
+<h4 id="函数体：保存在组件内的methods位置"><a href="#函数体：保存在组件内的methods位置" class="headerlink" title="函数体：保存在组件内的methods位置"></a>函数体：保存在组件内的methods位置</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">el</span>:<span class="string">'#box'</span>,</div><div class="line">	<span class="attr">data</span>:&#123; </div><div class="line">	    <span class="attr">arr</span>:[<span class="string">'apple'</span>,<span class="string">'banana'</span>,<span class="string">'orange'</span>,<span class="string">'pear'</span>],</div><div class="line">	    <span class="attr">json</span>:&#123;<span class="attr">a</span>:<span class="string">'apple'</span>,<span class="attr">b</span>:<span class="string">'banana'</span>,<span class="attr">c</span>:<span class="string">'orange'</span>&#125;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">methods</span>:&#123;		        <span class="comment">//methods存放位置</span></div><div class="line">	    show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;	</div><div class="line">	        alert(<span class="number">1</span>);</div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><ul>
+<li><p>@事件类型.stop = “函数”:</p>
+<ul>
+<li><p>阻止事件冒泡，等同于event.stopPropagation()</p>
+</li>
+<li><p>事件冒泡：子元素在自身事件执行结束后，会执行父元素相同类型的事件</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<ul>
+<li><p>@事件类型.prevent =”函数”:</p>
+<ul>
+<li><p>阻止默认事件，等同于event.prevent</p>
+</li>
+<li><p>默认行为：系统默认的操作，如右键出现的菜单，contextmenu为右键点击事件</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><i></i></p>
+<ul>
+<li><p>按键修饰符</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">keyup.13</span> = <span class="string">"show"</span>&gt;</span>wode<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>常用修饰符：</p>
+<ul>
+<li><p>enter tab delete esc space</p>
+</li>
+<li><p>left right up down</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h3><h4 id="语法：v-bind-属性-“实例数据”"><a href="#语法：v-bind-属性-“实例数据”" class="headerlink" title="语法：v-bind:属性 = “实例数据”"></a>语法：v-bind:属性 = “实例数据”</h4><ul>
+<li>自定义属性依然适用</li>
+</ul>
+<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;img v-bind:src = <span class="string">"imgurl"</span>/&gt;		</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></div><div class="line">	<span class="keyword">new</span> Vue(&#123;</div><div class="line">		<span class="attr">data</span>:&#123; <span class="attr">imgurl</span>:<span class="string">"img.png"</span> &#125;</div><div class="line">	&#125;)	</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="简写：v-bind：可简化为"><a href="#简写：v-bind：可简化为" class="headerlink" title="简写：v-bind：可简化为:"></a>简写：v-bind：可简化为:</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"imgurl"</span>/&gt;</span></div><div class="line"><span class="comment">&lt;!--:属性 = "属性值"--&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; 类名：bool值 &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; classA: true, classB: false &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- bool值可与实例中的数据联动 --&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="官方推荐整体json的方式"><a href="#官方推荐整体json的方式" class="headerlink" title="官方推荐整体json的方式"></a>官方推荐整体json的方式</h4><ul>
+<li><p>html部分：    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span> = <span class="string">"classjson"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Vue部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">	<span class="attr">classjson</span>:&#123;<span class="attr">red</span>:a, <span class="attr">blue</span>:<span class="literal">false</span>&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; 样式名：'样式值' &#125;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"&#123; color: blue, backgroundColor: purple &#125;"</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 复合样式采用驼峰命名法 --&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="官方推荐整体json的数据联动"><a href="#官方推荐整体json的数据联动" class="headerlink" title="官方推荐整体json的数据联动"></a>官方推荐整体json的数据联动</h4><ul>
+<li>html部分：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"stylejson"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>Vue部分：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">	<span class="attr">stylejson</span>:&#123; <span class="attr">color</span>: blue, <span class="attr">backgroundColor</span>: purple&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="内容操作："><a href="#内容操作：" class="headerlink" title="内容操作："></a>内容操作：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">‘message’</span>&gt;</span>识别文本<span class="tag">&lt;/<span class="name">span</span>&gt;</span>				</div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-html</span>=<span class="string">‘message’</span>&gt;</span>识别文本，转译标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><i></i><i></i><i></i></p>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><h4 id="定义指令："><a href="#定义指令：" class="headerlink" title="定义指令："></a>定义指令：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Vue.directive  ( name, <span class="function"><span class="keyword">function</span> (<span class="params"> 参数 </span>)</span>&#123;	</div><div class="line">	<span class="keyword">this</span>		----	<span class="comment">//指令对象</span></div><div class="line">	<span class="keyword">this</span>.el		----	<span class="comment">//调用指令的DOM元素</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="调用指令："><a href="#调用指令：" class="headerlink" title="调用指令："></a>调用指令：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-name</span> = <span class="string">"参数"</span> &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="补充说明："><a href="#补充说明：" class="headerlink" title="补充说明："></a>补充说明：</h4><ul>
+<li><p>不推荐Vue处理Dom操作，需要时可采用自定义指令的方式</p>
+</li>
+<li><p>定义指令时以v-启，指令名不包含v-</p>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><h4 id="Vue2-0删除了多数内置过滤器，用时需要自己定义"><a href="#Vue2-0删除了多数内置过滤器，用时需要自己定义" class="headerlink" title="Vue2.0删除了多数内置过滤器，用时需要自己定义"></a>Vue2.0删除了多数内置过滤器，用时需要自己定义</h4><h3 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Vue.filter("过滤器名"，function( result,value,value )&#123;		</div><div class="line">	return 处理结果				//value对应调用时的参数</div><div class="line">&#125;)</div><div class="line"></div><div class="line">&lt;span&gt; &#123;&#123; "welcome" | filer &#125;&#125; &lt;/span&gt;			//调用全局过滤器</div><div class="line">&lt;span&gt; &#123;&#123; msg | filter（参数）&#125;&#125; &lt;/span&gt;			//携带参数调用</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h3 id="局部过滤器："><a href="#局部过滤器：" class="headerlink" title="局部过滤器："></a>局部过滤器：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">new Vue(&#123;</div><div class="line">	filters:&#123;</div><div class="line">		toUpper( value )&#123;			//定义局部过滤器</div><div class="line">			return value.toUpperCase()</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;).$mount("body")</div><div class="line"></div><div class="line">&lt;span&gt; &#123;&#123; list | toUpper &#125;&#125; &lt;/span&gt;			//调用局部过滤器</div><div class="line">&lt;span&gt; &#123;&#123; "melody" | toUpper(参数) &#125;&#125; &lt;/span&gt;		//携带参数调用</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h3 id="多过滤器调用"><a href="#多过滤器调用" class="headerlink" title="多过滤器调用"></a>多过滤器调用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; msg| filterA | filterB（参数）&#125;&#125;</div><div class="line"><span class="comment">//pipe方式调用多过滤器，前一级输出就是次一级输入</span></div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="监听数据变化"><a href="#监听数据变化" class="headerlink" title="监听数据变化:"></a>监听数据变化:</h1><h4 id="全局监听"><a href="#全局监听" class="headerlink" title="全局监听"></a>全局监听</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">vm.$watch ( 实例变量,<span class="function"><span class="keyword">function</span>(<span class="params"> </span>)</span>&#123; &#125;); 			 	</div><div class="line">	<span class="comment">//浅度监听，不能监听对象类型</span></div><div class="line"></div><div class="line">vm.$watch ( 实例变量,<span class="function"><span class="keyword">function</span>(<span class="params"> </span>)</span>&#123; &#125;,&#123; <span class="attr">deep</span>:<span class="literal">true</span> &#125;);  		</div><div class="line">	<span class="comment">//深度监视，能够监听对象类型</span></div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="组件内嵌"><a href="#组件内嵌" class="headerlink" title="组件内嵌"></a>组件内嵌</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wathch:&#123;</div><div class="line">	<span class="attr">msg</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; 更新操作 &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="Vue-devtools"><a href="#Vue-devtools" class="headerlink" title="Vue-devtools"></a>Vue-devtools</h1><h4 id="调试工具"><a href="#调试工具" class="headerlink" title="调试工具"></a>调试工具</h4><ul>
+<li><p>清晰显示组件关系及作用范围</p>
+</li>
+<li><p>网址：<a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd" target="_blank" rel="external">https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd</a></p>
+</li>
+</ul>
+<ul>
+<li><p>命令行指令：npm install vue-devtools registry –D</p>
+</li>
+<li><p>谷歌浏览器 - 更多工具 - 插件拓展 - 勾选开发者选项 - </p>
+<pre><code>加载已解压的扩展程序 - 重启浏览器 - 
+
+当有Vue实例时，开发者选项中最后显示Vue-devtools
+</code></pre></li>
+</ul>
+<p><u></u><u></u></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>
