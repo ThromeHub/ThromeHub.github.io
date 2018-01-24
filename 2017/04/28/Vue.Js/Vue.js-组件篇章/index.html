@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>vue.js - 组件篇章 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2017-04-28">2017-04-28</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Vue.js - 组件篇章</h2>
+            <div class="post-meta">
+                本文总共3428个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <style>
+    u{
+        display: block;
+        height:100px;
+      }
+    i{
+        display: block;
+        height:30px;
+      }
+</style>
+
+
+<h1 id="Vue组件"><a href="#Vue组件" class="headerlink" title="Vue组件"></a>Vue组件</h1><h4 id="组件定位-一个大对象，拥有自己的数据-模板-方法-组件等"><a href="#组件定位-一个大对象，拥有自己的数据-模板-方法-组件等" class="headerlink" title="组件定位: 一个大对象，拥有自己的数据-模板-方法-组件等"></a>组件定位: 一个大对象，拥有自己的数据-模板-方法-组件等</h4><pre><code>Vue实例视为根组件
+</code></pre><hr>
+<h1 id="全局组件–全局作用范围"><a href="#全局组件–全局作用范围" class="headerlink" title="全局组件–全局作用范围"></a>全局组件–全局作用范围</h1><h4 id="作用范围：全局范围"><a href="#作用范围：全局范围" class="headerlink" title="作用范围：全局范围"></a>作用范围：全局范围</h4><h4 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.component (<span class="string">'组件名称'</span>,&#123;</div><div class="line">	<span class="attr">template</span>:<span class="string">"&lt;h4&gt; component-text &lt;/h4&gt;"</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> component = (&#123;	       	</div><div class="line">	<span class="attr">template</span>:<span class="string">"&lt;h4&gt; component-text &lt;/h4&gt;"</span>		</div><div class="line">&#125;)	<span class="comment">//V2.0推荐创建组件方式</span></div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h1><h4 id="作用范围：限定在父组件内"><a href="#作用范围：限定在父组件内" class="headerlink" title="作用范围：限定在父组件内"></a>作用范围：限定在父组件内</h4><h4 id="注意点：data必须是函数的形式，函数必须返回一个对象-json"><a href="#注意点：data必须是函数的形式，函数必须返回一个对象-json" class="headerlink" title="注意点：data必须是函数的形式，函数必须返回一个对象(json)"></a>注意点：data必须是函数的形式，函数必须返回一个对象(json)</h4><h3 id="组件定义："><a href="#组件定义：" class="headerlink" title="组件定义："></a>组件定义：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">components</span> : &#123; 			</div><div class="line">		组件名:组件对象</div><div class="line">	&#125;			</div><div class="line">&#125;).$mount(<span class="string">"#app"</span>)</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h3 id="组件调用："><a href="#组件调用：" class="headerlink" title="组件调用："></a>组件调用：</h3><h4 id="静态调用"><a href="#静态调用" class="headerlink" title="静态调用"></a>静态调用</h4><ul>
+<li>作用域内添加标签<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">组件名</span>&gt;</span><span class="tag">&lt;/<span class="name">组件名</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 标签的渲染效果为模板内容的渲染效果 --&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="动态调用：vue1-0专用"><a href="#动态调用：vue1-0专用" class="headerlink" title="动态调用：vue1.0专用"></a>动态调用：vue1.0专用</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">is</span>=<span class="string">"组件名"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"组件名"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="模板配合数据实例："><a href="#模板配合数据实例：" class="headerlink" title="模板配合数据实例："></a>模板配合数据实例：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">com：&#123;</div><div class="line">	data()&#123;	return &#123; arr : ['val','put']&#125;&#125;，</div><div class="line">	template:"#com"			</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;template id="com"&gt;</div><div class="line">	&lt;h1&gt;模板内容&lt;/h1&gt;</div><div class="line">	&lt;ul&gt;</div><div class="line">		&lt;li v-for = "val in arr"&gt;</div><div class="line">			&#123;&#123;val&#125;&#125;</div><div class="line">		&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h1><h4 id="Vue-默认情况下，子组件无法访问父组件数据"><a href="#Vue-默认情况下，子组件无法访问父组件数据" class="headerlink" title="Vue 默认情况下，子组件无法访问父组件数据"></a>Vue 默认情况下，子组件无法访问父组件数据</h4><pre><code>组件通信必须通过子组件作为唯一媒介绑定属性或事件
+</code></pre><hr>
+<h3 id="向下通信"><a href="#向下通信" class="headerlink" title="向下通信"></a>向下通信</h3><h4 id="视图层：为子组件标签绑定属性"><a href="#视图层：为子组件标签绑定属性" class="headerlink" title="视图层：为子组件标签绑定属性"></a>视图层：为子组件标签绑定属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"#app"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">down</span> <span class="attr">:pass</span> = <span class="string">"数据"</span>&gt;</span><span class="tag">&lt;/<span class="name">down</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="数据层：子组件内通过props属性获取同名属性"><a href="#数据层：子组件内通过props属性获取同名属性" class="headerlink" title="数据层：子组件内通过props属性获取同名属性"></a>数据层：子组件内通过props属性获取同名属性</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">components</span>:&#123;</div><div class="line">		<span class="attr">down</span>:&#123;</div><div class="line">			<span class="attr">props</span>:[<span class="string">'pass'</span>,<span class="string">'pass2'</span>]		[方式A]</div><div class="line">			props:&#123;				&#123;方式B&#125;</div><div class="line">				<span class="string">'pass'</span>: <span class="built_in">String</span>,</div><div class="line">				<span class="comment">//属性名称：数据类型	</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="向上通信"><a href="#向上通信" class="headerlink" title="向上通信"></a>向上通信</h3><h4 id="子组件数据层：触发自定义事件绑定数据"><a href="#子组件数据层：触发自定义事件绑定数据" class="headerlink" title="子组件数据层：触发自定义事件绑定数据"></a>子组件数据层：触发自定义事件绑定数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">methods:&#123;</div><div class="line">	pass()&#123;</div><div class="line">		<span class="keyword">this</span>.$emit(<span class="string">"绑定事件名"</span>，绑定数据)</div><div class="line">	&#125;</div><div class="line">&#125;，		<span class="comment">//this指代当前实例对象</span></div><div class="line"></div><div class="line">mounted()&#123;</div><div class="line">	<span class="keyword">this</span>.$emite(<span class="string">"passDownData"</span>,数据)</div><div class="line">&#125;		<span class="comment">//可配合钩子函数使用</span></div></pre></td></tr></table></figure>
+<p><i></i>    </p>
+<h4 id="子组件视图层：为子组件标签绑定指定事件"><a href="#子组件视图层：为子组件标签绑定指定事件" class="headerlink" title="子组件视图层：为子组件标签绑定指定事件"></a>子组件视图层：为子组件标签绑定指定事件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"#app"</span>&gt;</span>		</div><div class="line">	<span class="tag">&lt;<span class="name">down</span> @<span class="attr">pass</span> = <span class="string">"get"</span>&gt;</span><span class="tag">&lt;/<span class="name">down</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><i></i>    </p>
+<h4 id="父组件数据层：定义事件获取通信数据"><a href="#父组件数据层：定义事件获取通信数据" class="headerlink" title="父组件数据层：定义事件获取通信数据"></a>父组件数据层：定义事件获取通信数据</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">methods:&#123;</div><div class="line">	get(data)&#123; 父组件数据 &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="兄弟组件间的通信"><a href="#兄弟组件间的通信" class="headerlink" title="兄弟组件间的通信"></a>兄弟组件间的通信</h3><h4 id="通过新建实例管理组件通信：VueBus"><a href="#通过新建实例管理组件通信：VueBus" class="headerlink" title="通过新建实例管理组件通信：VueBus"></a>通过新建实例管理组件通信：VueBus</h4><ul>
+<li><p>新建实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Event=<span class="keyword">new</span> Vue();</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据发送：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Event.$emit(事件名称, 数据)</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据获取：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Event.$on(事件名称,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	<span class="comment">//获取数据后的操作</span></div><div class="line">&#125;.bind(<span class="keyword">this</span>));</div><div class="line"></div><div class="line"><span class="comment">//修正this指向，从Event到当前组件</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="组件获取"><a href="#组件获取" class="headerlink" title="组件获取"></a>组件获取</h1><h4 id="关联组件："><a href="#关联组件：" class="headerlink" title="关联组件："></a>关联组件：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- &lt;组件名 ref:关联名&gt;&lt;组件名&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">com</span> <span class="attr">ref:</span>"<span class="attr">melody</span>"&gt;</span><span class="tag">&lt;/<span class="name">com</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="关联DOM："><a href="#关联DOM：" class="headerlink" title="关联DOM："></a>关联DOM：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- &lt;标签名 ref:关联名&gt;&lt;标签名&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">ref:</span>"<span class="attr">melody</span>"&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="获取DOM："><a href="#获取DOM：" class="headerlink" title="获取DOM："></a>获取DOM：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//$refs对象以键值形式保存DOM节点 </span></div><div class="line"><span class="keyword">this</span>.$refs.melody--span节点</div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h1><h3 id="项目配置："><a href="#项目配置：" class="headerlink" title="项目配置："></a>项目配置：</h3><pre><code>|-main.js:入口文件
+
+|-Component
+
+    |-app.vue:主组件
+
+|-MyComponent
+
+    |-index.js:    导出自定义组件并install
+
+    |-loading.vue:    自定义组件内容
+</code></pre><p><i></i>    </p>
+<h3 id="index-js配置："><a href="#index-js配置：" class="headerlink" title="index.js配置："></a>index.js配置：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> loading <span class="keyword">from</span> <span class="string">"./loading.vue"</span>			<span class="comment">//引入自定义组件对象</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</div><div class="line">	<span class="attr">install</span>:<span class="function"><span class="keyword">function</span>(<span class="params">Vue</span>)</span>&#123;</div><div class="line">		Vue.component(<span class="string">"loading"</span>,loading)</div><div class="line">	&#125;	<span class="comment">//对应调用时的组件名 - 引入的组件对象</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//传参为Vue实例化对象，通过install方法为其添加指定全局组件</span></div></pre></td></tr></table></figure>
+<p><i></i>    </p>
+<h3 id="main-js配置："><a href="#main-js配置：" class="headerlink" title="main.js配置："></a>main.js配置：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">"./MyComponent/index.js"</span>	<span class="comment">//导入index配置对象</span></div><div class="line">Vue.use(selfLoading)；</div><div class="line"><span class="comment">//通过use方法调用配置对象中的install方法，为Vue根组件挂载全局组件</span></div></pre></td></tr></table></figure>
+<p><i></i>    </p>
+<h3 id="自定义组件调用："><a href="#自定义组件调用：" class="headerlink" title="自定义组件调用："></a>自定义组件调用：</h3><ul>
+<li>任意组件内可直接调用挂载的自定义全局组件<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">root</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">loading</span>&gt;</span><span class="tag">&lt;/<span class="name">loading</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">root</span>&gt;</span>		</div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><u></u></p>
+<h1 id="slot-位置或槽口"><a href="#slot-位置或槽口" class="headerlink" title="slot:                位置或槽口"></a>slot:                位置或槽口</h1><h4 id="作用-正常情况下组件内部内容会被替换，此时需要slot保留数据"><a href="#作用-正常情况下组件内部内容会被替换，此时需要slot保留数据" class="headerlink" title="作用: 正常情况下组件内部内容会被替换，此时需要slot保留数据"></a>作用: 正常情况下组件内部内容会被替换，此时需要slot保留数据</h4><h3 id="使用方法："><a href="#使用方法：" class="headerlink" title="使用方法："></a>使用方法：</h3><h4 id="子组件标签"><a href="#子组件标签" class="headerlink" title="子组件标签"></a>子组件标签</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">down</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">down</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="子组件模板"><a href="#子组件模板" class="headerlink" title="子组件模板"></a>子组件模板</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h4</span>&gt;</span>子组件模板<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">slot</span>&gt;</span>默认内容<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 如果子标签内有内容，slot会保留其内容 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- 如果子标签内无内容，slot会输出标签内内容 （默认内容） --&gt;</span></div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="选择性保留方法"><a href="#选择性保留方法" class="headerlink" title="选择性保留方法;"></a>选择性保留方法;</h4><ul>
+<li><p>需要保留的内容通过slot属性命名，模块内slot通过name锁定</p>
+</li>
+<li><p>子标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">down</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span> 内容A <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">slot</span> = <span class="string">"now"</span>&gt;</span> 内容B <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">down</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>子组件模块</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h4</span>&gt;</span>子组件模板<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span> = <span class="string">"now"</span>&gt;</span> 默认内容 <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>浏览器效果</p>
+<p>  子组件模板内容:”内容B”</p>
+</li>
+</ul>
+<p><u></u><u></u></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

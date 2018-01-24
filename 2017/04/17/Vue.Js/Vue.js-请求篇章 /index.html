@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>vue.js - 请求篇章 - Hexo</title>
+
+<meta name="keywords" content="undefined">
+
+<meta name="description " content="null">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="说">说</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <a href="/video" title="Video"><i class="fa fa-video-camera"></i><span>Video</span></a>
+        <a href="/cross_fire" title="Cross GFW"><i class="fa fa-wifi"></i><span>Cross GFW</span></a>
+        <a href="/help" title="Help"><i class="fa fa-question-circle"></i><span>Help</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>说IT</h1>
+        <h3>交流技术，畅谈人文</h3>
+        <p>一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="https://join.slack.com/readseek/signup" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/tangkunyin" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="https://facebook.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="undefined" target="_blank">
+                    <img width="48" src="undefined" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="undefined" target="_blank">undefined</a>
+                    <span title="最后编辑于2017-04-17">2017-04-17</span>
+                </p>
+                <p>undefined</p>
+            </div>
+            <h2 class="post-title">Vue.js - 请求篇章</h2>
+            <div class="post-meta">
+                本文总共1993个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <style>
+    u{
+        display: block;
+        height:100px;
+      }
+    i{
+        display: block;
+        height:30px;
+      }
+</style>
+
+
+
+<h1 id="Vue-resource"><a href="#Vue-resource" class="headerlink" title="Vue-resource"></a>Vue-resource</h1><h4 id="定位：官方推荐请求插件"><a href="#定位：官方推荐请求插件" class="headerlink" title="定位：官方推荐请求插件"></a>定位：官方推荐请求插件</h4><h4 id="调用：通过实例方法-http，实现类似ajax的效果"><a href="#调用：通过实例方法-http，实现类似ajax的效果" class="headerlink" title="调用：通过实例方法$http，实现类似ajax的效果"></a>调用：通过实例方法$http，实现类似ajax的效果</h4><h4 id="引入-vue-resouce"><a href="#引入-vue-resouce" class="headerlink" title="引入: vue-resouce"></a>引入: vue-resouce</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"vue-resouce"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<hr>
+<h3 id="get方法"><a href="#get方法" class="headerlink" title="get方法:"></a>get方法:</h3><h4 id="获取一个普通文本数据"><a href="#获取一个普通文本数据" class="headerlink" title="获取一个普通文本数据:"></a>获取一个普通文本数据:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.get(<span class="string">'aa.txt'</span>)					</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;			<span class="comment">//then（成功时调用函数fn，失败时调用函数fn）</span></div><div class="line">    alert(res.data);			<span class="comment">//返回值res为对象类型，包含request data status等响应报文信息</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h4 id="给服务发送数据-√通常使用"><a href="#给服务发送数据-√通常使用" class="headerlink" title="给服务发送数据:                        √通常使用"></a>给服务发送数据:                        √通常使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.get(<span class="string">'get.php'</span>,&#123;</div><div class="line">    name：数据，</div><div class="line">    pass：数据</div><div class="line">&#125;).then( <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.data);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="post方法"><a href="#post方法" class="headerlink" title="post方法:"></a>post方法:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.post(<span class="string">'post.php'</span>,&#123;		    </div><div class="line">    name：数据，</div><div class="line">    pass：数据</div><div class="line">&#125;,&#123;</div><div class="line">    <span class="attr">emulateJSON</span>:<span class="literal">true</span>			<span class="comment">//post方法需要指定发送类型（仿JSON）</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.data);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="http方式："><a href="#http方式：" class="headerlink" title="$http方式："></a>$http方式：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http(&#123;</div><div class="line">	<span class="attr">url</span>: 服务器地址，</div><div class="line">	data: 给后台提交数据，</div><div class="line">	method: <span class="string">'get'</span>/post/jsonp， 	<span class="comment">//发送方式</span></div><div class="line">	jsonp: <span class="string">'cb'</span> 			<span class="comment">//callback Name</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="jsonp方法"><a href="#jsonp方法" class="headerlink" title="jsonp方法:"></a>jsonp方法:</h3><h4 id="示例：https-sp0-baidu-com-5a1Fazu8AA54nxGko9WTAnF6hhy-su-wd-a-amp-cb-jshow"><a href="#示例：https-sp0-baidu-com-5a1Fazu8AA54nxGko9WTAnF6hhy-su-wd-a-amp-cb-jshow" class="headerlink" title="示例：https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=jshow"></a>示例：<a href="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=jshow" target="_blank" rel="external">https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=jshow</a></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$http.jsonp(<span class="string">'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su'</span>,&#123;</div><div class="line">    <span class="attr">wd</span> : <span class="string">'melody'</span>				<span class="comment">//发送数据</span></div><div class="line">&#125;,&#123;</div><div class="line">    <span class="attr">jsonp</span>:<span class="string">'cb'</span>					<span class="comment">//callback关键字，默认名字就是"callback"			</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.data.s);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">    alert(res.status);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><u></u></p>
+<h1 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h1><h4 id="安装：npm-install-axios-S"><a href="#安装：npm-install-axios-S" class="headerlink" title="安装：npm install axios -S"></a>安装：npm install axios -S</h4><h4 id="引入："><a href="#引入：" class="headerlink" title="引入："></a>引入：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"../node_module/axios/bin/axios.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><i></i></p>
+<h3 id="Get请求："><a href="#Get请求：" class="headerlink" title="Get请求："></a>Get请求：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">"url"</span>，&#123;		<span class="comment">//参数为url-配置对象</span></div><div class="line">	params:&#123; <span class="attr">name</span>:<span class="string">"melody"</span> &#125;</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123; 		<span class="comment">//请求成功回调</span></div><div class="line">	<span class="built_in">console</span>.log(res)</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;		<span class="comment">//错误回调</span></div><div class="line">	<span class="built_in">console</span>.log(err)		</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="Post请求："><a href="#Post请求：" class="headerlink" title="Post请求："></a>Post请求：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">axios.post(<span class="string">"url"</span>,&#123;</div><div class="line">	<span class="attr">params</span>:&#123; <span class="attr">name</span>:<span class="string">"melody"</span> &#125;</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(res)</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(err)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="Axios跨域请求需要另外配置，方式参照：http-www-jianshu-com-p-3b5e453f54f5"><a href="#Axios跨域请求需要另外配置，方式参照：http-www-jianshu-com-p-3b5e453f54f5" class="headerlink" title="Axios跨域请求需要另外配置，方式参照：http://www.jianshu.com/p/3b5e453f54f5"></a>Axios跨域请求需要另外配置，方式参照：<a href="http://www.jianshu.com/p/3b5e453f54f5" target="_blank" rel="external">http://www.jianshu.com/p/3b5e453f54f5</a></h4><p><u></u><u></u></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/20/2014',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>
