@@ -156,7 +156,7 @@
             </div>
             <h2 class="post-title">React - 基础手札</h2>
             <div class="post-meta">
-                本文总共10136个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共10133个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -172,8 +172,8 @@
 </style>
 
 
-<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h3 id="传统依赖注入"><a href="#传统依赖注入" class="headerlink" title="传统依赖注入"></a>传统依赖注入</h3><h4 id="React-ReactDOM核心库"><a href="#React-ReactDOM核心库" class="headerlink" title="React-ReactDOM核心库"></a>React-ReactDOM核心库</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://unpkg.com/react@15.3.2/dist/react.js"</span>&gt;&lt;/script&gt; </div><div class="line">&lt;script src=<span class="string">"https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h4 id="转译JSX语法的babal依赖"><a href="#转译JSX语法的babal依赖" class="headerlink" title="转译JSX语法的babal依赖"></a>转译JSX语法的babal依赖</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h3 id="传统依赖注入"><a href="#传统依赖注入" class="headerlink" title="传统依赖注入"></a>传统依赖注入</h3><h4 id="React-ReactDOM核心库"><a href="#React-ReactDOM核心库" class="headerlink" title="React-ReactDOM核心库"></a>React-ReactDOM核心库</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://unpkg.com/react@15.3.2/dist/react.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span> </div><div class="line">&lt;script src=<span class="string">"https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h4 id="转译JSX语法的babal依赖"><a href="#转译JSX语法的babal依赖" class="headerlink" title="转译JSX语法的babal依赖"></a>转译JSX语法的babal依赖</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p><u></u></p>
 <h1 id="虚拟DOM-Virtual-DOM"><a href="#虚拟DOM-Virtual-DOM" class="headerlink" title="虚拟DOM Virtual DOM"></a>虚拟DOM Virtual DOM</h1><blockquote>
 <p>虚拟DOM元素以对象方式归纳元素信息</p>
@@ -190,7 +190,7 @@
 <pre><code>       改变               改变
       ------            ------  
 数据Data      VirtualDOM        DOM
-      ------                ------
+      ------             ------
       触发事件          触发事件
 </code></pre></li>
 </ul>
@@ -202,7 +202,7 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">	<span class="keyword">let</span> content = <span class="xml"><span class="tag">&lt;<span class="name">main</span>&gt;</span>相关的HTML内容<span class="tag">&lt;/<span class="name">main</span>&gt;</span></span></div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> content</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><u></u></p>
-<h1 id="页面渲染"><a href="#页面渲染" class="headerlink" title="页面渲染"></a>页面渲染</h1><h4 id="ReactDOM-render-JSX语法，渲染位置"><a href="#ReactDOM-render-JSX语法，渲染位置" class="headerlink" title="ReactDOM.render( JSX语法，渲染位置 )"></a>ReactDOM.render( JSX语法，渲染位置 )</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ReactDIN.render(</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">main</span>&gt;</span> MainContent <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span>,</div><div class="line">	<span class="built_in">document</span>.body</div><div class="line">)</div></pre></td></tr></table></figure>
+<h1 id="页面渲染"><a href="#页面渲染" class="headerlink" title="页面渲染"></a>页面渲染</h1><h4 id="ReactDOM-render-JSX语法，渲染位置"><a href="#ReactDOM-render-JSX语法，渲染位置" class="headerlink" title="ReactDOM.render( JSX语法，渲染位置 )"></a>ReactDOM.render( JSX语法，渲染位置 )</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">main</span>&gt;</span> MainContent <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span>,</div><div class="line">	<span class="built_in">document</span>.body</div><div class="line">)</div></pre></td></tr></table></figure>
 <p><i></i></p>
 <h4 id="amp-amp-运算符"><a href="#amp-amp-运算符" class="headerlink" title="&amp;&amp;运算符"></a>&amp;&amp;运算符</h4><ul>
 <li><p>Boolean &amp;&amp; (&lt;main&gt; Content &lt;/main&gt;)</p>
